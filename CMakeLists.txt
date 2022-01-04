@@ -17,7 +17,7 @@ list(APPEND CMAKE_MODULE_PATH "OpenCV_DIR/OpenCV")
 
 find_package(OpenCV REQUIRED)
 
-include_directories(${OpenCV_INCLUDE_DIRS})
+include_directories(include ${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/includes/camera.h )
 
 file(GLOB srcs
     "${PROJECT_SOURCE_DIR}/src/*.cpp"

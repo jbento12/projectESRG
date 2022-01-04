@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/applicationInterface.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.cpp
+
+/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.cpp
+

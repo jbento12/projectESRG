@@ -1,9 +1,7 @@
 #ifndef camera__H
 #define camera__H
+
 #include "opencv2/opencv.hpp"
-#include "opencv2/video.hpp"
-#include "opencv2/imgproc.hpp"
-#include "opencv2/highgui.hpp"
 #include <string>
 #include <unistd.h>
 #include <semaphore.h>
@@ -23,7 +21,6 @@ class camera
     private: 
     
     char* shmptr;
-    VideoCapture cap;
     int device;
     sem_t *shmsem;
 
@@ -36,7 +33,7 @@ class camera
 
 
 
-}
+};
 
 
 
