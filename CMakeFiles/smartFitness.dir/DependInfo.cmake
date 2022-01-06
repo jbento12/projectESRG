@@ -18,9 +18,8 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include"
-  "includes/camera.h"
-  "/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include"
-  "/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/opencv"
+  "includes"
+  "/usr/local/include/opencv4"
   )
 
 # Targets to which this target links.

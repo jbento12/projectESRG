@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/include -I/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/includes/camera.h -isystem /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include -isystem /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/opencv 
+CXX_INCLUDES = -I/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/include -I/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/includes -isystem /usr/local/include/opencv4 
 

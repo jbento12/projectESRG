@@ -1,2 +1,2 @@
 #include "poseClassification.h"
-#include "camera.h"
+//#include "camera.h"
