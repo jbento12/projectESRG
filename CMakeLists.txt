@@ -11,9 +11,9 @@ include(CPack)
 
 
 #set the OpenCV variable to the given path
-set (OpenCV_DIR /buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/share/OpenCV)
+set (OpenCV_DIR home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/share/OpenCV)
 
-find_package(OpenCV REQUIRED)
+find_package(OpenCV REQUIRED PATHS /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/share)
 
 include_directories(include ${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/includes )
 

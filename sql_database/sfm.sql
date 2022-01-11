@@ -16,12 +16,59 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `smart_fitness`
+-- Table structure for table `exercise`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `smart_fitness` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+DROP TABLE IF EXISTS `exercise`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `exercise` (
+  `exercise__id` int NOT NULL AUTO_INCREMENT,
+  `training_id` int DEFAULT NULL,
+  `exercise_name` varchar(30) DEFAULT NULL,
+  `exercise_duration` date NOT NULL,
+  PRIMARY KEY (`exercise__id`),
+  KEY `training_id` (`training_id`),
+  CONSTRAINT `exercise_ibfk_1` FOREIGN KEY (`training_id`) REFERENCES `training` (`training_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-USE `smart_fitness`;
+--
+-- Dumping data for table `exercise`
+--
+
+LOCK TABLES `exercise` WRITE;
+/*!40000 ALTER TABLE `exercise` DISABLE KEYS */;
+/*!40000 ALTER TABLE `exercise` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `training`
+--
+
+DROP TABLE IF EXISTS `training`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `training` (
+  `training_date` date DEFAULT NULL,
+  `training_length` date DEFAULT NULL,
+  `training_id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int DEFAULT NULL,
+  `training_name` varchar(30) NOT NULL,
+  PRIMARY KEY (`training_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `training_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `training`
+--
+
+LOCK TABLES `training` WRITE;
+/*!40000 ALTER TABLE `training` DISABLE KEYS */;
+/*!40000 ALTER TABLE `training` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `user`
@@ -60,4 +107,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-26 17:58:21
+-- Dump completed on 2022-01-11 21:46:46
