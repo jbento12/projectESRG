@@ -19,7 +19,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "include"
   "includes"
-  "/usr/local/include/opencv4"
+  "/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/opencv"
   )
 
 # Targets to which this target links.
