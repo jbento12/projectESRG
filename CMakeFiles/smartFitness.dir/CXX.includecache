@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/applicationInterface.cpp
-applicationInterface.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/applicationInterface.h
-training.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.h
-manageDB.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.h
-gui.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.h
-
 /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.cpp
 camera.h
 /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.h
@@ -25,40 +15,6 @@ opencv2/opencv.hpp
 -
 iostream
 -
-
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.cpp
-exercise.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.h
-poseClassification.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.h
-
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.cpp
-gui.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.h
-
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.cpp
-manageDB.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.h
-
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.cpp
-poseClassification.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.h
-
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.cpp
-training.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.h
-exercise.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.h
-user.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.h
-
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.cpp
-user.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.h
-poseClassification.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.h
-
-includes/applicationInterface.h
 
 includes/camera.h
 opencv2/opencv.hpp
@@ -83,16 +39,4 @@ stdlib.h
 -
 stdio.h
 -
-
-includes/exercise.h
-
-includes/gui.h
-
-includes/manageDB.h
-
-includes/poseClassification.h
-
-includes/training.h
-
-includes/user.h
 
