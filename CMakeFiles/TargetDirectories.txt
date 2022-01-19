@@ -1,5 +1,6 @@
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/edit_cache.dir
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/package_source.dir
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/rebuild_cache.dir
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/package.dir
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/smartFitness.dir
+/home/luiscarlos/my_dev/projectESRG/CMakeFiles/edit_cache.dir
+/home/luiscarlos/my_dev/projectESRG/CMakeFiles/package_source.dir
+/home/luiscarlos/my_dev/projectESRG/CMakeFiles/rebuild_cache.dir
+/home/luiscarlos/my_dev/projectESRG/CMakeFiles/package.dir
+/home/luiscarlos/my_dev/projectESRG/CMakeFiles/smartFitness.dir
+/home/luiscarlos/my_dev/projectESRG/CMakeFiles/smartFitness_autogen.dir

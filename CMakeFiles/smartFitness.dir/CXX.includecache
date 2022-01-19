@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.cpp
+/home/luiscarlos/my_dev/projectESRG/src/camera.cpp
 camera.h
-/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.h
+/home/luiscarlos/my_dev/projectESRG/src/camera.h
 opencv2/core.hpp
 -
 opencv2/opencv.hpp

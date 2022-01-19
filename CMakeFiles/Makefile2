@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code
+CMAKE_SOURCE_DIR = /home/luiscarlos/my_dev/projectESRG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code
+CMAKE_BINARY_DIR = /home/luiscarlos/my_dev/projectESRG
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -64,6 +64,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/smartFitness.dir/clean
+clean: CMakeFiles/smartFitness_autogen.dir/clean
 
 .PHONY : clean
 
@@ -71,17 +72,17 @@ clean: CMakeFiles/smartFitness.dir/clean
 # Target rules for target CMakeFiles/smartFitness.dir
 
 # All Build rule for target.
-CMakeFiles/smartFitness.dir/all:
+CMakeFiles/smartFitness.dir/all: CMakeFiles/smartFitness_autogen.dir/all
 	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/depend
 	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target smartFitness"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target smartFitness"
 .PHONY : CMakeFiles/smartFitness.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/smartFitness.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luiscarlos/my_dev/projectESRG/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/smartFitness.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luiscarlos/my_dev/projectESRG/CMakeFiles 0
 .PHONY : CMakeFiles/smartFitness.dir/rule
 
 # Convenience name for target.
@@ -93,6 +94,33 @@ smartFitness: CMakeFiles/smartFitness.dir/rule
 CMakeFiles/smartFitness.dir/clean:
 	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/clean
 .PHONY : CMakeFiles/smartFitness.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/smartFitness_autogen.dir
+
+# All Build rule for target.
+CMakeFiles/smartFitness_autogen.dir/all:
+	$(MAKE) -f CMakeFiles/smartFitness_autogen.dir/build.make CMakeFiles/smartFitness_autogen.dir/depend
+	$(MAKE) -f CMakeFiles/smartFitness_autogen.dir/build.make CMakeFiles/smartFitness_autogen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=14 "Built target smartFitness_autogen"
+.PHONY : CMakeFiles/smartFitness_autogen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/smartFitness_autogen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luiscarlos/my_dev/projectESRG/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/smartFitness_autogen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luiscarlos/my_dev/projectESRG/CMakeFiles 0
+.PHONY : CMakeFiles/smartFitness_autogen.dir/rule
+
+# Convenience name for target.
+smartFitness_autogen: CMakeFiles/smartFitness_autogen.dir/rule
+
+.PHONY : smartFitness_autogen
+
+# clean rule for target.
+CMakeFiles/smartFitness_autogen.dir/clean:
+	$(MAKE) -f CMakeFiles/smartFitness_autogen.dir/build.make CMakeFiles/smartFitness_autogen.dir/clean
+.PHONY : CMakeFiles/smartFitness_autogen.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

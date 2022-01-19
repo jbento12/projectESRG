@@ -1,7 +1,7 @@
 
 #include "camera.h"
 
-
+/*
 // camera::camera()
 // {
 //     int apiID = cv::CAP_ANY;
@@ -155,4 +155,4 @@ int main(){
 }
                   
 
-
+*/

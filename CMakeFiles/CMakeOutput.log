@@ -403,3 +403,408 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+The system is: Linux - 5.11.0-46-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/luiscarlos/my_dev/projectESRG/CMakeFiles/3.16.3/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/luiscarlos/my_dev/projectESRG/CMakeFiles/3.16.3/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_9e7b1/fast && /usr/bin/make -f CMakeFiles/cmTC_9e7b1.dir/build.make CMakeFiles/cmTC_9e7b1.dir/build
+make[1]: Entering directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9e7b1.dir/testCCompiler.c.o
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc    -o CMakeFiles/cmTC_9e7b1.dir/testCCompiler.c.o   -c /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_9e7b1
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e7b1.dir/link.txt --verbose=1
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc      -rdynamic CMakeFiles/cmTC_9e7b1.dir/testCCompiler.c.o  -o cmTC_9e7b1 
+make[1]: Leaving directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_8d71f/fast && /usr/bin/make -f CMakeFiles/cmTC_8d71f.dir/build.make CMakeFiles/cmTC_8d71f.dir/build
+make[1]: Entering directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc   -v -o CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c
+Using built-in specs.
+COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc.br_real
+Target: arm-buildroot-linux-gnueabihf
+Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+Thread model: posix
+gcc version 9.4.0 (Buildroot 2021.02.5) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/cc1 -quiet -v -isysroot /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -marm -mtls-dialect=gnu -march=armv8-a+crc+simd -auxbase-strip CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccmOzfc0.s
+GNU C17 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)
+	compiled by GNU C version 9.3.0, GMP version 6.2.1, MPFR version 4.0.2, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include
+End of search list.
+GNU C17 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)
+	compiled by GNU C version 9.3.0, GMP version 6.2.1, MPFR version 4.0.2, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 01a57d653423b5e3c6b5f8c9020e7234
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv8-a+crc -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o /tmp/ccmOzfc0.s
+GNU assembler version 2.35.2 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.35.2
+COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+Linking C executable cmTC_8d71f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d71f.dir/link.txt --verbose=1
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc     -v -rdynamic CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o  -o cmTC_8d71f 
+Using built-in specs.
+COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc.br_real
+COLLECT_LTO_WRAPPER=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper
+Target: arm-buildroot-linux-gnueabihf
+Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+Thread model: posix
+gcc version 9.4.0 (Buildroot 2021.02.5) 
+COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8d71f' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/collect2 -plugin /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/liblto_plugin.so -plugin-opt=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpj38et.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_8d71f /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtbegin.o -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0 -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtend.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8d71f' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+make[1]: Leaving directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+
+
+
+Parsed C implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+  end of search list found
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+  implicit include dirs: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_8d71f/fast && /usr/bin/make -f CMakeFiles/cmTC_8d71f.dir/build.make CMakeFiles/cmTC_8d71f.dir/build]
+  ignore line: [make[1]: Entering directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc   -v -o CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc.br_real]
+  ignore line: [Target: arm-buildroot-linux-gnueabihf]
+  ignore line: [Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (Buildroot 2021.02.5) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/cc1 -quiet -v -isysroot /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot /usr/share/cmake-3.16/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -marm -mtls-dialect=gnu -march=armv8-a+crc+simd -auxbase-strip CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o -version -o /tmp/ccmOzfc0.s]
+  ignore line: [GNU C17 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.1  MPFR version 4.0.2  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C17 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.1  MPFR version 4.0.2  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 01a57d653423b5e3c6b5f8c9020e7234]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv8-a+crc -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o /tmp/ccmOzfc0.s]
+  ignore line: [GNU assembler version 2.35.2 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.35.2]
+  ignore line: [COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+  ignore line: [LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o' '-c' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  ignore line: [Linking C executable cmTC_8d71f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d71f.dir/link.txt --verbose=1]
+  ignore line: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc     -v -rdynamic CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o  -o cmTC_8d71f ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc.br_real]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper]
+  ignore line: [Target: arm-buildroot-linux-gnueabihf]
+  ignore line: [Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (Buildroot 2021.02.5) ]
+  ignore line: [COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+  ignore line: [LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_8d71f' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  link line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/collect2 -plugin /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/liblto_plugin.so -plugin-opt=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpj38et.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_8d71f /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtbegin.o -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0 -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtend.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccpj38et.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-armhf.so.3] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_8d71f] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtbegin.o] ==> ignore
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0]
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib]
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib]
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+    arg [CMakeFiles/cmTC_8d71f.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtend.o] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o] ==> ignore
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0]
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/lib]
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib]
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/lib;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+  implicit fwks: []
+
+
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_74dad/fast && /usr/bin/make -f CMakeFiles/cmTC_74dad.dir/build.make CMakeFiles/cmTC_74dad.dir/build
+make[1]: Entering directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_74dad.dir/testCXXCompiler.cxx.o
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++     -o CMakeFiles/cmTC_74dad.dir/testCXXCompiler.cxx.o -c /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_74dad
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_74dad.dir/link.txt --verbose=1
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++       -rdynamic CMakeFiles/cmTC_74dad.dir/testCXXCompiler.cxx.o  -o cmTC_74dad 
+make[1]: Leaving directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_763b5/fast && /usr/bin/make -f CMakeFiles/cmTC_763b5.dir/build.make CMakeFiles/cmTC_763b5.dir/build
+make[1]: Entering directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++    -v -o CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp
+Using built-in specs.
+COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real
+Target: arm-buildroot-linux-gnueabihf
+Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+Thread model: posix
+gcc version 9.4.0 (Buildroot 2021.02.5) 
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/cc1plus -quiet -v -isysroot /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -marm -mtls-dialect=gnu -march=armv8-a+crc+simd -auxbase-strip CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccf0C06Y.s
+GNU C++14 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)
+	compiled by GNU C version 9.3.0, GMP version 6.2.1, MPFR version 4.0.2, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/arm-buildroot-linux-gnueabihf
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/backward
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include
+End of search list.
+GNU C++14 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)
+	compiled by GNU C version 9.3.0, GMP version 6.2.1, MPFR version 4.0.2, MPC version 1.1.0, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 4889cd1a3f890489e5e9c323e4c8a71a
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv8-a+crc -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccf0C06Y.s
+GNU assembler version 2.35.2 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.35.2
+COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+Linking CXX executable cmTC_763b5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_763b5.dir/link.txt --verbose=1
+/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++      -v -rdynamic CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_763b5 
+Using built-in specs.
+COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real
+COLLECT_LTO_WRAPPER=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper
+Target: arm-buildroot-linux-gnueabihf
+Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+Thread model: posix
+gcc version 9.4.0 (Buildroot 2021.02.5) 
+COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_763b5' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/collect2 -plugin /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/liblto_plugin.so -plugin-opt=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cchfHk7p.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_763b5 /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtbegin.o -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0 -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtend.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_763b5' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd'
+make[1]: Leaving directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/arm-buildroot-linux-gnueabihf]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/backward]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+    add: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+  end of search list found
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include/c++/9.4.0]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/arm-buildroot-linux-gnueabihf] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include/c++/9.4.0/arm-buildroot-linux-gnueabihf]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/backward] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include/c++/9.4.0/backward]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include]
+  collapse include dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+  implicit include dirs: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include/c++/9.4.0;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include/c++/9.4.0/arm-buildroot-linux-gnueabihf;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include/c++/9.4.0/backward;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/usr/bin/make cmTC_763b5/fast && /usr/bin/make -f CMakeFiles/cmTC_763b5.dir/build.make CMakeFiles/cmTC_763b5.dir/build]
+  ignore line: [make[1]: Entering directory '/home/luiscarlos/my_dev/projectESRG/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++    -v -o CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real]
+  ignore line: [Target: arm-buildroot-linux-gnueabihf]
+  ignore line: [Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (Buildroot 2021.02.5) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/cc1plus -quiet -v -isysroot /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE /usr/share/cmake-3.16/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -marm -mtls-dialect=gnu -march=armv8-a+crc+simd -auxbase-strip CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o -version -o /tmp/ccf0C06Y.s]
+  ignore line: [GNU C++14 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.1  MPFR version 4.0.2  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/arm-buildroot-linux-gnueabihf]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.4.0/backward]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++14 (Buildroot 2021.02.5) version 9.4.0 (arm-buildroot-linux-gnueabihf)]
+  ignore line: [	compiled by GNU C version 9.3.0  GMP version 6.2.1  MPFR version 4.0.2  MPC version 1.1.0  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: 4889cd1a3f890489e5e9c323e4c8a71a]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  ignore line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv8-a+crc -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccf0C06Y.s]
+  ignore line: [GNU assembler version 2.35.2 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.35.2]
+  ignore line: [COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+  ignore line: [LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  ignore line: [Linking CXX executable cmTC_763b5]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_763b5.dir/link.txt --verbose=1]
+  ignore line: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++      -v -rdynamic CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_763b5 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper]
+  ignore line: [Target: arm-buildroot-linux-gnueabihf]
+  ignore line: [Configured with: ./configure --prefix=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --sysconfdir=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpc=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-mpfr=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host --with-pkgversion='Buildroot 2021.02.5' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a72 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 9.4.0 (Buildroot 2021.02.5) ]
+  ignore line: [COMPILER_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+  ignore line: [LIBRARY_PATH=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_763b5' '-shared-libgcc' '-mcpu=cortex-a72' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-marm' '-mtls-dialect=gnu' '-march=armv8-a+crc+simd']
+  link line: [ /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/collect2 -plugin /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/liblto_plugin.so -plugin-opt=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cchfHk7p.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -export-dynamic -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_763b5 /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtbegin.o -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0 -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtend.o /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/9.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cchfHk7p.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-armhf.so.3] ==> ignore
+    arg [-X] ==> ignore
+    arg [-m] ==> ignore
+    arg [armelf_linux_eabi] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_763b5] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtbegin.o] ==> ignore
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0]
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib]
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib]
+    arg [-L/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+    arg [CMakeFiles/cmTC_763b5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/crtend.o] ==> ignore
+    arg [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o] ==> ignore
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0]
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/lib]
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib]
+  collapse library dir [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit dirs: [/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/lib;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+  implicit fwks: []
+
+

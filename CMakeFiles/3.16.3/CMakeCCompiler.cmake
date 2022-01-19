@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc")
+set(CMAKE_C_COMPILER "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-gcc")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "9.4.0")
@@ -70,7 +70,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/bento/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include;/home/bento/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed;/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include;/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0/include-fixed;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/include;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include")
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "gcc;gcc_s;c;gcc;gcc_s")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/bento/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0;/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/lib;/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib;/home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/9.4.0;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/lib;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib;/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

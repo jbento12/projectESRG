@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code
+CMAKE_SOURCE_DIR = /home/luiscarlos/my_dev/projectESRG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code
+CMAKE_BINARY_DIR = /home/luiscarlos/my_dev/projectESRG
 
 # Include any dependencies generated for this target.
 include CMakeFiles/smartFitness.dir/depend.make
@@ -57,151 +57,203 @@ include CMakeFiles/smartFitness.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/smartFitness.dir/flags.make
 
+CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o: CMakeFiles/smartFitness.dir/flags.make
+CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o: smartFitness_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o -c /home/luiscarlos/my_dev/projectESRG/smartFitness_autogen/mocs_compilation.cpp
+
+CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.i"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/smartFitness_autogen/mocs_compilation.cpp > CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.s"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/smartFitness_autogen/mocs_compilation.cpp -o CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o: src/applicationInterface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/applicationInterface.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/applicationInterface.cpp
 
 CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/applicationInterface.cpp > CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/applicationInterface.cpp > CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.i
 
 CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/applicationInterface.cpp -o CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/applicationInterface.cpp -o CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.s
 
 CMakeFiles/smartFitness.dir/src/camera.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/camera.cpp.o: src/camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/smartFitness.dir/src/camera.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/camera.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/smartFitness.dir/src/camera.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/camera.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/camera.cpp
 
 CMakeFiles/smartFitness.dir/src/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/camera.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.cpp > CMakeFiles/smartFitness.dir/src/camera.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/camera.cpp > CMakeFiles/smartFitness.dir/src/camera.cpp.i
 
 CMakeFiles/smartFitness.dir/src/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/camera.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/camera.cpp -o CMakeFiles/smartFitness.dir/src/camera.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/camera.cpp -o CMakeFiles/smartFitness.dir/src/camera.cpp.s
 
 CMakeFiles/smartFitness.dir/src/exercise.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/exercise.cpp.o: src/exercise.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/smartFitness.dir/src/exercise.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/exercise.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/smartFitness.dir/src/exercise.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/exercise.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/exercise.cpp
 
 CMakeFiles/smartFitness.dir/src/exercise.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/exercise.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.cpp > CMakeFiles/smartFitness.dir/src/exercise.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/exercise.cpp > CMakeFiles/smartFitness.dir/src/exercise.cpp.i
 
 CMakeFiles/smartFitness.dir/src/exercise.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/exercise.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/exercise.cpp -o CMakeFiles/smartFitness.dir/src/exercise.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/exercise.cpp -o CMakeFiles/smartFitness.dir/src/exercise.cpp.s
 
 CMakeFiles/smartFitness.dir/src/gui.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/gui.cpp.o: src/gui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/smartFitness.dir/src/gui.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/gui.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/smartFitness.dir/src/gui.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/gui.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/gui.cpp
 
 CMakeFiles/smartFitness.dir/src/gui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/gui.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.cpp > CMakeFiles/smartFitness.dir/src/gui.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/gui.cpp > CMakeFiles/smartFitness.dir/src/gui.cpp.i
 
 CMakeFiles/smartFitness.dir/src/gui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/gui.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/gui.cpp -o CMakeFiles/smartFitness.dir/src/gui.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/gui.cpp -o CMakeFiles/smartFitness.dir/src/gui.cpp.s
+
+CMakeFiles/smartFitness.dir/src/main.cpp.o: CMakeFiles/smartFitness.dir/flags.make
+CMakeFiles/smartFitness.dir/src/main.cpp.o: src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/smartFitness.dir/src/main.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/main.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/main.cpp
+
+CMakeFiles/smartFitness.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/main.cpp.i"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/main.cpp > CMakeFiles/smartFitness.dir/src/main.cpp.i
+
+CMakeFiles/smartFitness.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/main.cpp.s"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/main.cpp -o CMakeFiles/smartFitness.dir/src/main.cpp.s
+
+CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o: CMakeFiles/smartFitness.dir/flags.make
+CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o: src/mainwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/mainwindow.cpp
+
+CMakeFiles/smartFitness.dir/src/mainwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/mainwindow.cpp.i"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/mainwindow.cpp > CMakeFiles/smartFitness.dir/src/mainwindow.cpp.i
+
+CMakeFiles/smartFitness.dir/src/mainwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/mainwindow.cpp.s"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/mainwindow.cpp -o CMakeFiles/smartFitness.dir/src/mainwindow.cpp.s
 
 CMakeFiles/smartFitness.dir/src/manageDB.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/manageDB.cpp.o: src/manageDB.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/smartFitness.dir/src/manageDB.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/manageDB.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/smartFitness.dir/src/manageDB.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/manageDB.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/manageDB.cpp
 
 CMakeFiles/smartFitness.dir/src/manageDB.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/manageDB.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.cpp > CMakeFiles/smartFitness.dir/src/manageDB.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/manageDB.cpp > CMakeFiles/smartFitness.dir/src/manageDB.cpp.i
 
 CMakeFiles/smartFitness.dir/src/manageDB.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/manageDB.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/manageDB.cpp -o CMakeFiles/smartFitness.dir/src/manageDB.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/manageDB.cpp -o CMakeFiles/smartFitness.dir/src/manageDB.cpp.s
 
 CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o: src/poseClassification.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/poseClassification.cpp
 
 CMakeFiles/smartFitness.dir/src/poseClassification.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/poseClassification.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.cpp > CMakeFiles/smartFitness.dir/src/poseClassification.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/poseClassification.cpp > CMakeFiles/smartFitness.dir/src/poseClassification.cpp.i
 
 CMakeFiles/smartFitness.dir/src/poseClassification.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/poseClassification.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/poseClassification.cpp -o CMakeFiles/smartFitness.dir/src/poseClassification.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/poseClassification.cpp -o CMakeFiles/smartFitness.dir/src/poseClassification.cpp.s
+
+CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o: CMakeFiles/smartFitness.dir/flags.make
+CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o: src/secondwindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/secondwindow.cpp
+
+CMakeFiles/smartFitness.dir/src/secondwindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/secondwindow.cpp.i"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/secondwindow.cpp > CMakeFiles/smartFitness.dir/src/secondwindow.cpp.i
+
+CMakeFiles/smartFitness.dir/src/secondwindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/secondwindow.cpp.s"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/secondwindow.cpp -o CMakeFiles/smartFitness.dir/src/secondwindow.cpp.s
 
 CMakeFiles/smartFitness.dir/src/training.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/training.cpp.o: src/training.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/smartFitness.dir/src/training.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/training.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/smartFitness.dir/src/training.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/training.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/training.cpp
 
 CMakeFiles/smartFitness.dir/src/training.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/training.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.cpp > CMakeFiles/smartFitness.dir/src/training.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/training.cpp > CMakeFiles/smartFitness.dir/src/training.cpp.i
 
 CMakeFiles/smartFitness.dir/src/training.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/training.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/training.cpp -o CMakeFiles/smartFitness.dir/src/training.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/training.cpp -o CMakeFiles/smartFitness.dir/src/training.cpp.s
 
 CMakeFiles/smartFitness.dir/src/user.cpp.o: CMakeFiles/smartFitness.dir/flags.make
 CMakeFiles/smartFitness.dir/src/user.cpp.o: src/user.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/smartFitness.dir/src/user.cpp.o"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/user.cpp.o -c /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/smartFitness.dir/src/user.cpp.o"
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/smartFitness.dir/src/user.cpp.o -c /home/luiscarlos/my_dev/projectESRG/src/user.cpp
 
 CMakeFiles/smartFitness.dir/src/user.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/smartFitness.dir/src/user.cpp.i"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.cpp > CMakeFiles/smartFitness.dir/src/user.cpp.i
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/luiscarlos/my_dev/projectESRG/src/user.cpp > CMakeFiles/smartFitness.dir/src/user.cpp.i
 
 CMakeFiles/smartFitness.dir/src/user.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/smartFitness.dir/src/user.cpp.s"
-	/home/bento/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/src/user.cpp -o CMakeFiles/smartFitness.dir/src/user.cpp.s
+	/home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/bin/arm-buildroot-linux-gnueabihf-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/luiscarlos/my_dev/projectESRG/src/user.cpp -o CMakeFiles/smartFitness.dir/src/user.cpp.s
 
 # Object files for target smartFitness
 smartFitness_OBJECTS = \
+"CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/camera.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/exercise.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/gui.cpp.o" \
+"CMakeFiles/smartFitness.dir/src/main.cpp.o" \
+"CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/manageDB.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o" \
+"CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/training.cpp.o" \
 "CMakeFiles/smartFitness.dir/src/user.cpp.o"
 
 # External object files for target smartFitness
 smartFitness_EXTERNAL_OBJECTS =
 
+smartFitness: CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/applicationInterface.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/camera.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/exercise.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/gui.cpp.o
+smartFitness: CMakeFiles/smartFitness.dir/src/main.cpp.o
+smartFitness: CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/manageDB.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/poseClassification.cpp.o
+smartFitness: CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/training.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/src/user.cpp.o
 smartFitness: CMakeFiles/smartFitness.dir/build.make
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_highgui.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_ml.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_objdetect.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_shape.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_stitching.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_superres.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_videostab.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_calib3d.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_features2d.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_flann.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_photo.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_video.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_videoio.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_imgcodecs.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_imgproc.so.3.4.13
-smartFitness: /home/bento/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_core.so.3.4.13
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_highgui.so.3.4.13
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_videoio.so.3.4.13
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Widgets.so.5.15.2
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_imgcodecs.so.3.4.13
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_imgproc.so.3.4.13
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libopencv_core.so.3.4.13
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Gui.so.5.15.2
+smartFitness: /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Core.so.5.15.2
 smartFitness: CMakeFiles/smartFitness.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable smartFitness"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/luiscarlos/my_dev/projectESRG/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable smartFitness"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/smartFitness.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,6 +266,6 @@ CMakeFiles/smartFitness.dir/clean:
 .PHONY : CMakeFiles/smartFitness.dir/clean
 
 CMakeFiles/smartFitness.dir/depend:
-	cd /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/smartFitness.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/luiscarlos/my_dev/projectESRG && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/luiscarlos/my_dev/projectESRG /home/luiscarlos/my_dev/projectESRG /home/luiscarlos/my_dev/projectESRG /home/luiscarlos/my_dev/projectESRG /home/luiscarlos/my_dev/projectESRG/CMakeFiles/smartFitness.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/smartFitness.dir/depend
 

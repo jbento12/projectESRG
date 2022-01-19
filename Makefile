@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code
+CMAKE_SOURCE_DIR = /home/luiscarlos/my_dev/projectESRG
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code
+CMAKE_BINARY_DIR = /home/luiscarlos/my_dev/projectESRG
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/luiscarlos/my_dev/projectESRG/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -102,9 +102,9 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luiscarlos/my_dev/projectESRG/CMakeFiles /home/luiscarlos/my_dev/projectESRG/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bento/Desktop/Project_ESRG/Smart_Fitness_Mirror/code/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/luiscarlos/my_dev/projectESRG/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -144,6 +144,46 @@ smartFitness: cmake_check_build_system
 smartFitness/fast:
 	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/build
 .PHONY : smartFitness/fast
+
+#=============================================================================
+# Target rules for targets named smartFitness_autogen
+
+# Build rule for target.
+smartFitness_autogen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 smartFitness_autogen
+.PHONY : smartFitness_autogen
+
+# fast build rule for target.
+smartFitness_autogen/fast:
+	$(MAKE) -f CMakeFiles/smartFitness_autogen.dir/build.make CMakeFiles/smartFitness_autogen.dir/build
+.PHONY : smartFitness_autogen/fast
+
+smartFitness_autogen/mocs_compilation.o: smartFitness_autogen/mocs_compilation.cpp.o
+
+.PHONY : smartFitness_autogen/mocs_compilation.o
+
+# target to build an object file
+smartFitness_autogen/mocs_compilation.cpp.o:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.o
+.PHONY : smartFitness_autogen/mocs_compilation.cpp.o
+
+smartFitness_autogen/mocs_compilation.i: smartFitness_autogen/mocs_compilation.cpp.i
+
+.PHONY : smartFitness_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+smartFitness_autogen/mocs_compilation.cpp.i:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.i
+.PHONY : smartFitness_autogen/mocs_compilation.cpp.i
+
+smartFitness_autogen/mocs_compilation.s: smartFitness_autogen/mocs_compilation.cpp.s
+
+.PHONY : smartFitness_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+smartFitness_autogen/mocs_compilation.cpp.s:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/smartFitness_autogen/mocs_compilation.cpp.s
+.PHONY : smartFitness_autogen/mocs_compilation.cpp.s
 
 src/applicationInterface.o: src/applicationInterface.cpp.o
 
@@ -253,6 +293,60 @@ src/gui.cpp.s:
 	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/gui.cpp.s
 .PHONY : src/gui.cpp.s
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/mainwindow.o: src/mainwindow.cpp.o
+
+.PHONY : src/mainwindow.o
+
+# target to build an object file
+src/mainwindow.cpp.o:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/mainwindow.cpp.o
+.PHONY : src/mainwindow.cpp.o
+
+src/mainwindow.i: src/mainwindow.cpp.i
+
+.PHONY : src/mainwindow.i
+
+# target to preprocess a source file
+src/mainwindow.cpp.i:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/mainwindow.cpp.i
+.PHONY : src/mainwindow.cpp.i
+
+src/mainwindow.s: src/mainwindow.cpp.s
+
+.PHONY : src/mainwindow.s
+
+# target to generate assembly for a file
+src/mainwindow.cpp.s:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/mainwindow.cpp.s
+.PHONY : src/mainwindow.cpp.s
+
 src/manageDB.o: src/manageDB.cpp.o
 
 .PHONY : src/manageDB.o
@@ -306,6 +400,33 @@ src/poseClassification.s: src/poseClassification.cpp.s
 src/poseClassification.cpp.s:
 	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/poseClassification.cpp.s
 .PHONY : src/poseClassification.cpp.s
+
+src/secondwindow.o: src/secondwindow.cpp.o
+
+.PHONY : src/secondwindow.o
+
+# target to build an object file
+src/secondwindow.cpp.o:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/secondwindow.cpp.o
+.PHONY : src/secondwindow.cpp.o
+
+src/secondwindow.i: src/secondwindow.cpp.i
+
+.PHONY : src/secondwindow.i
+
+# target to preprocess a source file
+src/secondwindow.cpp.i:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/secondwindow.cpp.i
+.PHONY : src/secondwindow.cpp.i
+
+src/secondwindow.s: src/secondwindow.cpp.s
+
+.PHONY : src/secondwindow.s
+
+# target to generate assembly for a file
+src/secondwindow.cpp.s:
+	$(MAKE) -f CMakeFiles/smartFitness.dir/build.make CMakeFiles/smartFitness.dir/src/secondwindow.cpp.s
+.PHONY : src/secondwindow.cpp.s
 
 src/training.o: src/training.cpp.o
 
@@ -372,6 +493,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... package"
 	@echo "... smartFitness"
+	@echo "... smartFitness_autogen"
+	@echo "... smartFitness_autogen/mocs_compilation.o"
+	@echo "... smartFitness_autogen/mocs_compilation.i"
+	@echo "... smartFitness_autogen/mocs_compilation.s"
 	@echo "... src/applicationInterface.o"
 	@echo "... src/applicationInterface.i"
 	@echo "... src/applicationInterface.s"
@@ -384,12 +509,21 @@ help:
 	@echo "... src/gui.o"
 	@echo "... src/gui.i"
 	@echo "... src/gui.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/mainwindow.o"
+	@echo "... src/mainwindow.i"
+	@echo "... src/mainwindow.s"
 	@echo "... src/manageDB.o"
 	@echo "... src/manageDB.i"
 	@echo "... src/manageDB.s"
 	@echo "... src/poseClassification.o"
 	@echo "... src/poseClassification.i"
 	@echo "... src/poseClassification.s"
+	@echo "... src/secondwindow.o"
+	@echo "... src/secondwindow.i"
+	@echo "... src/secondwindow.s"
 	@echo "... src/training.o"
 	@echo "... src/training.i"
 	@echo "... src/training.s"
