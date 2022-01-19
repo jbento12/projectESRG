@@ -1,7 +1,7 @@
 #include <linux/types.h>
 
 #define BCM2835_PERI_BASE       0x7E000000
-#define GPIO_BASE (BCM2835_PERI_BASE + 0x204000) // SPI0 controller
+#define GPIO_BASE (BCM2835_PERI_BASE + 0x200000) // GPIO controller
 
 
 struct GpioRegisters
