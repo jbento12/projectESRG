@@ -5,3 +5,4 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 Makefile
 CMakeFiles/
+.vscode/
