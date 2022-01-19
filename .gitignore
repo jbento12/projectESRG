@@ -4,3 +4,5 @@ CMakeCache.txt
 CPackConfig.cmake
 CPackSourceConfig.cmake
 Makefile
+CMakeFiles/CMakeOutput.log
+CMakeFiles/Makefile.cmake
