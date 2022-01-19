@@ -149,8 +149,10 @@ static int __init nrf_init(void)
 {
 	int retval = 0;
 
+	uint8_t addr[5] = {0x12,0x12,0x12,0x12,0x12};
+
 	s_pGpioRegisters = (struct GpioRegisters *)ioremap(GPIO_BASE, sizeof(struct GpioRegisters));
-	
+
 	SetGPIOFunction(s_pGpioRegisters,NRF_CE,1);
 	SetGPIOOutputValue(s_pGpioRegisters,NRF_CE,0);
 
