@@ -6,3 +6,4 @@ CPackSourceConfig.cmake
 Makefile
 CMakeFiles/
 .vscode/
+smartFitness_autogen/
