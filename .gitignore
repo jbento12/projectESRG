@@ -5,5 +5,7 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 Makefile
 CMakeFiles/
-.vscode/
+# .vscode/
+.vscode/tasks.json
 smartFitness_autogen/
+
