@@ -1,6 +1,0 @@
-/home/luiscarlos/my_dev/projectESRG/CMakeFiles/edit_cache.dir
-/home/luiscarlos/my_dev/projectESRG/CMakeFiles/package_source.dir
-/home/luiscarlos/my_dev/projectESRG/CMakeFiles/rebuild_cache.dir
-/home/luiscarlos/my_dev/projectESRG/CMakeFiles/package.dir
-/home/luiscarlos/my_dev/projectESRG/CMakeFiles/smartFitness.dir
-/home/luiscarlos/my_dev/projectESRG/CMakeFiles/smartFitness_autogen.dir
