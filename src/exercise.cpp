@@ -1,2 +1,2 @@
-#include "exercise.h"
-#include "poseClassification.h"
+#include "../includes/exercise.h"
+#include "../includes/poseClassification.h"
