@@ -26,3 +26,8 @@ void GuiTrainingSession::on_push_GoBack_clicked()
 {
     on_GuiTrainingSession_finished(NULL);
 }
+
+void GuiTrainingSession::on_GuiTrainingSession_accepted()
+{
+    qDebug("Iniciada uma nova sessao de treino");
+}
