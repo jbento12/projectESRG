@@ -1,9 +1,9 @@
 #include "gui.h"
 
 #include <QApplication>
-#include <QQuickView>
-#include <QGuiApplication>
-#include <QQmlEngine>
+//#include <QQuickView>
+//#include <QGuiApplication>
+//#include <QQmlEngine>
 
 
 int main(int argc, char *argv[])
