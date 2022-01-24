@@ -34,5 +34,5 @@ set(EXECUTABLE_OUTPUT_PATH ./)
 add_executable(${PROJECT_NAME} ${srcs})
 
 
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} rt)
 #target_link_libraries(${PROJECT_NAME} )

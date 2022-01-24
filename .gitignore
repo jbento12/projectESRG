@@ -12,3 +12,5 @@ smartFitness_autogen/
 CMakeLists.txt.user
 src/main.cpp.autosave
 
+daemons/.vscode/settings.json
+daemons/build/AquireImage
