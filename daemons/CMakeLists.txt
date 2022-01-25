@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.0.0)
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
-project(smartFitness LANGUAGES C CXX)
+project(AquireImage LANGUAGES C CXX)
 
 #set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -21,31 +21,18 @@ set(CMAKE_BUILD_TYPE Debug)
 
 #set the OpenCV variable to the given path
 #set (OpenCV_DIR home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/share/OpenCV)
-#set(Qt5_DIR /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5)
-
-#find_package(OpenCV REQUIRED PATHS /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/share/OpenCV NO_DEFAULT_PATH)
-#find_package(Qt5 COMPONENTS Widgets REQUIRED PATHS /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5 NO_DEFAULT_PATH)
+# find_package(OpenCV REQUIRED PATHS /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/share/OpenCV NO_DEFAULT_PATH)
 
 find_package(OpenCV REQUIRED)
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
-
-
-
-
-include_directories(include ${OpenCV_INCLUDE_DIRS} ${PROJECT_SOURCE_DIR}/includes )
 
 file(GLOB srcs
  	#"${PROJECT_SOURCE_DIR}/src/camera.cpp"
-    "${PROJECT_SOURCE_DIR}/src/*.cpp" "${PROJECT_SOURCE_DIR}/src/*.ui"    
+    "${PROJECT_SOURCE_DIR}/*.cpp"   
 )
+set(EXECUTABLE_OUTPUT_PATH ./)
+
+add_executable(${PROJECT_NAME} ${srcs})
 
 
-add_executable(${PROJECT_NAME} ${srcs} includes/gui.h 
-					includes/guihistory.h
-					includes/guinewtraining.h
-					includes/guisecond.h
-					includes/guitrainingsession.h)
-
-
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} Qt5::Widgets rt pthread)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} rt)
 #target_link_libraries(${PROJECT_NAME} )
