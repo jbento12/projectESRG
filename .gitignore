@@ -5,7 +5,8 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 Makefile
 CMakeFiles/
-# .vscode/
+daemons/vscode/
+vscode/
 .vscode/tasks.json
 smartFitness_autogen/
 
@@ -14,3 +15,4 @@ src/main.cpp.autosave
 
 daemons/.vscode/settings.json
 daemons/build/AquireImage
+daemons/.vscode/launch.json

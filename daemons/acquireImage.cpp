@@ -26,41 +26,63 @@ using namespace cv;
 
 struct AcquireImage
 {
+    bool sig_capturing;
+    Mat frame;
+    
+
     AcquireImage(){sig_capturing = false;}
     void startAquire(){this->sig_capturing = true;}
     void stopAquire(){this->sig_capturing = false;}
     bool aquire(){return sig_capturing;}
-
-    Mat frame;
-private:
-    bool sig_capturing;
 };
-
 
 int main()
 {
     
     //-------- shared memory varibles --------
     int shmfd;
-    int shm_size = sizeof(AcquireImage);
+    int shm_size = 10 * sizeof(AcquireImage);
     AcquireImage* acquireImage;
     
     //-------- camera varibles -----------
     VideoCapture cap;
     int deviceID = 0;             // 0 = open default camera
     int apiID = cv::CAP_ANY;      // 0 = autodetect default API
+    // Mat frame;
 
-    shmfd = shm_open(SHM_NAME, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
-    if (shmfd < 0) {
-        perror("In shm_open()");
-        exit(1);
-    }
-    ftruncate(shmfd, shm_size);
-    acquireImage = (AcquireImage*)mmap(NULL, shm_size, PROT_READ | PROT_WRITE, MAP_SHARED, shmfd, 0);
-    if (acquireImage == NULL) {
-        perror("In mmap()");
-        exit(1);
-    }
+
+
+    
+    return 0;
+}
+
+
+/*
+ //-------- shared memory varibles --------
+    int shmfd;
+    int shm_size = 10 * sizeof(AcquireImage);
+    AcquireImage* acquireImage;
+    
+    //-------- camera varibles -----------
+    VideoCapture cap;
+    int deviceID = 0;             // 0 = open default camera
+    int apiID = cv::CAP_ANY;      // 0 = autodetect default API
+    // Mat frame;
+
+    // cap >> frame;
+    // // shm_size = sizeof(frame) + sizeof(bool);
+
+                    shmfd = shm_open(SHM_NAME, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
+                    if (shmfd < 0) {
+                        perror("In shm_open()");
+                        exit(1);
+                    }
+                    ftruncate(shmfd, shm_size);
+                    acquireImage = (AcquireImage*)mmap(NULL, shm_size, 0, MAP_SHARED, shmfd, 0);
+                    if (acquireImage == NULL) {
+                        perror("In mmap()");
+                        exit(1);
+                    }
 
 
     //open object
@@ -71,25 +93,31 @@ int main()
     }
 
 
-    cap >> acquireImage->frame;
-
-
     // Capture frame-by-frame
+    while(1)
+    {
+        cap >> acquireImage->frame;
+        if (acquireImage->frame.empty())
+            return -1;
+        
+        imshow("Frame", acquireImage->frame);
+        waitKey(50);
+    }
     
-    if (acquireImage->frame.empty())
-        return -1;
 
-    
-
-    
-
-    
-    
-    return 0;
-}
+    shm_unlink(SHM_NAME);
 
 
-/*
+
+
+
+
+
+
+
+
+
+
 
 VideoCapture cap(0); 
    
