@@ -1,7 +1,10 @@
 #ifndef camera__H
 #define camera__H
 
-#include "opencv2/opencv.hpp"
+#include <opencv4/opencv2/core.hpp>
+#include <opencv4/opencv2/opencv.hpp>
+// #include <opencv2/opencv_modules.hpp>
+#include <iostream>
 #include <string>
 #include <unistd.h>
 #include <semaphore.h>

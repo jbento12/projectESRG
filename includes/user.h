@@ -17,10 +17,7 @@ class user
 
     user();
     ~user();
-
-
     
-
 };
 
 
