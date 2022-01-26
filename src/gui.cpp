@@ -48,7 +48,6 @@ void gui::on_pushButton_clicked()
 
         //pass control to the next window
         this->hide();
-//        guiSecond->guiUser = guiUser;   //give the next window the reference to the user that made "login"
         guiSecond->setUserRef(guiUser);
         guiSecond->show();
     }

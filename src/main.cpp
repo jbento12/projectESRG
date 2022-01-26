@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     User::populateUserList();
     User::printUserList();
-
+    appInterface.init();
     appInterface.createThreads();
 
      QApplication a(argc, argv);

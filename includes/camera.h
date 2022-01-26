@@ -19,6 +19,8 @@ using namespace std;
 using namespace cv;
 
 
+
+
 class Camera
 {
 
@@ -33,14 +35,14 @@ public:
 
     bool isOpen();
 
+
+    Mat frame;
+
 private:
     string dev_name;
     int32_t apiID;
     int32_t deviceID;
     VideoCapture cap;
-
-    Mat frame;
-
 
 
 //    char* shmptr;
