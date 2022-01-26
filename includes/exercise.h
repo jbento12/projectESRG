@@ -12,14 +12,26 @@ using namespace std;
 
 
 
+//struct LandMark
+//{
+
+
+//}
+
+//struct LandMarkList
+//{
+//    vector
+//}
+
+
 class Exercise
 {
 public:
     Exercise();
     ~Exercise();
 
-    void setName(string name);
-    void setPath(string path);
+    void setName(const string& name);
+    void setPath(const string& path);
 
     string getName();
     string getPath();

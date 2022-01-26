@@ -20,13 +20,13 @@ Exercise::~Exercise()
 }
 
 
-void Exercise::setName(std::string name)
+void Exercise::setName(const string& name)
 {
     this->name = name;
 }
 
 
-void Exercise::setPath(std::string path)
+void Exercise::setPath(const string& path)
 {
     this->path = path;
 }
@@ -47,6 +47,15 @@ string Exercise::getPath()
 
 
 
+
+
+
+
+
+// ---------------- Used to populate ------------------------------
+
+
+
 bool Exercise::addExerciseToMarket(Exercise& exercise)
 {
     exercise.id = Exercise::exerciseIDcount;
@@ -55,33 +64,34 @@ bool Exercise::addExerciseToMarket(Exercise& exercise)
     return true;
 }
 
+
 void Exercise::populateExerciseList()
 {
+    //----------- Just a dummy populate (for now (testing)) -----------
     Exercise aux;
-    string s_aux;
 
-    s_aux = "Bicep Curl";
-    aux.setName(s_aux);
-    s_aux = "/boasCurl";
-    aux.setPath(s_aux);
+    aux.setName("Bicep Curl");
+    aux.setPath("/boasCurl");
     addExerciseToMarket(aux);
 
-    s_aux = "Lat PullDown";
-    aux.setName(s_aux);
-    s_aux = "/boasPullDown";
-    aux.setPath(s_aux);
+    aux.setName("Lat PullDown");
+    aux.setPath("/boasPullDown");
     addExerciseToMarket(aux);
 
-    s_aux = "Row";
-    aux.setName(s_aux);
-    s_aux = "/boasRow";
-    aux.setPath(s_aux);
+    aux.setName("Row");
+    aux.setPath("/boasRow");
     addExerciseToMarket(aux);
 
-    s_aux = "Barbell";
-    aux.setName(s_aux);
-    s_aux = "/boasBarbell";
-    aux.setPath(s_aux);
+    aux.setName("Barbell");
+    aux.setPath("/boasBarbell");
+    addExerciseToMarket(aux);
+
+    aux.setName("Supino");
+    aux.setPath("/boasSupino");
+    addExerciseToMarket(aux);
+
+    aux.setName("Bench");
+    aux.setPath("/boasBench");
     addExerciseToMarket(aux);
 }
 

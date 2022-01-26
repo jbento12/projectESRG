@@ -1,6 +1,5 @@
-#include "gui.h"
+﻿#include "gui.h"
 #include "ui_gui.h"
-
 #include <QMessageBox>
 
 
@@ -8,8 +7,8 @@
 
 //temporario para o login
 
-const string test_Username = "";
-const string test_Password = "";
+//const string test_Username = "";
+//const string test_Password = "";
 
 gui::gui(QWidget *parent)
     : QMainWindow(parent)
@@ -17,6 +16,7 @@ gui::gui(QWidget *parent)
 {
     ui->setupUi(this);
 
+    this->guiUser = NULL;
     guiSecond = new GuiSecond(this);
     QObject::connect(guiSecond, &GuiSecond::finished, this, &gui::show);
 }
@@ -34,12 +34,16 @@ void gui::on_pushButton_clicked()
     string pass;
     string user_first_name = "Unknown";
 
+
     user = ui->line_user->text().toStdString();   //get text from UI
     pass = ui->line_pass->text().toStdString();
 
-    if(checkLogin(user, pass, user_first_name))
+    if(User::checkLogin(user, pass, this->guiUser))
     {
-        QString salute = "Boas meu puto " + QString::fromStdString(user_first_name);
+        if(!guiUser)
+            return;
+
+        QString salute = "Boas meu puto " + QString::fromStdString(this->guiUser->getName());
         QMessageBox::information(this, "Login", salute);
         this->hide();
         guiSecond->show();
@@ -51,17 +55,4 @@ void gui::on_pushButton_clicked()
 }
 
 
-bool gui::checkLogin(const string& user, const string& pass, string& user_first_name)
-{
-    if(user == test_Username && pass == test_Password)
-    {
-        user_first_name = "Keidje";
-        return true;
-    }
-    else
-    {
-        user_first_name = "Unknown";
-        return false;
-    }
-}
 

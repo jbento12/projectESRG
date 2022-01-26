@@ -5,6 +5,8 @@
 
 #include "guinewtraining.h"
 #include "guihistory.h"
+#include "user.h"
+
 
 namespace Ui {
 class GuiSecond;
@@ -30,6 +32,7 @@ private:
     Ui::GuiSecond *ui;
     GuiNewTraining  *guiNewTraining;
     GuiHistory      *guiHistory;
+    User* guiUser;
 };
 
 #endif // GUISECOND_H

@@ -48,11 +48,48 @@ int main()
     VideoCapture cap;
     int deviceID = 0;             // 0 = open default camera
     int apiID = cv::CAP_ANY;      // 0 = autodetect default API
-    // Mat frame;
+    Mat frame;
 
+    //open object
+    cap.open(deviceID, apiID);
+    if(!cap.isOpened()){
+        cout << "Error opening video stream or file" << endl;
+        return -1;
+    }
+    
+    cap >> frame;
+    shm_size = sizeof(frame) + sizeof(bool);
+
+                    shmfd = shm_open(SHM_NAME, O_CREAT | O_RDWR, S_IRWXU | S_IRWXG);
+                    if (shmfd < 0) {
+                        perror("In shm_open()");
+                        exit(1);
+                    }
+                    ftruncate(shmfd, shm_size);
+                    acquireImage = (AcquireImage*)mmap(NULL, shm_size, 0, MAP_SHARED, shmfd, 0);
+                    if (acquireImage == NULL) {
+                        perror("In mmap()");
+                        exit(1);
+                    }
 
 
     
+
+    cap >> acquireImage->frame;
+
+    // // Capture frame-by-frame
+    // while(1)
+    // {
+    //     cap >> acquireImage->frame;
+    //     if (acquireImage->frame.empty())
+    //         return -1;
+        
+    //     imshow("Frame", acquireImage->frame);
+    //     waitKey(50);
+    // }
+    
+
+    shm_unlink(SHM_NAME);
     return 0;
 }
 

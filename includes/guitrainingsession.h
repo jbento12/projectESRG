@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "user.h"
+
+
 namespace Ui {
 class GuiTrainingSession;
 }
@@ -27,6 +30,7 @@ signals:
 
 private:
     Ui::GuiTrainingSession *ui;
+    User* guiUser;
 };
 
 #endif // GUITRAININGSESSION_H

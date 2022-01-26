@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "user.h"
+
+
 namespace Ui {
 class GuiHistory;
 }
@@ -22,6 +25,7 @@ private slots:
 
 private:
     Ui::GuiHistory *ui;
+    User* guiUser;
 };
 
 #endif // GUIHISTORY_H
