@@ -4,7 +4,7 @@
 #include <QMainWindow>
 
 #include "guisecond.h"
-
+#include "user.h"
 #include <string>
 
 
@@ -22,7 +22,6 @@ public:
     gui(QWidget *parent = nullptr);
     ~gui();
 
-    bool checkLogin(const string& user, const string& pass, string& user_first_name);
 
 private slots:
     void on_pushButton_clicked();
@@ -30,5 +29,6 @@ private slots:
 private:
     Ui::gui *ui;
     GuiSecond* guiSecond;
+    User* guiUser;
 };
 #endif // GUI_H

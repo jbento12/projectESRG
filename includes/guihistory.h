@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "user.h"
+
+
 namespace Ui {
 class GuiHistory;
 }
@@ -15,6 +18,9 @@ public:
     explicit GuiHistory(QWidget *parent = nullptr);
     ~GuiHistory();
 
+    void setUserRef(User* user);
+
+
 private slots:
     void on_push_GoBack_clicked();
 
@@ -22,6 +28,7 @@ private slots:
 
 private:
     Ui::GuiHistory *ui;
+    User* guiUser;
 };
 
 #endif // GUIHISTORY_H

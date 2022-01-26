@@ -3,13 +3,28 @@
 
 #include "gui.h"
 #include <pthread.h>
+#include <QTimer>
+#include <QEventLoop>
+#include <QThread>
+#include <QApplication>
+//#include <dos.h>
+#include<unistd.h>
+
+#include "camera.h"
+
 
 
 
 class ApplicationInterface
 {
-    //threads
 public:
+    ApplicationInterface();
+    ~ApplicationInterface();
+
+
+    void init();
+
+    //threads
     void thManageDBFunc(void* arg);
     void thProcessImageFunc(void* arg);
     void thClassificationFunc(void* arg);
@@ -44,6 +59,12 @@ public:
         return 0;
     }
 
+
+
+    void startAcquire();
+    void stopAcquire();
+
+
 private:
     pthread_t thManageDB;
     pthread_t thProcessImage;
@@ -52,6 +73,8 @@ private:
     pthread_t thAcquireImage;
 
 
+    Camera camera;
+    bool toAcquire;
 
 };
 

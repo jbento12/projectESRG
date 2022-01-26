@@ -1,5 +1,5 @@
-#ifndef camera__H
-#define camera__H
+#ifndef CAMERA_H
+#define CAMERA_H
 
 #include "opencv2/opencv.hpp"
 #include <string>
@@ -11,28 +11,43 @@
 #include <sys/stat.h>
 #include <sys/fcntl.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdint.h>
+
+#include <iostream>
 
 using namespace std;
 using namespace cv;
 
-class camera
+
+
+
+class Camera
 {
-    private: 
-    
-    char* shmptr;
-    int device;
-    sem_t *shmsem;
 
 
-    public:
-    camera();
-    ~camera();
-    
+public:
+    Camera();
+    ~Camera();
+
+    bool open();
+    bool open(int32_t dev_id, int32_t api_id);
+    void release();
+
+    bool isOpen();
 
 
+    Mat frame;
+
+private:
+    string dev_name;
+    int32_t apiID;
+    int32_t deviceID;
+    VideoCapture cap;
 
 
+//    char* shmptr;
+//    int device;
+//    sem_t *shmsem;
 };
 
 
@@ -47,4 +62,4 @@ class camera
 
 
 
-#endif
+#endif //CAMERA_H

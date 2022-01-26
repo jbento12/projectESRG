@@ -4,6 +4,8 @@
 #include <QDialog>
 
 #include "guitrainingsession.h"
+#include "user.h"
+
 
 namespace Ui {
 class GuiNewTraining;
@@ -16,6 +18,8 @@ class GuiNewTraining : public QDialog
 public:
     explicit GuiNewTraining(QWidget *parent = nullptr);
     ~GuiNewTraining();
+
+    void setUserRef(User* user);
 
 private slots:
     void on_push_GoBack_clicked();
@@ -30,6 +34,7 @@ signals:
 private:
     Ui::GuiNewTraining *ui;
     GuiTrainingSession* guiTrainingSession;
+    User* guiUser;
 };
 
 #endif // GUINEWTRAINING_H

@@ -10,7 +10,6 @@ GuiNewTraining::GuiNewTraining(QWidget *parent) :
     guiTrainingSession = new GuiTrainingSession(this);
 
     QObject::connect(guiTrainingSession, &GuiTrainingSession::finished, this, &GuiNewTraining::show);
-
 }
 
 GuiNewTraining::~GuiNewTraining()
@@ -19,6 +18,15 @@ GuiNewTraining::~GuiNewTraining()
     delete ui;
 }
 
+
+//---------------------- Functions ---------------------------
+void GuiNewTraining::setUserRef(User* user)
+{
+  guiUser = user;
+}
+
+
+// -------------- Events ------------------------------------
 void GuiNewTraining::on_push_GoBack_clicked()
 {
     on_GuiNewTraining_finished(NULL);
@@ -26,7 +34,6 @@ void GuiNewTraining::on_push_GoBack_clicked()
 
 void GuiNewTraining::on_GuiNewTraining_finished(int result)
 {
-    emit signal_GuiNewTraining_finished();
     this->close();
 }
 

@@ -46,6 +46,6 @@ add_executable(${PROJECT_NAME} ${srcs} includes/gui.h
 					includes/guisecond.h
 					includes/guitrainingsession.h)
 
-
+#
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} Qt5::Widgets rt pthread)
 #target_link_libraries(${PROJECT_NAME} )
