@@ -6,7 +6,7 @@
 #include "guinewtraining.h"
 #include "guihistory.h"
 #include "user.h"
-
+#include "exercise.h"
 
 namespace Ui {
 class GuiSecond;
@@ -19,6 +19,9 @@ class GuiSecond : public QDialog
 public:
     explicit GuiSecond(QWidget *parent = nullptr);
     ~GuiSecond();
+
+    void setUserRef(User* user);
+    void fillComboBox();
 
 private slots:
     void on_push_GoBack_clicked();

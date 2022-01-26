@@ -18,6 +18,9 @@ public:
     explicit GuiHistory(QWidget *parent = nullptr);
     ~GuiHistory();
 
+    void setUserRef(User* user);
+
+
 private slots:
     void on_push_GoBack_clicked();
 

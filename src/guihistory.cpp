@@ -13,6 +13,14 @@ GuiHistory::~GuiHistory()
     delete ui;
 }
 
+
+//---------------------- Functions ---------------------------
+void GuiHistory::setUserRef(User* user)
+{
+  guiUser = user;
+}
+
+
 void GuiHistory::on_push_GoBack_clicked()
 {
     this->on_GuiHistory_finished(NULL);

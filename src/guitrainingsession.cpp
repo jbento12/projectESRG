@@ -14,6 +14,13 @@ GuiTrainingSession::~GuiTrainingSession()
 }
 
 
+//---------------------- Functions ---------------------------
+void GuiTrainingSession::setUserRef(User* user)
+{
+  guiUser = user;
+}
+
+
 
 void GuiTrainingSession::on_GuiTrainingSession_finished(int result)
 {

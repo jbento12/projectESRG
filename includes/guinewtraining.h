@@ -19,6 +19,8 @@ public:
     explicit GuiNewTraining(QWidget *parent = nullptr);
     ~GuiNewTraining();
 
+    void setUserRef(User* user);
+
 private slots:
     void on_push_GoBack_clicked();
 

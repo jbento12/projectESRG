@@ -72,6 +72,17 @@ bool User::checkLogin(const string& username, const string& pass, User*& user)
 
 
 
+void User::addExercise(const Exercise& exercise)
+{
+    this->userExercisesList.push_back(exercise);
+}
+
+
+
+
+
+
+
 
 // --------------------- Used to populate -------------------------------
 bool User::addUserToUserList(User& user)

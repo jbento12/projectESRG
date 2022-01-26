@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 
+#include "exercise.h"
 using namespace std;
 
 class User
@@ -33,12 +34,17 @@ private:
     float height;
     int32_t userId;
 
+    //list of User's "bought" exercise list
+    vector<Exercise> userExercisesList;
+    void addExercise(const Exercise& exercise);
+
 
 //populate with Users
 public:
     static bool addUserToUserList(User& user);
     static void populateUserList();
     static void printUserList();
+
 
 private:
     static vector<User> UserList;

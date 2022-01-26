@@ -1,5 +1,5 @@
-#ifndef EXERCISE_H_
-#define EXERCISE_H_
+#ifndef MYEXERCISE_H_
+#define MYEXERCISE_H_
 
 #include <iostream>
 #include <vector>
@@ -35,6 +35,7 @@ public:
 
     string getName();
     string getPath();
+    int32_t getId(){return this->id;};
 
 private:
     string name;
@@ -48,8 +49,9 @@ public:
     static void populateExerciseList();
     static void printMarketExerciseList();
 
-private:
     static vector<Exercise> marketExerciseList;
+private:
+
     static uint32_t exerciseIDcount;
 };
 
