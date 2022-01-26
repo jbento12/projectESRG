@@ -22,7 +22,7 @@ public:
 
     void setUserRef(User* user);
     void fillComboBox();
-
+    void listUserExercises();
 private slots:
     void on_push_GoBack_clicked();
     void on_push_TrainHistory_clicked();
@@ -30,6 +30,8 @@ private slots:
 
 
     void on_GuiSecond_finished(int result);
+
+    void on_push_AddExercises_clicked();
 
 private:
     Ui::GuiSecond *ui;

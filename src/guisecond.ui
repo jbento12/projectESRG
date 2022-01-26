@@ -117,13 +117,13 @@
     </rect>
    </property>
   </widget>
-  <widget class="QListView" name="list_UserExercises">
+  <widget class="QListWidget" name="listWidget_UserList">
    <property name="geometry">
     <rect>
-     <x>370</x>
-     <y>60</y>
-     <width>291</width>
-     <height>211</height>
+     <x>320</x>
+     <y>50</y>
+     <width>311</width>
+     <height>331</height>
     </rect>
    </property>
   </widget>

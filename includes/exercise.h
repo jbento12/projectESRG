@@ -49,6 +49,8 @@ public:
     static void populateExerciseList();
     static void printMarketExerciseList();
 
+    static Exercise getExerciseFromId(const int32_t id);
+
     static vector<Exercise> marketExerciseList;
 private:
 

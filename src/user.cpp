@@ -72,11 +72,15 @@ bool User::checkLogin(const string& username, const string& pass, User*& user)
 
 
 
-void User::addExercise(const Exercise& exercise)
+void User::addExercise(Exercise& exercise)
 {
+    for(int32_t i = 0; i < userExercisesList.size(); i++)
+    {
+        if(exercise.getId() == userExercisesList[i].getId())
+        return;
+    }
     this->userExercisesList.push_back(exercise);
 }
-
 
 
 

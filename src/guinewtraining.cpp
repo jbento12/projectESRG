@@ -10,7 +10,6 @@ GuiNewTraining::GuiNewTraining(QWidget *parent) :
     guiTrainingSession = new GuiTrainingSession(this);
 
     QObject::connect(guiTrainingSession, &GuiTrainingSession::finished, this, &GuiNewTraining::show);
-
 }
 
 GuiNewTraining::~GuiNewTraining()

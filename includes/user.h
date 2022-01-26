@@ -26,6 +26,10 @@ public:
 
     static bool checkLogin(const string& username, const string& password, User*& user);
 
+    //list of User's "bought" exercise list
+    vector<Exercise> userExercisesList;
+    void addExercise(Exercise& exercise);
+
 private:
     string name;
     string username;
@@ -34,9 +38,9 @@ private:
     float height;
     int32_t userId;
 
-    //list of User's "bought" exercise list
-    vector<Exercise> userExercisesList;
-    void addExercise(const Exercise& exercise);
+
+
+
 
 
 //populate with Users

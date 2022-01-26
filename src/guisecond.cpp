@@ -67,3 +67,29 @@ void GuiSecond::fillComboBox() {
     }
 
 }
+
+
+//Add the selected exercise to user
+void GuiSecond::on_push_AddExercises_clicked()
+{
+    Exercise aux_exer;
+    int id = ui->combo_MarketExer->itemData(ui->combo_MarketExer->currentIndex()).toInt();
+
+    aux_exer = Exercise::getExerciseFromId(id);
+
+    this->guiUser->addExercise(aux_exer);
+    ui->listWidget_UserList->clear();
+    listUserExercises();
+}
+
+void GuiSecond::listUserExercises()
+{
+    int id = 0;
+    id = ui->combo_MarketExer->itemData(ui->combo_MarketExer->currentIndex()).toInt();
+
+    for (int32_t i = 0; i < this->guiUser->userExercisesList.size(); i++)
+    {
+        QString thisLine = QString::fromStdString(this->guiUser->userExercisesList[i].getName());
+        ui->listWidget_UserList->addItem(thisLine);
+    }
+}

@@ -11,9 +11,10 @@ uint32_t Exercise::exerciseIDcount = 0;
 
 Exercise::Exercise()
 {
- name = "Unknown";
-
+    id = -1;
+    name = "Unknown";
 }
+
 
 Exercise::~Exercise()
 {
@@ -104,4 +105,18 @@ void Exercise::printMarketExerciseList()
         cout << Exercise::marketExerciseList[i].path << endl;
         cout << Exercise::marketExerciseList[i].id   << endl << endl;
     }
+}
+
+Exercise Exercise::getExerciseFromId(const int32_t id)
+{
+    Exercise aux;
+    for(uint32_t i = 0; i < Exercise::marketExerciseList.size(); i++)
+    {
+        if(id == Exercise::marketExerciseList[i].getId())
+        {
+            return Exercise::marketExerciseList[i];
+        }
+    }
+
+    return aux;
 }
