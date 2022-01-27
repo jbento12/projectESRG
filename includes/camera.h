@@ -60,7 +60,7 @@ public:
 
     bool isOpen();
 
-
+    Mat result;
     Mat frame;
     Mat frameDisplay;
     VideoCapture cap;

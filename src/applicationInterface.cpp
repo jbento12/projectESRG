@@ -60,6 +60,63 @@ void* thManageDBFunc(void* arg)
 void* thProcessImageFunc(void* arg)
 {
     cout << "thread - thProcessImageFunc\n";
+//    String modelTxt = "/home/luiscarlos/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
+//    String modelBin = "/home/luiscarlos/pose/mpi/pose_iter_160000.caffemodel";
+//    String imageFile = "single.jpg";
+//    String dataset = "MPI";
+//    int W_in = 368;
+//    int H_in = 368;
+//    float thresh = 0.1;
+//    float scale  = 0.003922;
+//    int midx = 2, npairs = 20, nparts = 22;
+//    Net net = readNet(modelBin, modelTxt);
+//    vector<Point> points(22);
+//                Mat inputBlob = blobFromImage(appInterface.camera.frame, scale, Size(W_in, H_in), Scalar(0, 0, 0), false, false);
+//                net.setInput(inputBlob);
+//                Mat result = net.forward();
+
+
+//                int H = result.size[2];
+//                int W = result.size[3];
+
+//                // find the position of the body parts
+
+//                for (int n=0; n<nparts; n++)
+//                {
+//                    // Slice heatmap of corresponding body's part.
+//                    Mat heatMap(H, W, CV_32F, result.ptr(0,n));
+//                    // 1 maximum per heatmap
+//                    Point p(-1,-1),pm;
+//                    double conf;
+//                    minMaxLoc(heatMap, 0, &conf, 0, &pm);
+//                    if (conf > thresh)
+//                        p = pm;
+//                    points[n] = p;
+//                }
+
+//                // connect body parts and draw it !
+//                float SX = float(appInterface.camera.frame.cols) / W;
+//                float SY = float(appInterface.camera.frame.rows) / H;
+//                for (int n=0; n<npairs; n++)
+//                {
+//                    // lookup 2 connected body/hand parts
+//                    Point2f a = points[POSE_PAIRS[midx][n][0]];
+//                    Point2f b = points[POSE_PAIRS[midx][n][1]];
+
+//                    // we did not find enough confidence before
+//                    if (a.x<=0 || a.y<=0 || b.x<=0 || b.y<=0)
+//                        continue;
+
+//                    // scale to image size
+//                    a.x*=SX; a.y*=SY;
+//                    b.x*=SX; b.y*=SY;
+
+//                    line(appInterface.camera.frame, a, b, Scalar(0,200,0), 2);
+//                    circle(appInterface.camera.frame, a, 3, Scalar(0,0,200), -1);
+//                    circle(appInterface.camera.frame, b, 3, Scalar(0,0,200), -1);
+//                }
+
+
 }
 
 
@@ -81,73 +138,19 @@ void* thAcquireImageFunc(void* arg)
 //    /home/luiscarlos
 //        /etc
 //        /etc
-     String modelTxt = "/home/luiscarlos/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
-     String modelBin = "/home/luiscarlos/pose/mpi/pose_iter_160000.caffemodel";
-     String imageFile = "single.jpg";
-     String dataset = "MPI";
-     int W_in = 368;
-     int H_in = 368;
-     float thresh = 0.1;
-     float scale  = 0.003922;
-     int midx = 2, npairs = 20, nparts = 22;
-     Net net = readNet(modelBin, modelTxt);
-     vector<Point> points(22);
 
     //task infinite loop
     for(;;)
     {
         pthread_mutex_lock(&mut_acquireImage);
+
         if(appInterface.getToAcquire())
         {
             if(appInterface.camera.isOpen())
                 appInterface.camera.cap >> appInterface.camera.frame;
 
-            Mat inputBlob = blobFromImage(appInterface.camera.frame, scale, Size(W_in, H_in), Scalar(0, 0, 0), false, false);
-            net.setInput(inputBlob);
-            Mat result = net.forward();
 
-
-            int H = result.size[2];
-            int W = result.size[3];
-
-            // find the position of the body parts
-
-            for (int n=0; n<nparts; n++)
-            {
-                // Slice heatmap of corresponding body's part.
-                Mat heatMap(H, W, CV_32F, result.ptr(0,n));
-                // 1 maximum per heatmap
-                Point p(-1,-1),pm;
-                double conf;
-                minMaxLoc(heatMap, 0, &conf, 0, &pm);
-                if (conf > thresh)
-                    p = pm;
-                points[n] = p;
-            }
-
-            // connect body parts and draw it !
-            float SX = float(appInterface.camera.frame.cols) / W;
-            float SY = float(appInterface.camera.frame.rows) / H;
-            for (int n=0; n<npairs; n++)
-            {
-                // lookup 2 connected body/hand parts
-                Point2f a = points[POSE_PAIRS[midx][n][0]];
-                Point2f b = points[POSE_PAIRS[midx][n][1]];
-
-                // we did not find enough confidence before
-                if (a.x<=0 || a.y<=0 || b.x<=0 || b.y<=0)
-                    continue;
-
-                // scale to image size
-                a.x*=SX; a.y*=SY;
-                b.x*=SX; b.y*=SY;
-
-                line(appInterface.camera.frame, a, b, Scalar(0,200,0), 2);
-                circle(appInterface.camera.frame, a, 3, Scalar(0,0,200), -1);
-                circle(appInterface.camera.frame, b, 3, Scalar(0,0,200), -1);
-            }
-
-            //store image with landmarks in frameDisplay (image to display)
+//            //store image with landmarks in frameDisplay (image to display)
             appInterface.camera.frameDisplay = appInterface.camera.frame.clone();
 
 

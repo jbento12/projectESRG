@@ -7,6 +7,9 @@
 
 #include <stdint.h>
 
+#include <QtSql>
+#include <QDebug>
+#include <QFileInfo>
 
 using namespace std;
 
@@ -29,9 +32,10 @@ class Exercise
 public:
     Exercise();
     ~Exercise();
-
+    void setIDfromDatabase(int32_t idDatabase);
     void setName(const string& name);
     void setPath(const string& path);
+
 
     string getName();
     string getPath();
@@ -46,6 +50,7 @@ private:
 //populate with exercises
 public:
     static bool addExerciseToMarket(Exercise& exercise);
+    static bool addExerciseToMarketFromDatabase(Exercise& exercise);
     static void populateExerciseList();
     static void printMarketExerciseList();
 

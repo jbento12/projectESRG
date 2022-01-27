@@ -2,7 +2,8 @@
 #include "poseClassification.h"
 
 #include <string>
-
+#include <QString>
+#include <QDebug>
 //global varibles
 
 vector<Exercise> Exercise::marketExerciseList;
@@ -20,6 +21,11 @@ Exercise::~Exercise()
 {
 }
 
+
+void Exercise::setIDfromDatabase(int32_t idDatabase)
+{
+    this->id = idDatabase;
+}
 
 void Exercise::setName(const string& name)
 {
@@ -65,35 +71,63 @@ bool Exercise::addExerciseToMarket(Exercise& exercise)
     return true;
 }
 
+bool Exercise::addExerciseToMarketFromDatabase(Exercise& exercise)
+{
+    Exercise::exerciseIDcount++;
+    Exercise::marketExerciseList.push_back(exercise);
+    return true;
+}
 
 void Exercise::populateExerciseList()
 {
     //----------- Just a dummy populate (for now (testing)) -----------
     Exercise aux;
+    QString name_aux;
+    QSqlDatabase exercise_db = QSqlDatabase::addDatabase("QSQLITE");
 
-    aux.setName("Bicep Curl");
-    aux.setPath("/boasCurl");
-    addExerciseToMarket(aux);
+    exercise_db.setDatabaseName("/home/luiscarlos/Documents/embebidos/exercise_sqlite.db");
 
-    aux.setName("Lat PullDown");
-    aux.setPath("/boasPullDown");
-    addExerciseToMarket(aux);
 
-    aux.setName("Row");
-    aux.setPath("/boasRow");
-    addExerciseToMarket(aux);
+    if(!exercise_db.open())
+    {
+        cout << "Failed to open Database";
+        return;
+    }
 
-    aux.setName("Barbell");
-    aux.setPath("/boasBarbell");
-    addExerciseToMarket(aux);
+    QSqlQuery exer_db_qry;
+    exer_db_qry.exec("SELECT * FROM exercise");
 
-    aux.setName("Supino");
-    aux.setPath("/boasSupino");
-    addExerciseToMarket(aux);
+    while(exer_db_qry.next())//advance the poiter
+    {
+        aux.setIDfromDatabase(exer_db_qry.value(0).toInt());
+        name_aux = exer_db_qry.value(1).toString();
+        aux.setName(name_aux.toStdString());
+        addExerciseToMarketFromDatabase(aux);
+    }
 
-    aux.setName("Bench");
-    aux.setPath("/boasBench");
-    addExerciseToMarket(aux);
+//    aux.setName("Bicep Curl");
+//    aux.setPath("/boasCurl");
+//    addExerciseToMarket(aux);
+
+//    aux.setName("Lat PullDown");
+//    aux.setPath("/boasPullDown");
+//    addExerciseToMarket(aux);
+
+//    aux.setName("Row");
+//    aux.setPath("/boasRow");
+//    addExerciseToMarket(aux);
+
+//    aux.setName("Barbell");
+//    aux.setPath("/boasBarbell");
+//    addExerciseToMarket(aux);
+
+//    aux.setName("Supino");
+//    aux.setPath("/boasSupino");
+//    addExerciseToMarket(aux);
+
+//    aux.setName("Bench");
+//    aux.setPath("/boasBench");
+//    addExerciseToMarket(aux);
 }
 
 void Exercise::printMarketExerciseList()
@@ -101,9 +135,9 @@ void Exercise::printMarketExerciseList()
     cout << "Comecar a imprimer os exercicios" << endl;
     for(uint32_t i = 0; i < Exercise::marketExerciseList.size(); i++)
     {
-        cout << Exercise::marketExerciseList[i].name << endl;
+        cout << Exercise::marketExerciseList[i].id   << " ";
+        cout << Exercise::marketExerciseList[i].name << " ";
         cout << Exercise::marketExerciseList[i].path << endl;
-        cout << Exercise::marketExerciseList[i].id   << endl << endl;
     }
 }
 

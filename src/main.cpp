@@ -7,7 +7,6 @@
 //#include <QQuickView>
 //#include <QGuiApplication>
 //#include <QQmlEngine>
-//#include <QtSql>
 
 
 using namespace std;
@@ -21,6 +20,9 @@ int main(int argc, char *argv[])
     Exercise::printMarketExerciseList();
 
     User::populateUserList();
+
+
+
     User::printUserList();
     appInterface.init();
     createThreads();
