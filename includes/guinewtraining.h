@@ -33,8 +33,10 @@ signals:
 
 private:
     Ui::GuiNewTraining *ui;
-    GuiTrainingSession* guiTrainingSession;
+
     User* guiUser;
+public:
+    GuiTrainingSession* guiTrainingSession;
 };
 
 #endif // GUINEWTRAINING_H

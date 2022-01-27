@@ -28,7 +28,13 @@ private slots:
 
 private:
     Ui::gui *ui;
-    GuiSecond* guiSecond;
+
     User* guiUser;
+public:
+    GuiSecond* guiSecond;
 };
+
+
+//gui* w_ptr;
+
 #endif // GUI_H

@@ -35,9 +35,11 @@ private slots:
 
 private:
     Ui::GuiSecond *ui;
-    GuiNewTraining  *guiNewTraining;
+
     GuiHistory      *guiHistory;
     User* guiUser;
+public:
+    GuiNewTraining  *guiNewTraining;
 };
 
 #endif // GUISECOND_H

@@ -20,8 +20,10 @@ public:
 
     void setUserRef(User* user);
 
+    QTimer *timer; // NEW
 
 private slots:
+    void TimerSlot(); // NEW slot
     void on_GuiTrainingSession_finished(int result);
     void on_push_GoBack_clicked();
 
@@ -34,8 +36,10 @@ signals:
     void signal_GuiTrainingSession_finished();
 
 private:
-    Ui::GuiTrainingSession *ui;
+
     User* guiUser;
+public:
+    Ui::GuiTrainingSession *ui;
 };
 
 #endif // GUITRAININGSESSION_H

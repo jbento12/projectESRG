@@ -5,7 +5,9 @@
 
 #include "camera.h"
 
+#include "gui.h"
 #include <iostream>
+#include <QPixmap>
 
 using namespace std;
 
@@ -76,7 +78,7 @@ void* thAcquireImageFunc(void* arg)
 {
     cout << "thread - thAcquireImageFunc\n";
 
-
+    Mat src;
     //task infinite loop
     for(;;)
     {
@@ -85,6 +87,11 @@ void* thAcquireImageFunc(void* arg)
         {
 
             appInterface.camera.cap >> appInterface.camera.frame;
+
+
+
+
+
 
         }
         else

@@ -9,6 +9,8 @@ GuiTrainingSession::GuiTrainingSession(QWidget *parent) :
     ui(new Ui::GuiTrainingSession)
 {
     ui->setupUi(this);
+     timer = new QTimer(this); // create it
+   connect(timer, &QTimer::timeout, this, &GuiTrainingSession::TimerSlot ); // connect it
 }
 
 GuiTrainingSession::~GuiTrainingSession()
@@ -16,6 +18,16 @@ GuiTrainingSession::~GuiTrainingSession()
     delete ui;
 }
 
+
+void GuiTrainingSession::TimerSlot()
+{
+    Mat src;
+    if (appInterface.camera.frame.empty())
+        return;
+
+    src = appInterface.camera.frame;
+    ui->label_ImageDisplay->setPixmap(QPixmap::fromImage(QImage(src.data, src.cols, src.rows, src.step, QImage::Format_RGB888)));
+}
 
 //---------------------- Functions ---------------------------
 void GuiTrainingSession::setUserRef(User* user)
@@ -28,6 +40,7 @@ void GuiTrainingSession::setUserRef(User* user)
 void GuiTrainingSession::on_GuiTrainingSession_finished(int result)
 {
    appInterface.stopAcquire();
+   timer->stop();
    this->close();
 }
 
@@ -47,4 +60,5 @@ void GuiTrainingSession::on_GuiTrainingSession_accepted()
 void GuiTrainingSession::on_pushButton_clicked()
 {
     appInterface.startAcquire();
+    timer->start(1000); // 2 mins timer
 }
