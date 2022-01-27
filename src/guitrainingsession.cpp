@@ -22,11 +22,11 @@ GuiTrainingSession::~GuiTrainingSession()
 void GuiTrainingSession::TimerSlot()
 {
     Mat src;
-    if (appInterface.camera.frame.empty())
+    if (appInterface.camera.frameDisplay.empty())
         return;
 
-    src = appInterface.camera.frame;
-    ui->label_ImageDisplay->setPixmap(QPixmap::fromImage(QImage(src.data, src.cols, src.rows, src.step, QImage::Format_RGB888)));
+    src = appInterface.camera.frameDisplay;
+    ui->label_ImageDisplay->setPixmap(QPixmap::fromImage(QImage(src.data, src.cols, src.rows, src.step, QImage::Format_RGB888)).scaled(500,500,Qt::KeepAspectRatio));
 }
 
 //---------------------- Functions ---------------------------
@@ -39,8 +39,8 @@ void GuiTrainingSession::setUserRef(User* user)
 
 void GuiTrainingSession::on_GuiTrainingSession_finished(int result)
 {
-   appInterface.stopAcquire();
    timer->stop();
+   appInterface.stopAcquire();
    this->close();
 }
 
@@ -60,5 +60,5 @@ void GuiTrainingSession::on_GuiTrainingSession_accepted()
 void GuiTrainingSession::on_pushButton_clicked()
 {
     appInterface.startAcquire();
-    timer->start(1000); // 2 mins timer
+    timer->start(100); // camera timer
 }
