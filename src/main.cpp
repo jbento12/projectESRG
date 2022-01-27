@@ -11,7 +11,7 @@
 
 
 using namespace std;
-ApplicationInterface appInterface;
+
 
 
 int main(int argc, char *argv[])
@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     User::populateUserList();
     User::printUserList();
     appInterface.init();
-    appInterface.createThreads();
+    createThreads();
 
      QApplication a(argc, argv);
      gui w;

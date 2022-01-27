@@ -28,6 +28,8 @@ private slots:
 
     void on_GuiTrainingSession_accepted();
 
+    void on_pushButton_clicked();
+
 signals:
     void signal_GuiTrainingSession_finished();
 

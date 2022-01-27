@@ -10,10 +10,18 @@
 using namespace std;
 
 
+pthread_t thManageDB;
+pthread_t thProcessImage;
+pthread_t thClassification;
+pthread_t thTraining;
+pthread_t thAcquireImage;
+
 pthread_mutex_t mut_acquireImage = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond_acquireImage = PTHREAD_COND_INITIALIZER;
 
 
+
+ApplicationInterface appInterface;
 
 
 ApplicationInterface::ApplicationInterface()
@@ -39,50 +47,48 @@ void ApplicationInterface::init()
 
 
 
-void ApplicationInterface::thManageDBFunc(void* arg)
+void* thManageDBFunc(void* arg)
 {
     cout << "thread - thManageDBFunc\n";
 
 }
 
 
-void ApplicationInterface::thProcessImageFunc(void* arg)
+void* thProcessImageFunc(void* arg)
 {
     cout << "thread - thProcessImageFunc\n";
 }
 
 
-void ApplicationInterface::thClassificationFunc(void* arg)
+void* thClassificationFunc(void* arg)
 {
     cout << "thread - thClassificationFunc\n";
 }
 
 
-void ApplicationInterface::thTrainingFunc(void* arg)
+void* thTrainingFunc(void* arg)
 {
     cout << "thread - thTrainingFunc\n";
 }
 
 
-void ApplicationInterface::thAcquireImageFunc(void* arg)
+void* thAcquireImageFunc(void* arg)
 {
     cout << "thread - thAcquireImageFunc\n";
-
-    int ola = 1;
 
 
     //task infinite loop
     for(;;)
     {
         pthread_mutex_lock(&mut_acquireImage);
-        if(ola)
+        if(appInterface.getToAcquire())
         {
-            cout<< "cheguei ao acccccccccccCCCC\n";
-            ola = 0;
+
+            appInterface.camera.cap >> appInterface.camera.frame;
+
         }
         else
         {
-            cout<< "vou dormir ate logo\n";
             pthread_cond_wait(&cond_acquireImage, &mut_acquireImage);
         }
         pthread_mutex_unlock(&mut_acquireImage);
@@ -90,14 +96,18 @@ void ApplicationInterface::thAcquireImageFunc(void* arg)
 }
 
 
-bool ApplicationInterface::createThreads()
+bool createThreads()
 {
-    pthread_create(&thManageDB, NULL,       &ApplicationInterface::thManageDBFunc_wrapper, NULL);
-    pthread_create(&thProcessImage, NULL,   &ApplicationInterface::thProcessImageFunc_wrapper, NULL);
-    pthread_create(&thClassification, NULL, &ApplicationInterface::thClassificationFunc_wrapper, NULL);
-    pthread_create(&thTraining, NULL,       &ApplicationInterface::thTrainingFunc_wrapper, NULL);
-    pthread_create(&thAcquireImage, NULL,   &ApplicationInterface::thAcquireImageFunc_wrapper, NULL);
-
+    pthread_create(&thManageDB,         NULL,   thManageDBFunc,         NULL);
+    pthread_detach(thManageDB);
+    pthread_create(&thProcessImage,     NULL,   thProcessImageFunc,     NULL);
+    pthread_detach(thProcessImage);
+    pthread_create(&thClassification,   NULL,   thClassificationFunc,   NULL);
+    pthread_detach(thClassification);
+    pthread_create(&thTraining,         NULL,   thTrainingFunc,         NULL);
+    pthread_detach(thTraining);
+    pthread_create(&thAcquireImage,     NULL,   thAcquireImageFunc,     NULL);
+    pthread_detach(thAcquireImage);
     return true;
 }
 
@@ -105,10 +115,12 @@ bool ApplicationInterface::createThreads()
 void ApplicationInterface::startAcquire()
 {
     this->toAcquire = true;
+    appInterface.camera.open();
     pthread_cond_signal(&cond_acquireImage);    //tell thread to start aquire
 }
 
 void ApplicationInterface::stopAcquire()
 {
     this->toAcquire = true;
+    appInterface.camera.release();
 }

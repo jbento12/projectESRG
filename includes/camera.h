@@ -37,12 +37,12 @@ public:
 
 
     Mat frame;
-
+    VideoCapture cap;
 private:
     string dev_name;
     int32_t apiID;
     int32_t deviceID;
-    VideoCapture cap;
+
 
 
 //    char* shmptr;
