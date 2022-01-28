@@ -6,6 +6,10 @@
 #include <QDebug>
 //global varibles
 
+//#define EXERCISE_DATABASE_PATH "/home/luiscarlos/Documents/embebidos/exercise_sqlite.db"
+#define EXERCISE_DATABASE_PATH "/etc/sfm_database/exercise_sqlite.db"
+
+
 vector<Exercise> Exercise::marketExerciseList;
 uint32_t Exercise::exerciseIDcount = 0;
 
@@ -85,7 +89,7 @@ void Exercise::populateExerciseList()
     QString name_aux;
     QSqlDatabase exercise_db = QSqlDatabase::addDatabase("QSQLITE");
 
-    exercise_db.setDatabaseName("/home/luiscarlos/Documents/embebidos/exercise_sqlite.db");
+    exercise_db.setDatabaseName(EXERCISE_DATABASE_PATH);
 
 
     if(!exercise_db.open())
