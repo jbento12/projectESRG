@@ -4,12 +4,13 @@
 #include <string>
 #include <QString>
 #include <QDebug>
+
+
+#define EXERCISE_DATABASE_PATH "/home/luiscarlos/Documents/embebidos/exercise_sqlite.db"
+//#define EXERCISE_DATABASE_PATH "/etc/sfm_database/exercise_sqlite.db"
+
+
 //global varibles
-
-//#define EXERCISE_DATABASE_PATH "/home/luiscarlos/Documents/embebidos/exercise_sqlite.db"
-#define EXERCISE_DATABASE_PATH "/etc/sfm_database/exercise_sqlite.db"
-
-
 vector<Exercise> Exercise::marketExerciseList;
 uint32_t Exercise::exerciseIDcount = 0;
 
@@ -82,57 +83,6 @@ bool Exercise::addExerciseToMarketFromDatabase(Exercise& exercise)
     return true;
 }
 
-void Exercise::populateExerciseList()
-{
-    //----------- Just a dummy populate (for now (testing)) -----------
-    Exercise aux;
-    QString name_aux;
-    QSqlDatabase exercise_db = QSqlDatabase::addDatabase("QSQLITE");
-
-    exercise_db.setDatabaseName(EXERCISE_DATABASE_PATH);
-
-
-    if(!exercise_db.open())
-    {
-        cout << "Failed to open Database";
-        return;
-    }
-
-    QSqlQuery exer_db_qry;
-    exer_db_qry.exec("SELECT * FROM exercise");
-
-    while(exer_db_qry.next())//advance the poiter
-    {
-        aux.setIDfromDatabase(exer_db_qry.value(0).toInt());
-        name_aux = exer_db_qry.value(1).toString();
-        aux.setName(name_aux.toStdString());
-        addExerciseToMarketFromDatabase(aux);
-    }
-
-//    aux.setName("Bicep Curl");
-//    aux.setPath("/boasCurl");
-//    addExerciseToMarket(aux);
-
-//    aux.setName("Lat PullDown");
-//    aux.setPath("/boasPullDown");
-//    addExerciseToMarket(aux);
-
-//    aux.setName("Row");
-//    aux.setPath("/boasRow");
-//    addExerciseToMarket(aux);
-
-//    aux.setName("Barbell");
-//    aux.setPath("/boasBarbell");
-//    addExerciseToMarket(aux);
-
-//    aux.setName("Supino");
-//    aux.setPath("/boasSupino");
-//    addExerciseToMarket(aux);
-
-//    aux.setName("Bench");
-//    aux.setPath("/boasBench");
-//    addExerciseToMarket(aux);
-}
 
 void Exercise::printMarketExerciseList()
 {

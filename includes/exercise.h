@@ -1,5 +1,5 @@
-#ifndef MYEXERCISE_H_
-#define MYEXERCISE_H_
+#ifndef MYEXERCISE_H__
+#define MYEXERCISE_H__
 
 #include <iostream>
 #include <vector>
@@ -10,6 +10,7 @@
 #include <QtSql>
 #include <QDebug>
 #include <QFileInfo>
+
 
 using namespace std;
 

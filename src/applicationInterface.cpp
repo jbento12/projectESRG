@@ -3,9 +3,7 @@
 #include "manageDB.h"
 #include "gui.h"
 
-#include "camera.h"
 
-#include "gui.h"
 #include <iostream>
 #include <QPixmap>
 
@@ -53,6 +51,26 @@ void ApplicationInterface::init()
 void* thManageDBFunc(void* arg)
 {
     cout << "thread - thManageDBFunc\n";
+
+    ManageDB manageDatabase;
+    manageDatabase.database = QSqlDatabase::addDatabase("QSQLITE");
+    manageDatabase.database.setDatabaseName(MY_DATABASE_PATH_U);
+
+    if(!manageDatabase.database.open())
+    {
+        qDebug("cant open DATABASE");
+    }
+
+
+    manageDatabase.populateUserList();
+    User::printUserList();
+
+    manageDatabase.populateExerciseList();
+    Exercise::printMarketExerciseList();
+
+
+
+
 
 }
 
@@ -134,10 +152,6 @@ void* thTrainingFunc(void* arg)
 
 void* thAcquireImageFunc(void* arg)
 {
-//    /home/luiscarlos
-//    /home/luiscarlos
-//        /etc
-//        /etc
 
     //task infinite loop
     for(;;)
@@ -150,7 +164,7 @@ void* thAcquireImageFunc(void* arg)
                 appInterface.camera.cap >> appInterface.camera.frame;
 
 
-//            //store image with landmarks in frameDisplay (image to display)
+            //store image with landmarks in frameDisplay (image to display)
             appInterface.camera.frameDisplay = appInterface.camera.frame.clone();
 
 

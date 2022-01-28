@@ -4,11 +4,11 @@
 #include <QDialog>
 #include <QTimer>
 
-
+#include "guinewtraining.h"
 #include "guihistory.h"
 #include "user.h"
 #include "exercise.h"
-#include "guinewtraining.h"
+
 
 namespace Ui {
 class GuiSecond;

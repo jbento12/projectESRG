@@ -23,7 +23,7 @@ void GuiHistory::setUserRef(User* user)
 
 void GuiHistory::on_push_GoBack_clicked()
 {
-    this->on_GuiHistory_finished(NULL);
+    this->on_GuiHistory_finished(0);
 }
 
 void GuiHistory::on_GuiHistory_finished(int result)

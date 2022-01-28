@@ -1,13 +1,21 @@
-#ifndef USER_H_
-#define USER_H_
+#ifndef USER_H__
+#define USER_H__
+
+
+
 
 #include <iostream>
 #include <stdint.h>
 #include <string>
 #include <vector>
-
+#include <QString>
+#include "training.h"
 #include "exercise.h"
+
 using namespace std;
+
+
+
 
 class User
 {
@@ -18,8 +26,10 @@ public:
     bool setWeight(float weight);
     bool setHeight(float height);
 
+    void setId(int32_t id){this->userId = id;};
     void setName(const string& name);
     void setUsername(const string& username);
+    void setPassword(const string& password){this->password = password;};
 
     string getName();
     string getUsername();
@@ -30,6 +40,8 @@ public:
     vector<Exercise> userExercisesList;
     void addExercise(Exercise& exercise);
 
+    //bool checkLoginFromDB(const string& username, const string& pass);
+
 private:
     string name;
     string username;
@@ -39,20 +51,18 @@ private:
     int32_t userId;
 
 
-
-
-
-
 //populate with Users
 public:
     static bool addUserToUserList(User& user);
+    static bool addUserToUserListFromDatabase(const User& user);
     static void populateUserList();
     static void printUserList();
 
 
+    static uint32_t userIDcount;
 private:
     static vector<User> UserList;
-    static uint32_t userIDcount;
+
 };
 
 
@@ -64,4 +74,4 @@ private:
 
 
 
-#endif  //USER_H_
+#endif//USER_H__

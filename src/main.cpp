@@ -16,18 +16,18 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-    Exercise::populateExerciseList();
-    Exercise::printMarketExerciseList();
+//    Exercise::populateExerciseList();
+//    Exercise::printMarketExerciseList();
 
-    User::populateUserList();
+//    User::populateUserList();
 
 
 
-    User::printUserList();
-    appInterface.init();
-    createThreads();
+//    User::printUserList();
 
      QApplication a(argc, argv);
+     appInterface.init();
+     createThreads();
      gui w;
      w.show();
      return a.exec();

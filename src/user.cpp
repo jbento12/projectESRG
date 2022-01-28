@@ -1,11 +1,10 @@
 #include "user.h"
 #include "poseClassification.h"
 
-
+#include <QString>
 
 uint32_t User::userIDcount = 0;
 vector<User> User::UserList;
-
 
 
 User::User()
@@ -57,9 +56,19 @@ string User::getUsername()
 
 bool User::checkLogin(const string& username, const string& pass, User*& user)
 {
+    QString user_aux1;
+    QString user_aux2;
+    QString pass_aux1;
+    QString pass_aux2;
+
+         user_aux1 = QString::fromStdString(username);
+         pass_aux1 = QString::fromStdString(pass);
 
     for(uint32_t i = 0; i < User::UserList.size(); i++)
     {
+        user_aux2 = QString::fromStdString(User::UserList[i].username);
+        pass_aux2 = QString::fromStdString(User::UserList[i].password);
+
         if(username == User::UserList[i].username && pass == User::UserList[i].password)
         {
             user = &User::UserList[i];  //passar a referencia do User
@@ -69,6 +78,7 @@ bool User::checkLogin(const string& username, const string& pass, User*& user)
     user = NULL;
     return false;   //could not find username and password matching
 }
+
 
 
 
@@ -84,10 +94,6 @@ void User::addExercise(Exercise& exercise)
 
 
 
-
-
-
-
 // --------------------- Used to populate -------------------------------
 bool User::addUserToUserList(User& user)
 {
@@ -97,27 +103,12 @@ bool User::addUserToUserList(User& user)
     return true;
 }
 
-
-void User::populateUserList()
+bool User::addUserToUserListFromDatabase(const User& user)
 {
-    //----------- Just a dummy populate (for now (testing)) -----------
-    User aux;
-
-    aux.setName("Luca");
-    aux.setUsername("");
-    aux.password = "";
-    addUserToUserList(aux);
-
-    aux.setName("Valete");
-    aux.setUsername("val");
-    aux.password = "vare";
-    addUserToUserList(aux);
-
-    aux.setName("vanessa");
-    aux.setUsername("van");
-    aux.password = "ola";
-    addUserToUserList(aux);
+    User::UserList.push_back(user);
+    return true;
 }
+
 
 void User::printUserList()
 {

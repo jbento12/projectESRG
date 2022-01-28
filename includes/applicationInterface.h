@@ -13,10 +13,11 @@
 
 #include "camera.h"
 
+#include "manageDB.h"
+#include "user.h"
 
 
 extern bool createThreads();
-
 
 class ApplicationInterface
 {
@@ -53,6 +54,8 @@ public:
 private:
 
     bool toAcquire;
+
+
 
 
 };

@@ -13,6 +13,7 @@ bool insertExercise(const Exercise& exercise)
     return true;
 }
 
+
 Exercise removeExercise()
 {
 
