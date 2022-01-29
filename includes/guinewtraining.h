@@ -2,7 +2,8 @@
 #define GUINEWTRAINING_H
 
 #include <QDialog>
-
+#include <QMessageBox>
+#include <QString>
 #include "guitrainingsession.h"
 #include "user.h"
 

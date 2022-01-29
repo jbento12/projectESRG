@@ -64,6 +64,8 @@ public:
     Mat frame;
     Mat frameDisplay;
     VideoCapture cap;
+
+    Mat resultLandMarks;
 private:
     string dev_name;
     int32_t apiID;

@@ -39,10 +39,20 @@ void GuiNewTraining::on_GuiNewTraining_finished(int result)
 
 void GuiNewTraining::on_push_Select_clicked()
 {
+    int32_t ret;
+    QString train_name;
 
-    //somehow get the training selected on the combo seltector
-    this->hide();
-    guiTrainingSession->show();
+    //get the training name on the combo seltector
+ //   train_name = ui->comboBox_ChooseTrain->itemData().toString;
+    //set the "to play" trianing based on the name from the combo box
+//    ret = this->guiUser->setToPlayTraining(QString::toStdString(train_name));
+//    if(ret == 0)
+//    {
+        this->hide();
+        guiTrainingSession->show();
+//    }else {
+//        QMessageBox::warning(this, "Add New Model", "Could not set training");
+//    }
 }
 
 

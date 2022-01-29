@@ -13,8 +13,8 @@
 #include "exercise.h"
 
 
-#define USER_E_NAME_INVAL -1
-#define USER_E_NAME_EXISTS -2
+#define USER_ERR_TRAIN_NAME_INVAL -1
+#define USER_ERR_TRAIN_NAME_EXISTS -2
 
 
 using namespace std;
@@ -42,6 +42,7 @@ public:
     static bool checkLogin(const string& username, const string& password, User*& user);
 
     Training toPlay;
+    int32_t setToPlayTraining(const string& name);
 
     //list of exercise list
     Training newModel;

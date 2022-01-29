@@ -48,13 +48,17 @@ public:
     void startAcquire();
     void stopAcquire();
     bool getToAcquire(){return this->toAcquire;};
+    void startProcess(){this->toProcess = true;};
+    void stopProcess(){this->toProcess = false;};
+    bool getToProcess(){return this->toProcess;};
 
 
+public:
     Camera camera;
+
 private:
-
     bool toAcquire;
-
+    bool toProcess;
 
 
 

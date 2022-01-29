@@ -108,10 +108,10 @@ void GuiSecond::on_push_CreatModel_clicked()
     {
         QMessageBox::information(this, "Add New Model", "New Model Added");
     }
-    else if(ret == USER_E_NAME_INVAL){
+    else if(ret == USER_ERR_TRAIN_NAME_INVAL){
         QMessageBox::warning(this, "Add New Model", "Invalid Model Name");
     }
-    else if(ret == USER_E_NAME_EXISTS){
+    else if(ret == USER_ERR_TRAIN_NAME_EXISTS){
         QMessageBox::warning(this, "Add New Model", "Model Name already exists");
     }
 }

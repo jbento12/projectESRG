@@ -95,13 +95,13 @@ void User::addExerciseToNewModel(Exercise& exercise)
 int32_t User::addNewModel(const string name)
 {
     if(name == "")
-        return USER_E_NAME_INVAL;
+        return USER_ERR_TRAIN_NAME_INVAL;
 
     for(int32_t i = 0; i < userTrainingList.size(); i++)
     {
         if(userTrainingList[i].getName() == name)
         {
-            return USER_E_NAME_EXISTS;
+            return USER_ERR_TRAIN_NAME_EXISTS;
         }
     }
     newModel.setName(name);
@@ -114,7 +114,18 @@ void User::populateUserTrainingList()
 
 }
 
-
+int32_t User::setToPlayTraining(const string& name)
+{
+    for(int32_t i = 0; i < this->userTrainingList.size(); i++)  //search for the training based on name
+    {
+        if(userTrainingList[i].getName() == name)
+        {
+            this->toPlay = userTrainingList[i];
+            return 0;
+        }
+    }
+    return USER_ERR_TRAIN_NAME_INVAL;
+}
 
 // --------------------- Used to populate -------------------------------
 bool User::addUserToUserList(User& user)
