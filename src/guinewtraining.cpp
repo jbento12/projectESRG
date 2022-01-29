@@ -29,7 +29,7 @@ void GuiNewTraining::setUserRef(User* user)
 // -------------- Events ------------------------------------
 void GuiNewTraining::on_push_GoBack_clicked()
 {
-    on_GuiNewTraining_finished(NULL);
+    on_GuiNewTraining_finished(0);
 }
 
 void GuiNewTraining::on_GuiNewTraining_finished(int result)
@@ -41,7 +41,19 @@ void GuiNewTraining::on_push_Select_clicked()
 {
 
     //somehow get the training selected on the combo seltector
-
     this->hide();
     guiTrainingSession->show();
+}
+
+
+//List Training models
+void GuiNewTraining::fillComboBox() {
+    ui->comboBox_ChooseTrain->clear();
+
+    for(uint32_t i = 0; i < this->guiUser->userTrainingList.size(); i++)
+    {
+        ui->comboBox_ChooseTrain->addItem(QString::fromStdString(this->guiUser->userTrainingList[i].getName()));
+    }
+
+//                                          QVariant(Exercise::marketExerciseList[i].getId()));
 }

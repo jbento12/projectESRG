@@ -20,6 +20,7 @@ public:
     ~GuiNewTraining();
 
     void setUserRef(User* user);
+    void fillComboBox();
 
 private slots:
     void on_push_GoBack_clicked();

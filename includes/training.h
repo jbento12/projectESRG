@@ -19,10 +19,11 @@ public:
     string getName();
     void setName(const string& name);
 
+    vector<Exercise> exerciseList;
 private:
     string name;
     int32_t currentExerciseId;
-    vector<int32_t> exerciseId_list;
+
 };
 
 

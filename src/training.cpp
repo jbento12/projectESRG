@@ -6,15 +6,44 @@
 
 
 
+Training::Training()
+{
+
+}
+
+Training::~Training()
+{
+
+}
 
 
-bool insertExercise(const Exercise& exercise)
+bool Training::insertExercise(const Exercise& exercise)
 {
     return true;
 }
 
 
-Exercise removeExercise()
+Exercise Training::removeExercise()
 {
 
 }
+
+
+void Training::nextExercise()
+{
+
+
+}
+
+
+string Training::getName()
+{
+    return this->name;
+}
+
+
+void Training::setName(const string& name)
+{
+    this->name = name;
+}
+

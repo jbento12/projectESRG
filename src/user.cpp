@@ -15,7 +15,6 @@ User::User()
 User::~User()
 {
 
-
 }
 
 
@@ -82,14 +81,37 @@ bool User::checkLogin(const string& username, const string& pass, User*& user)
 
 
 
-void User::addExercise(Exercise& exercise)
+void User::addExerciseToNewModel(Exercise& exercise)
 {
-    for(int32_t i = 0; i < userExercisesList.size(); i++)
+    for(int32_t i = 0; i < newModel.exerciseList.size(); i++)
     {
-        if(exercise.getId() == userExercisesList[i].getId())
+        if(exercise.getId() == newModel.exerciseList[i].getId())
         return;
     }
-    this->userExercisesList.push_back(exercise);
+    this->newModel.exerciseList.push_back(exercise);
+}
+
+
+int32_t User::addNewModel(const string name)
+{
+    if(name == "")
+        return USER_E_NAME_INVAL;
+
+    for(int32_t i = 0; i < userTrainingList.size(); i++)
+    {
+        if(userTrainingList[i].getName() == name)
+        {
+            return USER_E_NAME_EXISTS;
+        }
+    }
+    newModel.setName(name);
+    userTrainingList.push_back(newModel);
+    return 0;
+}
+
+void User::populateUserTrainingList()
+{
+
 }
 
 

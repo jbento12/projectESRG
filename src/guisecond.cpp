@@ -47,6 +47,7 @@ void GuiSecond::on_push_NewTraining_clicked()
 {
     this->hide();
     guiNewTraining->setUserRef(guiUser);
+    guiNewTraining->fillComboBox();
     guiNewTraining->show();
 }
 
@@ -58,6 +59,9 @@ void GuiSecond::on_push_TrainHistory_clicked()
 }
 
 
+
+
+//---------------------------------------- New Training Model ------------------------------------
 void GuiSecond::fillComboBox() {
 
     for(uint32_t i = 0; i < Exercise::marketExerciseList.size(); i++)
@@ -65,7 +69,6 @@ void GuiSecond::fillComboBox() {
         ui->combo_MarketExer->addItem(QString::fromStdString(Exercise::marketExerciseList[i].getName()),
                                       QVariant(Exercise::marketExerciseList[i].getId()));
     }
-
 }
 
 
@@ -77,19 +80,47 @@ void GuiSecond::on_push_AddExercises_clicked()
 
     aux_exer = Exercise::getExerciseFromId(id);
 
-    this->guiUser->addExercise(aux_exer);
+    this->guiUser->addExerciseToNewModel(aux_exer);
     ui->listWidget_UserList->clear();
-    listUserExercises();
+    listNewModelExercises();
 }
 
-void GuiSecond::listUserExercises()
+
+void GuiSecond::listNewModelExercises()
 {
     int id = 0;
     id = ui->combo_MarketExer->itemData(ui->combo_MarketExer->currentIndex()).toInt();
 
-    for (int32_t i = 0; i < this->guiUser->userExercisesList.size(); i++)
+    for (int32_t i = 0; i < this->guiUser->newModel.exerciseList.size(); i++)
     {
-        QString thisLine = QString::fromStdString(this->guiUser->userExercisesList[i].getName());
+        QString thisLine = QString::fromStdString(this->guiUser->newModel.exerciseList[i].getName());
         ui->listWidget_UserList->addItem(thisLine);
     }
 }
+
+void GuiSecond::on_push_CreatModel_clicked()
+{
+    int32_t ret;
+    string trainingName = ui->lineEdit_NewTrainingName->text().toStdString();
+    ret = this->guiUser->addNewModel(trainingName);
+
+    if(ret == 0)
+    {
+        QMessageBox::information(this, "Add New Model", "New Model Added");
+    }
+    else if(ret == USER_E_NAME_INVAL){
+        QMessageBox::warning(this, "Add New Model", "Invalid Model Name");
+    }
+    else if(ret == USER_E_NAME_EXISTS){
+        QMessageBox::warning(this, "Add New Model", "Model Name already exists");
+    }
+}
+
+void GuiSecond::on_push_ResetNewModel_clicked()
+{
+    this->guiUser->newModel = Training();
+    ui->listWidget_UserList->clear();
+    ui->lineEdit_NewTrainingName->clear();
+}
+
+

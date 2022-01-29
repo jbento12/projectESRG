@@ -12,6 +12,11 @@
 #include "training.h"
 #include "exercise.h"
 
+
+#define USER_E_NAME_INVAL -1
+#define USER_E_NAME_EXISTS -2
+
+
 using namespace std;
 
 
@@ -36,10 +41,14 @@ public:
 
     static bool checkLogin(const string& username, const string& password, User*& user);
 
-    //list of User's "bought" exercise list
-    vector<Exercise> userExercisesList;
-    void addExercise(Exercise& exercise);
+    Training toPlay;
 
+    //list of exercise list
+    Training newModel;
+    vector<Training> userTrainingList;
+    int32_t addNewModel(const string);
+    void addExerciseToNewModel(Exercise& exercise);
+    void populateUserTrainingList();
     //bool checkLoginFromDB(const string& username, const string& pass);
 
 private:
@@ -49,6 +58,7 @@ private:
     float weight;
     float height;
     int32_t userId;
+
 
 
 //populate with Users
