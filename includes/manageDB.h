@@ -10,8 +10,8 @@
 #include "user.h"
 #include "exercise.h"
 
-#define MY_DATABASE_PATH_U "/home/luiscarlos/Documents/embebidos/sfm_sqlite.db"
-//#define MY_DATABASE_PATH_U "/etc/sfm_database/user_sqlite.db"
+//#define MY_DATABASE_PATH_U "/home/luiscarlos/Documents/embebidos/sfm_sqlite.db"
+#define MY_DATABASE_PATH_U "/etc/sfm_database/sfm_sqlite.db"
 
 
 using namespace std;

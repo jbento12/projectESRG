@@ -15,7 +15,7 @@ Camera::~Camera()
 
 bool Camera::open()
 {
-    apiID = cv::CAP_ANY;
+    apiID = cv::CAP_V4L2;
     deviceID = 0;
 
     return cap.open(deviceID, apiID);

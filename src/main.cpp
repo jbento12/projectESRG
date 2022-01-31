@@ -16,14 +16,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-//    Exercise::populateExerciseList();
-//    Exercise::printMarketExerciseList();
-
-//    User::populateUserList();
-
-
-
-//    User::printUserList();
 
      QApplication a(argc, argv);
      appInterface.init();
