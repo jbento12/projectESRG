@@ -4,10 +4,11 @@
 #include "user.h"
 #include <QApplication>
 #include <string>
+#include <QDebug>
 //#include <QQuickView>
 //#include <QGuiApplication>
 //#include <QQmlEngine>
-
+#include "macros.h"
 
 using namespace std;
 
@@ -16,17 +17,9 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 
-//    Exercise::populateExerciseList();
-//    Exercise::printMarketExerciseList();
-
-//    User::populateUserList();
-
-
-
-//    User::printUserList();
 
      QApplication a(argc, argv);
-     appInterface.init();
+//     appInterface.init();
      createThreads();
      gui w;
      w.show();

@@ -9,9 +9,15 @@
 #include <QString>
 #include "user.h"
 #include "exercise.h"
+#include "macros.h"
 
+
+#ifdef MY_ARCH_PC
 #define MY_DATABASE_PATH_U "/home/luiscarlos/Documents/embebidos/sfm_sqlite.db"
-//#define MY_DATABASE_PATH_U "/etc/sfm_database/user_sqlite.db"
+#else
+#define MY_DATABASE_PATH_U "/etc/sfm_database/sfm_sqlite.db"
+#endif
+
 
 
 using namespace std;
