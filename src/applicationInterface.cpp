@@ -9,6 +9,15 @@
 #include <time.h>
 #include <sched.h>
 #include <unistd.h>
+#include "macros.h"
+
+#ifdef MY_ARCH_PC
+#define MODEL_TXT "/home/luiscarlos/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
+#define MODEL_BIN "/home/luiscarlos/pose/mpi/pose_iter_160000.caffemodel"
+#else
+#define MODEL_TXT "/etc/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt"
+#define MODEL_BIN "/etc/pose/mpi/pose_iter_160000.caffemodel"
+#endif
 
 
 uint64_t increDebug = 0;
@@ -49,9 +58,28 @@ ApplicationInterface::~ApplicationInterface()
 
 void ApplicationInterface::init()
 {
-
+//    camera.cap.set ( CV_CAP_PROP_FRAME_WIDTH , 640) ;
+//    camera.cap.set ( CV_CAP_PROP_FRAME_HEIGHT , 480) ;
+//    camera.cap.set ( CV_CAP_PROP_BRIGHTNESS , 100) ;
+//    camera.cap.set ( CV_CAP_PROP_EXPOSURE , 100) ;
+//    camera.cap.set ( CV_CAP_PROP_CONTRAST , 100) ;
+//    camera.cap.set ( CV_CAP_PROP_SATURATION , 100) ;
 }
 
+
+void ApplicationInterface::startAcquire()
+{
+    this->toAcquire = true;
+    appInterface.camera.open();
+    pthread_cond_signal(&cond_acquireImage);    //tell thread to start aquire
+}
+
+
+void ApplicationInterface::stopAcquire()
+{
+    this->toAcquire = false;
+    appInterface.camera.release();
+}
 
 
 
@@ -99,8 +127,8 @@ void* thTrainingFunc(void* arg)
 void* thProcessImageFunc(void* arg)
 {
     cout << "thread - thProcessImageFunc\n";
-    String modelTxt = "/etc/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
-    String modelBin = "/etc/pose/mpi/pose_iter_160000.caffemodel";
+    String modelTxt = "/home/luiscarlos/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
+    String modelBin = "/home/luiscarlos/pose/mpi/pose_iter_160000.caffemodel";
     String imageFile = "single.jpg";
     String dataset = "MPI";
     int W_in = 368;
@@ -274,135 +302,5 @@ bool createThreads()
 }
 
 
-void ApplicationInterface::startAcquire()
-{
-    this->toAcquire = true;
-    appInterface.camera.open();
-    pthread_cond_signal(&cond_acquireImage);    //tell thread to start aquire
-}
-
-//pthread_mutex_lock(&mut_acquireImage);
-//for(dly = 0; dly < 10000000; dly++)
-//{
-//    pthread_cond_wait(&cond_acquireImage, &mut_acquireImage);
-//    increDebug++;
-//}
-// pthread_mutex_unlock(&mut_acquireImage);
-
-////        pthread_mutex_lock(&mut_acquireImage);
-//pthread_cond_wait(&cond_acquireImage, &mut_acquireImage);
-//qDebug() << "Ola do PROCESS" << increDebug << '\n';
-////        pthread_mutex_unlock(&mut_acquireImage);
 
 
-
-
-//time_aux.tv_sec = time(NULL) + 3;
-//time_aux.tv_nsec = 0;
-//pthread_cond_timedwait(&cond_acquireImage, &mut_acquireImage, &time_aux);   //wait 3 second
-
-//for(dly = 0; dly < 10000000; dly++)
-//{
-//    pthread_mutex_lock(&mut_acquireImage);
-//    increDebug++;
-//    pthread_mutex_unlock(&mut_acquireImage);
-//}
-//pthread_mutex_lock(&mut_acquireImage);
-//qDebug() << "Ola do ACQUIRE" << increDebug << '\n';
-//pthread_mutex_unlock(&mut_acquireImage);
-
-void ApplicationInterface::stopAcquire()
-{
-    this->toAcquire = false;
-    appInterface.camera.release();
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //float thresh = 0.1;
-        //int midx = 2, npairs = 20, nparts = 22;
-        //vector<Point> points(22);
-
-        ////time the imgage aquire
-        //struct timespec time_aux;
-
-
-//if(appInterface.getToAcquire())
-//{
-//    time_aux.tv_sec = time(NULL);
-//    time_aux.tv_nsec = 100000000;           //checks every 0.1 secons
-
-
-
-//    if(appInterface.camera.isOpen())
-//    {
-//      //pthread_mutex_lock(&mut_acquireImage);
-//        pthread_cond_timedwait(&cond_acquireImage, &mut_acquireImage, &time_aux);
-//        appInterface.camera.cap >> appInterface.camera.frame;   //take picture and store it
-//      //pthread_mutex_unlock(&mut_acquireImage);
-//    }
-
-//            pthread_mutex_lock(&mut_resultLand);
-//                int H = appInterface.camera.resultLandMarks.size[2];
-//                int W = appInterface.camera.resultLandMarks.size[3];
-//            pthread_mutex_unlock(&mut_resultLand);
-
-
-//            // Draw the position of the body parts in the Image
-//            for (int n=0; n<nparts; n++)
-//            {
-//                // Slice heatmap of corresponding body's part.
-//                pthread_mutex_lock(&mut_resultLand);
-//                Mat heatMap(H, W, CV_32F, appInterface.camera.resultLandMarks.ptr(0,n));
-//                pthread_mutex_unlock(&mut_resultLand);
-//                // 1 maximum per heatmap
-//                Point p(-1,-1),pm;
-//                double conf;
-//                minMaxLoc(heatMap, 0, &conf, 0, &pm);
-//                if (conf > thresh)
-//                    p = pm;
-//                points[n] = p;
-//            }
-
-//            // connect body parts and draw it !
-//            float SX = float(appInterface.camera.frame.cols) / W;
-//            float SY = float(appInterface.camera.frame.rows) / H;
-//            for (int n=0; n<npairs; n++)
-//            {
-//                // lookup 2 connected body/hand parts
-//                Point2f a = points[POSE_PAIRS[midx][n][0]];
-//                Point2f b = points[POSE_PAIRS[midx][n][1]];
-
-//                // we did not find enough confidence before
-//                if (a.x<=0 || a.y<=0 || b.x<=0 || b.y<=0)
-//                    continue;
-
-//                // scale to image size
-//                a.x*=SX; a.y*=SY;
-//                b.x*=SX; b.y*=SY;
-
-//                line(appInterface.camera.frame, a, b, Scalar(0,200,0), 2);
-//                circle(appInterface.camera.frame, a, 3, Scalar(0,0,200), -1);
-//                circle(appInterface.camera.frame, b, 3, Scalar(0,0,200), -1);
-//            }
-
-
-
-//   appInterface.startProcess();
-//   pthread_cond_signal(&cond_processImage);
-//}
-//else
-//{
-//    appInterface.stopProcess();
-//    pthread_cond_wait(&cond_acquireImage, &mut_acquireImage);
-//}
