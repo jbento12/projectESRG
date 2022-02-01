@@ -16,3 +16,5 @@ src/main.cpp.autosave
 daemons/.vscode/settings.json
 daemons/build/AquireImage
 daemons/.vscode/launch.json
+doc/html/
+doc/latex/

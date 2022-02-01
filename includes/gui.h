@@ -2,10 +2,11 @@
 #define GUI_H
 
 #include <QMainWindow>
-
-#include "guisecond.h"
-#include "user.h"
 #include <string>
+#include "user.h"
+#include "guisecond.h"
+
+
 
 
 using namespace std;
@@ -28,7 +29,13 @@ private slots:
 
 private:
     Ui::gui *ui;
-    GuiSecond* guiSecond;
+
     User* guiUser;
+public:
+    GuiSecond* guiSecond;
 };
+
+
+//gui* w_ptr;
+
 #endif // GUI_H

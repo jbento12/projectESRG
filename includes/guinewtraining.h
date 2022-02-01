@@ -2,7 +2,8 @@
 #define GUINEWTRAINING_H
 
 #include <QDialog>
-
+#include <QMessageBox>
+#include <QString>
 #include "guitrainingsession.h"
 #include "user.h"
 
@@ -20,6 +21,7 @@ public:
     ~GuiNewTraining();
 
     void setUserRef(User* user);
+    void fillComboBox();
 
 private slots:
     void on_push_GoBack_clicked();
@@ -33,8 +35,10 @@ signals:
 
 private:
     Ui::GuiNewTraining *ui;
-    GuiTrainingSession* guiTrainingSession;
+
     User* guiUser;
+public:
+    GuiTrainingSession* guiTrainingSession;
 };
 
 #endif // GUINEWTRAINING_H

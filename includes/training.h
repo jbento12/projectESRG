@@ -14,9 +14,15 @@ public:
 
     bool insertExercise(const Exercise& exercise);
     Exercise removeExercise();
+    void nextExercise();
 
+    string getName();
+    void setName(const string& name);
+
+    vector<Exercise> exerciseList;
 private:
-    vector<Exercise> exercise_list;
+    string name;
+    int32_t currentExerciseId;
 
 };
 

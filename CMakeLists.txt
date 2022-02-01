@@ -27,7 +27,7 @@ set(CMAKE_BUILD_TYPE Debug)
 #find_package(Qt5 COMPONENTS Widgets REQUIRED PATHS /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5 NO_DEFAULT_PATH)
 
 find_package(OpenCV REQUIRED)
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5 COMPONENTS Widgets Sql REQUIRED)
 
 
 
@@ -47,5 +47,5 @@ add_executable(${PROJECT_NAME} ${srcs} includes/gui.h
 					includes/guitrainingsession.h)
 
 #
-target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} Qt5::Widgets rt pthread)
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} Qt5::Widgets Qt5::Sql rt pthread)
 #target_link_libraries(${PROJECT_NAME} )

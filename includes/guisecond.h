@@ -3,11 +3,14 @@
 
 #include <QDialog>
 #include <QTimer>
+#include <QMessageBox>
 
 #include "guinewtraining.h"
 #include "guihistory.h"
 #include "user.h"
 #include "exercise.h"
+
+
 
 namespace Ui {
 class GuiSecond;
@@ -23,7 +26,7 @@ public:
 
     void setUserRef(User* user);
     void fillComboBox();
-    void listUserExercises();
+    void listNewModelExercises();
 
 private slots:
     void on_push_GoBack_clicked();
@@ -32,11 +35,17 @@ private slots:
     void on_GuiSecond_finished(int result);
     void on_push_AddExercises_clicked();
 
+    void on_push_CreatModel_clicked();
+
+    void on_push_ResetNewModel_clicked();
+
 private:
     Ui::GuiSecond *ui;
-    GuiNewTraining  *guiNewTraining;
+
     GuiHistory      *guiHistory;
     User* guiUser;
+public:
+    GuiNewTraining  *guiNewTraining;
 };
 
 #endif // GUISECOND_H

@@ -5,6 +5,7 @@
 
 #include <string>
 
+//gui* w_ptr;
 //temporario para o login
 
 //const string test_Username = "";

@@ -8,13 +8,21 @@
 #include <QThread>
 #include <QApplication>
 //#include <dos.h>
-#include<unistd.h>
+#include <unistd.h>
+#include <string>
 
 #include "camera.h"
 
+#include "manageDB.h"
+#include "user.h"
 
 
+extern bool createThreads();
 
+/**
+ * @brief 
+ * 
+ */
 class ApplicationInterface
 {
 public:
@@ -22,6 +30,10 @@ public:
     ~ApplicationInterface();
 
 
+    /**
+     * @brief 
+     * 
+     */
     void init();
 
     //threads
@@ -29,56 +41,41 @@ public:
     void thProcessImageFunc(void* arg);
     void thClassificationFunc(void* arg);
     void thTrainingFunc(void* arg);
+
     void thAcquireImageFunc(void* arg);
 
     bool createThreads();
 
-    static void* thManageDBFunc_wrapper(void* object)
-    {
-        reinterpret_cast<ApplicationInterface*>(object)->thManageDBFunc(NULL);
-        return 0;
-    }
-    static void* thProcessImageFunc_wrapper(void* object)
-    {
-        reinterpret_cast<ApplicationInterface*>(object)->thProcessImageFunc(NULL);
-        return 0;
-    }
-    static void* thClassificationFunc_wrapper(void* object)
-    {
-        reinterpret_cast<ApplicationInterface*>(object)->thClassificationFunc(NULL);
-        return 0;
-    }
-    static void* thTrainingFunc_wrapper(void* object)
-    {
-        reinterpret_cast<ApplicationInterface*>(object)->thTrainingFunc(NULL);
-        return 0;
-    }
-    static void* thAcquireImageFunc_wrapper(void* object)
-    {
-        reinterpret_cast<ApplicationInterface*>(object)->thAcquireImageFunc(NULL);
-        return 0;
-    }
+                        //    static void* thManageDBFunc_wrapper(void* object)
+                        //    {
+                        //        reinterpret_cast<ApplicationInterface*>(object)->thManageDBFunc(NULL);
+                        //        return 0;
+                        //    }
 
 
 
     void startAcquire();
     void stopAcquire();
+    bool getToAcquire(){return this->toAcquire;};
+    void startProcess(){this->toProcess = true;};
+    void stopProcess(){this->toProcess = false;};
+    bool getToProcess(){return this->toProcess;};
 
+
+public:
+    Camera camera;
 
 private:
-    pthread_t thManageDB;
-    pthread_t thProcessImage;
-    pthread_t thClassification;
-    pthread_t thTraining;
-    pthread_t thAcquireImage;
-
-
-    Camera camera;
     bool toAcquire;
+    bool toProcess;
+
+
 
 };
 
 
+
+extern ApplicationInterface appInterface;
 
 
 
