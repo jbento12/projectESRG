@@ -1,11 +1,10 @@
 #include "user.h"
 #include "poseClassification.h"
 
-
+#include <QString>
 
 uint32_t User::userIDcount = 0;
 vector<User> User::UserList;
-
 
 
 User::User()
@@ -15,7 +14,6 @@ User::User()
 
 User::~User()
 {
-
 
 }
 
@@ -57,9 +55,19 @@ string User::getUsername()
 
 bool User::checkLogin(const string& username, const string& pass, User*& user)
 {
+    QString user_aux1;
+    QString user_aux2;
+    QString pass_aux1;
+    QString pass_aux2;
+
+         user_aux1 = QString::fromStdString(username);
+         pass_aux1 = QString::fromStdString(pass);
 
     for(uint32_t i = 0; i < User::UserList.size(); i++)
     {
+        user_aux2 = QString::fromStdString(User::UserList[i].username);
+        pass_aux2 = QString::fromStdString(User::UserList[i].password);
+
         if(username == User::UserList[i].username && pass == User::UserList[i].password)
         {
             user = &User::UserList[i];  //passar a referencia do User
@@ -72,21 +80,52 @@ bool User::checkLogin(const string& username, const string& pass, User*& user)
 
 
 
-void User::addExercise(Exercise& exercise)
+
+void User::addExerciseToNewModel(Exercise& exercise)
 {
-    for(int32_t i = 0; i < userExercisesList.size(); i++)
+    for(int32_t i = 0; i < newModel.exerciseList.size(); i++)
     {
-        if(exercise.getId() == userExercisesList[i].getId())
+        if(exercise.getId() == newModel.exerciseList[i].getId())
         return;
     }
-    this->userExercisesList.push_back(exercise);
+    this->newModel.exerciseList.push_back(exercise);
 }
 
 
+int32_t User::addNewModel(const string name)
+{
+    if(name == "")
+        return USER_ERR_TRAIN_NAME_INVAL;
 
+    for(int32_t i = 0; i < userTrainingList.size(); i++)
+    {
+        if(userTrainingList[i].getName() == name)
+        {
+            return USER_ERR_TRAIN_NAME_EXISTS;
+        }
+    }
+    newModel.setName(name);
+    userTrainingList.push_back(newModel);
+    return 0;
+}
 
+void User::populateUserTrainingList()
+{
 
+}
 
+int32_t User::setToPlayTraining(const string& name)
+{
+    for(int32_t i = 0; i < this->userTrainingList.size(); i++)  //search for the training based on name
+    {
+        if(userTrainingList[i].getName() == name)
+        {
+            this->toPlay = userTrainingList[i];
+            return 0;
+        }
+    }
+    return USER_ERR_TRAIN_NAME_INVAL;
+}
 
 // --------------------- Used to populate -------------------------------
 bool User::addUserToUserList(User& user)
@@ -97,27 +136,12 @@ bool User::addUserToUserList(User& user)
     return true;
 }
 
-
-void User::populateUserList()
+bool User::addUserToUserListFromDatabase(const User& user)
 {
-    //----------- Just a dummy populate (for now (testing)) -----------
-    User aux;
-
-    aux.setName("Luca");
-    aux.setUsername("");
-    aux.password = "";
-    addUserToUserList(aux);
-
-    aux.setName("Valete");
-    aux.setUsername("val");
-    aux.password = "vare";
-    addUserToUserList(aux);
-
-    aux.setName("vanessa");
-    aux.setUsername("van");
-    aux.password = "ola";
-    addUserToUserList(aux);
+    User::UserList.push_back(user);
+    return true;
 }
+
 
 void User::printUserList()
 {

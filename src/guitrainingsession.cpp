@@ -22,10 +22,10 @@ GuiTrainingSession::~GuiTrainingSession()
 void GuiTrainingSession::TimerSlot()
 {
     Mat src;
-    if (appInterface.camera.frameDisplay.empty())
+    if (appInterface.camera.frame.empty())
         return;
 
-    src = appInterface.camera.frameDisplay;
+    src = appInterface.camera.frame;
     ui->label_ImageDisplay->setPixmap(QPixmap::fromImage(QImage(src.data, src.cols, src.rows, src.step, QImage::Format_RGB888)).scaled(500,500,Qt::KeepAspectRatio));
 }
 
@@ -49,7 +49,7 @@ void GuiTrainingSession::on_GuiTrainingSession_finished(int result)
 void GuiTrainingSession::on_push_GoBack_clicked()
 {
 
-    on_GuiTrainingSession_finished(NULL);
+    on_GuiTrainingSession_finished(0);
 }
 
 void GuiTrainingSession::on_GuiTrainingSession_accepted()

@@ -13,11 +13,16 @@
 
 #include "camera.h"
 
+#include "manageDB.h"
+#include "user.h"
 
 
 extern bool createThreads();
 
-
+/**
+ * @brief 
+ * 
+ */
 class ApplicationInterface
 {
 public:
@@ -25,6 +30,10 @@ public:
     ~ApplicationInterface();
 
 
+    /**
+     * @brief 
+     * 
+     */
     void init();
 
     //threads
@@ -32,6 +41,7 @@ public:
     void thProcessImageFunc(void* arg);
     void thClassificationFunc(void* arg);
     void thTrainingFunc(void* arg);
+
     void thAcquireImageFunc(void* arg);
 
     bool createThreads();
@@ -47,12 +57,18 @@ public:
     void startAcquire();
     void stopAcquire();
     bool getToAcquire(){return this->toAcquire;};
+    void startProcess(){this->toProcess = true;};
+    void stopProcess(){this->toProcess = false;};
+    bool getToProcess(){return this->toProcess;};
 
 
+public:
     Camera camera;
-private:
 
+private:
     bool toAcquire;
+    bool toProcess;
+
 
 
 };

@@ -2,10 +2,11 @@
 #define GUI_H
 
 #include <QMainWindow>
-
-#include "guisecond.h"
-#include "user.h"
 #include <string>
+#include "user.h"
+#include "guisecond.h"
+
+
 
 
 using namespace std;
