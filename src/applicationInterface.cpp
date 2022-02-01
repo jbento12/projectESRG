@@ -124,6 +124,12 @@ void* thTrainingFunc(void* arg)
     cout << "thread - thTrainingFunc\n";
 }
 
+/**
+ * @brief thread responssible to process the most recent frame sample
+ * 
+ * @param arg 
+ * @return void* 
+ */
 void* thProcessImageFunc(void* arg)
 {
     cout << "thread - thProcessImageFunc\n";
@@ -166,6 +172,13 @@ void* thProcessImageFunc(void* arg)
     }
 }
 
+
+/**
+ * @brief thread responsible to capture a frame every sample period
+ * 
+ * @param arg N/D
+ * @return void* 
+ */
 void* thAcquireImageFunc(void* arg)
 {   
 
