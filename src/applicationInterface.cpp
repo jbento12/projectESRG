@@ -181,10 +181,19 @@ void* ApplicationInterface::thProcessImageFunc(void *arg)
     String modelBin = MODEL_BIN;
     String imageFile = "single.jpg";
     String dataset = "MPI";
-    int W_in = 368;
-    int H_in = 368;
+//    int W_in = 368;
+//    int H_in = 368;
+#ifdef MY_ARCH_PC
+    int W_in = 128;
+    int H_in = 72;
+#else
+    int W_in = 100;
+    int H_in = 75;
+#endif
+
     float thresh = 0.1;
-    float scale = 0.003922;
+//    float scale = 0.003922;
+    float scale = 0.001;
     Net net = readNet(modelBin, modelTxt);
 //    Net net = cv::dnn::readNetFromONNX("/home/luiscarlos/pose/poseEstimationModel.onnx");
 
@@ -209,9 +218,9 @@ void* ApplicationInterface::thProcessImageFunc(void *arg)
             pthread_mutex_lock(&mut_resultLand);
             appInterface.camera.resultLandMarks = landMarks.clone();
             pthread_mutex_unlock(&mut_resultLand);
-        }
-        else
-        {
+//        }
+//        else
+//        {
             pthread_cond_wait(&cond_processImage, &mut_processImage);
         }
     }
@@ -225,7 +234,6 @@ void* ApplicationInterface::thProcessImageFunc(void *arg)
  */
 void* ApplicationInterface::thAcquireImageFunc(void *arg)
 {
-
     float thresh = 0.1;
     int midx = 1, npairs = 14, nparts = 16;
     vector<Point> points(22);

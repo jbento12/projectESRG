@@ -952,10 +952,10 @@
   <widget class="QLabel" name="label_ImageDisplay">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>180</y>
-     <width>621</width>
-     <height>401</height>
+     <x>130</x>
+     <y>200</y>
+     <width>640</width>
+     <height>360</height>
     </rect>
    </property>
    <property name="text">
