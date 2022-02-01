@@ -13,7 +13,13 @@
 using namespace std;
 
 
-
+/**
+ * @brief 
+ * 
+ * @param argc  
+ * @param argv string that tells the platform in which the program is running
+ * @return int 
+ */
 int main(int argc, char *argv[])
 {
 

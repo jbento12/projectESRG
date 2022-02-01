@@ -19,6 +19,10 @@
 
 extern bool createThreads();
 
+/**
+ * @brief 
+ * 
+ */
 class ApplicationInterface
 {
 public:
@@ -26,6 +30,10 @@ public:
     ~ApplicationInterface();
 
 
+    /**
+     * @brief 
+     * 
+     */
     void init();
 
     //threads
@@ -33,6 +41,7 @@ public:
     void thProcessImageFunc(void* arg);
     void thClassificationFunc(void* arg);
     void thTrainingFunc(void* arg);
+
     void thAcquireImageFunc(void* arg);
 
     bool createThreads();
