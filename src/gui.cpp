@@ -28,7 +28,9 @@ gui::~gui()
     delete ui;
 }
 
-
+/**
+ * @brief gui::on_pushButton_clicked
+ */
 void gui::on_pushButton_clicked()
 {
     string user;

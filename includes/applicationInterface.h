@@ -7,8 +7,10 @@
 #include <QEventLoop>
 #include <QThread>
 #include <QApplication>
-//#include <dos.h>
 #include <unistd.h>
+#include <mqueue.h>   /* mq_* functions */
+#include <sys/stat.h>
+#include <stdlib.h>
 #include <string>
 
 #include "camera.h"
@@ -17,7 +19,10 @@
 #include "user.h"
 
 
-extern bool createThreads();
+#define MSGQOBJ_NAME    "/daemonMessage"
+#define MAX_MSG_LEN     10000
+#define MSG_PRIO 1
+
 
 /**
  * @brief 
@@ -37,21 +42,19 @@ public:
     void init();
 
     //threads
-    void thManageDBFunc(void* arg);
-    void thProcessImageFunc(void* arg);
-    void thClassificationFunc(void* arg);
-    void thTrainingFunc(void* arg);
+    pthread_t thManageDB;
+    pthread_t thProcessImage;
+    pthread_t thClassification;
+    pthread_t thTraining;
+    pthread_t thAcquireImage;
 
-    void thAcquireImageFunc(void* arg);
+    static void* thManageDBFunc(void* arg);
+    static void* thProcessImageFunc(void* arg);
+    static void* thClassificationFunc(void* arg);
+    static void* thTrainingFunc(void* arg);
+    static void* thAcquireImageFunc(void* arg);
 
     bool createThreads();
-
-                        //    static void* thManageDBFunc_wrapper(void* object)
-                        //    {
-                        //        reinterpret_cast<ApplicationInterface*>(object)->thManageDBFunc(NULL);
-                        //        return 0;
-                        //    }
-
 
 
     void startAcquire();
@@ -62,6 +65,10 @@ public:
     bool getToProcess(){return this->toProcess;};
 
 
+
+
+
+
 public:
     Camera camera;
 
@@ -70,13 +77,12 @@ private:
     bool toProcess;
 
 
-
 };
 
 
 
-extern ApplicationInterface appInterface;
 
+extern ApplicationInterface appInterface;
 
 
 #endif //APPLICATION_INTERFACE_H
