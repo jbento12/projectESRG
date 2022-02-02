@@ -1,6 +1,6 @@
 
 #include "camera.h"
-
+#include <QDebug>
 /**
  * @brief Construct a new Camera:: Camera object
  * 
@@ -9,6 +9,13 @@ Camera::Camera()
 {
     apiID = cv::CAP_ANY;
     deviceID = 0;
+
+      qDebug() << cap.get(CAP_PROP_FRAME_WIDTH);
+      qDebug() <<   cap.get(cv::CAP_PROP_FRAME_HEIGHT);
+            cap.set(CAP_PROP_FRAME_WIDTH, 600);
+            cap.set(cv::CAP_PROP_FRAME_HEIGHT, 400);
+            qDebug() << cap.get(CAP_PROP_FRAME_WIDTH);
+            qDebug() <<  cap.get(cv::CAP_PROP_FRAME_HEIGHT);
 }
 
 /**

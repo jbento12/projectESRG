@@ -24,6 +24,14 @@
 #define MSG_PRIO 1
 
 
+extern pthread_mutex_t mut_acquireImage;
+extern pthread_mutex_t mut_processImage;
+extern pthread_mutex_t mut_resultLand;
+extern pthread_mutex_t mut_frame;
+
+extern pthread_cond_t cond_acquireImage;
+extern pthread_cond_t cond_processImage;
+
 /**
  * @brief 
  * 
@@ -34,6 +42,7 @@ public:
     ApplicationInterface();
     ~ApplicationInterface();
 
+    pid_t pidDaemon;
 
     /**
      * @brief 
