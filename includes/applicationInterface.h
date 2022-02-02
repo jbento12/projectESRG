@@ -76,7 +76,7 @@ public:
 
 
 
-
+    string heartRate;
 
 public:
     Camera camera;

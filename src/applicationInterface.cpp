@@ -140,48 +140,73 @@ void* ApplicationInterface::thClassificationFunc(void *arg)
 void* ApplicationInterface::thTrainingFunc(void *arg)
 {
     cout << "thread - thTrainingFunc\n";
+    int fd;
+    char buff[512];
+    int cnt_buff_size = 0;
 
-    mqd_t msgq_id;
-    int mq_recv_ret;
-    char buffer[MAX_MSG_LEN];
-    unsigned int m_prio = MSG_PRIO;
-    unsigned int msg_num = 0;
-
-    /* opening the queue using default attributes  --  mq_open() */
-    msgq_id = mq_open(MSGQOBJ_NAME, O_RDWR | O_CREAT , S_IRWXU | S_IRWXG, NULL);
-    if (msgq_id == (mqd_t)-1) {
-        perror("In mq_open()");
-        exit(1);
+    fd = open("/dev/nrf", O_RDWR);
+    if(fd < 0) {
+             cout << "Cannot open device nrf...\n";
+      return 0;
     }
 
-    // --------------- sends PID to Daemon --------------------
-//     sprintf(buffer, "MainPID %d", getpid());
-//     mq_send(msgq_id, buffer, strlen(buffer) + 1, m_prio);
-
-     //--------------- get Daemon PID and store it ------------
-     mq_recv_ret = mq_receive(msgq_id, buffer, MAX_MSG_LEN, NULL);
-             if (mq_recv_ret == -1) {
-                 perror("In mq_receive()");
-             }
-
-         if(sscanf(buffer, "%*[^0123456789]%d", &appInterface.pidDaemon) != 1)
-             perror("In obtaining main process PID()");
-
-     printf("O MAIN_PID = %d __ DAEMON PID = %d", getpid(), appInterface.pidDaemon);
-
-
-     //task infinite loop
-    while(1)
+    while(true)
     {
-        mq_recv_ret = mq_receive(msgq_id, buffer, MAX_MSG_LEN, NULL);
-        if (mq_recv_ret == -1) {
-            perror("In mq_receive()");
-            exit(1);
-        }
+        read(fd, buff, cnt_buff_size);
+        appInterface.heartRate = String(buff);
 
-        cout << buffer << " - " << mq_recv_ret << endl;
-
+        usleep(500000);    //check button every half second
     }
+
+
+
+
+
+
+
+
+    //    mqd_t msgq_id;
+//    int mq_recv_ret;
+//    char buffer[MAX_MSG_LEN];
+//    unsigned int m_prio = MSG_PRIO;
+//    unsigned int msg_num = 0;
+
+//    /* opening the queue using default attributes  --  mq_open() */
+//    msgq_id = mq_open(MSGQOBJ_NAME, O_RDWR | O_CREAT , S_IRWXU | S_IRWXG, NULL);
+//    if (msgq_id == (mqd_t)-1) {
+//        perror("In mq_open()");
+//        exit(1);
+//    }
+
+//    // --------------- sends PID to Daemon --------------------
+////     sprintf(buffer, "MainPID %d", getpid());
+////     mq_send(msgq_id, buffer, strlen(buffer) + 1, m_prio);
+
+//     //--------------- get Daemon PID and store it ------------
+//     mq_recv_ret = mq_receive(msgq_id, buffer, MAX_MSG_LEN, NULL);
+//             if (mq_recv_ret == -1) {
+//                 perror("In mq_receive()");
+//             }
+
+//         if(sscanf(buffer, "%*[^0123456789]%d", &appInterface.pidDaemon) != 1)
+//             perror("In obtaining main process PID()");
+
+//     printf("O MAIN_PID = %d __ DAEMON PID = %d", getpid(), appInterface.pidDaemon);
+
+
+//     //task infinite loop
+//    while(1)
+//    {
+//        mq_recv_ret = mq_receive(msgq_id, buffer, MAX_MSG_LEN, NULL);
+//        if (mq_recv_ret == -1) {
+//            perror("In mq_receive()");
+//            exit(1);
+//        }
+
+//        cout << buffer << " - " << mq_recv_ret << endl;
+
+//    }
+
 }
 
 /**

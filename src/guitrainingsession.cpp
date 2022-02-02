@@ -29,6 +29,7 @@ void GuiTrainingSession::TimerSlot()
     pthread_mutex_lock(&mut_frame);
     ui->label_ImageDisplay->setPixmap(QPixmap::fromImage(QImage(src.data, src.cols, src.rows, src.step, QImage::Format_RGB888)).scaled(500,500,Qt::KeepAspectRatio));
     pthread_mutex_unlock(&mut_frame);
+    ui->label_heartRate->setText(QString::fromStdString(appInterface.heartRate));
 }
 
 //---------------------- Functions ---------------------------
