@@ -71,7 +71,7 @@ ssize_t button_device_read(struct file *pfile, char __user *p_buff,size_t len, l
 	  //write to user
 	  len = 1;
 	  if( copy_to_user(p_buff, &gpio_state, len) > 0) {
-	    pr_err("ERROR: Not all the bytes have been copied to user\n");
+	    pr_err("ERROR: could not \n");
 	  }
 	
 	

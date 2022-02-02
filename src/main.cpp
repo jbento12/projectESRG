@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     char buttonValue = 0;
     int count = 0;
 
-    QApplication a(argc, argv);
+     QApplication a(argc, argv);
      appInterface.init();
      appInterface.createThreads();
      gui w;

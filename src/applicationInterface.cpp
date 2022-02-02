@@ -140,32 +140,10 @@ void* ApplicationInterface::thClassificationFunc(void *arg)
 void* ApplicationInterface::thTrainingFunc(void *arg)
 {
     cout << "thread - thTrainingFunc\n";
-    int fd;
-    char buff[512];
-    int cnt_buff_size = 0;
-
-    fd = open("/dev/nrf", O_RDWR);
-    if(fd < 0) {
-             cout << "Cannot open device nrf...\n";
-      return 0;
-    }
-
-    while(true)
-    {
-        read(fd, buff, cnt_buff_size);
-        appInterface.heartRate = String(buff);
-
-        usleep(500000);    //check button every half second
-    }
 
 
 
-
-
-
-
-
-    //    mqd_t msgq_id;
+//    mqd_t msgq_id;
 //    int mq_recv_ret;
 //    char buffer[MAX_MSG_LEN];
 //    unsigned int m_prio = MSG_PRIO;
