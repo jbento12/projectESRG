@@ -42,6 +42,7 @@ public:
     ApplicationInterface();
     ~ApplicationInterface();
 
+    pid_t pidDaemon;
 
     /**
      * @brief 

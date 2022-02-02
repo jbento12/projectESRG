@@ -154,6 +154,23 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
         exit(1);
     }
 
+    // --------------- sends PID to Daemon --------------------
+//     sprintf(buffer, "MainPID %d", getpid());
+//     mq_send(msgq_id, buffer, strlen(buffer) + 1, m_prio);
+
+     //--------------- get Daemon PID and store it ------------
+     mq_recv_ret = mq_receive(msgq_id, buffer, MAX_MSG_LEN, NULL);
+             if (mq_recv_ret == -1) {
+                 perror("In mq_receive()");
+             }
+
+         if(sscanf(buffer, "%*[^0123456789]%d", &appInterface.pidDaemon) != 1)
+             perror("In obtaining main process PID()");
+
+     printf("O MAIN_PID = %d __ DAEMON PID = %d", getpid(), appInterface.pidDaemon);
+
+
+     //task infinite loop
     while(1)
     {
         mq_recv_ret = mq_receive(msgq_id, buffer, MAX_MSG_LEN, NULL);
@@ -163,7 +180,6 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
         }
 
         cout << buffer << " - " << mq_recv_ret << endl;
-//        printf("%s - %d", buffer, mq_recv_ret);
 
     }
 }
@@ -218,9 +234,9 @@ void* ApplicationInterface::thProcessImageFunc(void *arg)
             pthread_mutex_lock(&mut_resultLand);
             appInterface.camera.resultLandMarks = landMarks.clone();
             pthread_mutex_unlock(&mut_resultLand);
-//        }
-//        else
-//        {
+        }
+        else
+        {
             pthread_cond_wait(&cond_processImage, &mut_processImage);
         }
     }
@@ -350,21 +366,23 @@ bool ApplicationInterface::createThreads()
     ret = pthread_attr_setschedparam(&tattr, &param);
 
     pthread_create(&thAcquireImage, &tattr, thAcquireImageFunc, NULL);
-    //pthread_detach(thAcquireImage);
+    pthread_detach(thAcquireImage);
 
     /* set the priority; others are unchanged */
     param.sched_priority = 75;
     /* setting the new scheduling param */
     ret = pthread_attr_setschedparam(&tattr, &param);
     pthread_create(&thProcessImage, &tattr, thProcessImageFunc, NULL);
-    //pthread_detach(thProcessImage);
+    pthread_detach(thProcessImage);
 
     pthread_create(&thManageDB, NULL, thManageDBFunc, NULL);
-    // pthread_detach(thManageDB);
+     pthread_detach(thManageDB);
     pthread_create(&thClassification, NULL, thClassificationFunc, NULL);
-    //    pthread_detach(thClassification);
+        pthread_detach(thClassification);
     pthread_create(&thTraining, NULL, thTrainingFunc, NULL);
-    //    pthread_detach(thTraining);
+        pthread_detach(thTraining);
+
+
 
     return true;
 }
