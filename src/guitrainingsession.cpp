@@ -32,7 +32,8 @@ void GuiTrainingSession::TimerSlot()
                    src.rows, src.step, QImage::Format_RGB888)).scaled(500,500,Qt::KeepAspectRatio));
     pthread_mutex_unlock(&mut_frame);
 
-//    ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
+    ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
+    ui->label_Stamp->setText(QString::number(appInterface.heartSensor.getHeartStamp()));
 }
 
 //---------------------- Functions ---------------------------
