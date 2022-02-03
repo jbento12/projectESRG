@@ -1,7 +1,8 @@
+
 #include <linux/types.h>
 
-#define BCM2835_PERI_BASE       0x7E000000
-#define GPIO_BASE (BCM2835_PERI_BASE + 0x204000) // SPI0 controller
+#define BCM2711_PERI_BASE       0xfE000000
+#define GPIO_BASE (BCM2711_PERI_BASE + 0x200000) // GPIO controller
 
 
 struct GpioRegisters
@@ -11,7 +12,10 @@ struct GpioRegisters
 	uint32_t GPSET[2];
 	uint32_t Reserved2;
 	uint32_t GPCLR[2];
+	uint32_t Reserved3;
+	uint32_t GPLEV[2];
 };
 
 void SetGPIOFunction(struct GpioRegisters *s_pGpioRegisters, int GPIO, int functionCode);
 void SetGPIOOutputValue(struct GpioRegisters *s_pGpioRegisters, int GPIO, bool outputValue);
+bool GetGPIOInputValue(struct GpioRegisters *s_pGpioRegisters, int GPIO);

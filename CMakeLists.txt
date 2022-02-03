@@ -27,6 +27,9 @@ set(CMAKE_BUILD_TYPE Debug)
 #find_package(Qt5 COMPONENTS Widgets REQUIRED PATHS /home/luiscarlos/buildroot/buildroot-2021.02.5/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5 NO_DEFAULT_PATH)
 
 find_package(OpenCV REQUIRED)
+if(CMAKE_SYSTEM_PROCESSOR MATCHES “BCM28|armv7”)
+add_compile_options(-march=armv8-a+crc -mcpu=cortex-a53 -mfpu=neon-fp-armv8)
+endif()
 find_package(Qt5 COMPONENTS Widgets Sql REQUIRED)
 
 

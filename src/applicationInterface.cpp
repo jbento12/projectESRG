@@ -22,11 +22,11 @@ uint64_t increDebug = 0;
 
 using namespace std;
 
-pthread_t thManageDB;
-pthread_t thProcessImage;
-pthread_t thClassification;
-pthread_t thTraining;
-pthread_t thAcquireImage;
+//pthread_t thManageDB;
+//pthread_t thProcessImage;
+//pthread_t thClassification;
+//pthread_t thTraining;
+//pthread_t thAcquireImage;
 
 pthread_mutex_t mut_acquireImage;
 pthread_mutex_t mut_processImage;
@@ -79,7 +79,8 @@ void ApplicationInterface::init()
 void ApplicationInterface::startAcquire()
 {
     this->toAcquire = true;
-    appInterface.camera.open();
+    this->camera.open();
+    this->heartSensor.startHeart();
     pthread_cond_signal(&cond_acquireImage); //tell thread to start aquire
 }
 
@@ -90,7 +91,8 @@ void ApplicationInterface::startAcquire()
 void ApplicationInterface::stopAcquire()
 {
     this->toAcquire = false;
-    appInterface.camera.release();
+    this->heartSensor.stopHeart();
+    this->camera.release();
 }
 
 
@@ -100,7 +102,7 @@ void ApplicationInterface::stopAcquire()
  * @param arg 
  * @return void* 
  */
-void *thManageDBFunc(void *arg)
+void* ApplicationInterface::thManageDBFunc(void *arg)
 {
     cout << "thread - thManageDBFunc\n";
 
@@ -126,7 +128,7 @@ void *thManageDBFunc(void *arg)
  * @param arg 
  * @return void* 
  */
-void *thClassificationFunc(void *arg)
+void* ApplicationInterface::thClassificationFunc(void *arg)
 {
     cout << "thread - thClassificationFunc\n";
 }
@@ -137,9 +139,26 @@ void *thClassificationFunc(void *arg)
  * @param arg 
  * @return void* 
  */
-void *thTrainingFunc(void *arg)
+void* ApplicationInterface::thTrainingFunc(void *arg)
 {
     cout << "thread - thTrainingFunc\n";
+
+
+#ifndef MY_ARCH_PC      //run only on board
+    appInterface.heartSensor.open();
+    appInterface.heartSensor.readFromMsg();     //read daemon pid
+
+    while(1)
+    {
+        appInterface.heartSensor.readFromMsg();
+        cout << "FROM DAEMAN "  << appInterface.heartSensor.getPidDaemon()   <<
+                     "VALOR "   << appInterface.heartSensor.getHeartRate()   <<
+                    "STAMP "    << appInterface.heartSensor.getHeartStamp()  << endl;
+        sleep(1);
+    }
+#endif
+
+
 }
 
 /**
@@ -148,18 +167,29 @@ void *thTrainingFunc(void *arg)
  * @param arg 
  * @return void* 
  */
-void *thProcessImageFunc(void *arg)
+void* ApplicationInterface::thProcessImageFunc(void *arg)
 {
     cout << "thread - thProcessImageFunc\n";
-    String modelTxt = "/home/luiscarlos/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt";
-    String modelBin = "/home/luiscarlos/pose/mpi/pose_iter_160000.caffemodel";
+    String modelTxt = MODEL_TXT;
+    String modelBin = MODEL_BIN;
     String imageFile = "single.jpg";
     String dataset = "MPI";
-    int W_in = 368;
-    int H_in = 368;
+//    int W_in = 368;
+//    int H_in = 368;
+#ifdef MY_ARCH_PC
+    int W_in = 128;
+    int H_in = 72;
+#else
+    int W_in = 100;
+    int H_in = 75;
+#endif
+
     float thresh = 0.1;
-    float scale = 0.003922;
+//    float scale = 0.003922;
+    float scale = 0.001;
     Net net = readNet(modelBin, modelTxt);
+//    Net net = cv::dnn::readNetFromONNX("/home/luiscarlos/pose/poseEstimationModel.onnx");
+
     Mat frameCopy;
     Mat landMarks;
 
@@ -169,7 +199,7 @@ void *thProcessImageFunc(void *arg)
     {
         if (appInterface.getToProcess())
         {
-            pthread_mutex_trylock(&mut_frame); //save image to start processing    most recent frame
+            pthread_mutex_lock(&mut_frame); //save image to start processing    most recent frame
             frameCopy = appInterface.camera.frame.clone();
             pthread_mutex_unlock(&mut_frame);
 
@@ -191,15 +221,14 @@ void *thProcessImageFunc(void *arg)
 
 /**
  * @brief thread responsible to capture a frame every sample period
- * 
+ *
  * @param arg N/D
- * @return void* 
+ * @return void*
  */
-void *thAcquireImageFunc(void *arg)
+void* ApplicationInterface::thAcquireImageFunc(void *arg)
 {
-
     float thresh = 0.1;
-    int midx = 2, npairs = 20, nparts = 22;
+    int midx = 1, npairs = 14, nparts = 16;
     vector<Point> points(22);
 
     //time the imgage aquire
@@ -216,21 +245,22 @@ void *thAcquireImageFunc(void *arg)
             {
                 pthread_mutex_lock(&mut_frame);
                 appInterface.camera.cap >> appInterface.camera.frame; //take picture and store it
+                cv::cvtColor(appInterface.camera.frame, appInterface.camera.frame,   cv::COLOR_BGR2RGB );    //change to RGB
                 pthread_mutex_unlock(&mut_frame);
             }
 
             pthread_mutex_lock(&mut_resultLand);
             int H = appInterface.camera.resultLandMarks.size[2];
             int W = appInterface.camera.resultLandMarks.size[3];
-            pthread_mutex_unlock(&mut_resultLand);
+//            pthread_mutex_unlock(&mut_resultLand);
 
             // Draw the position of the body parts in the Image
             for (int n = 0; n < nparts; n++)
             {
                 // Slice heatmap of corresponding body's part.
-                pthread_mutex_lock(&mut_resultLand);
+//                pthread_mutex_lock(&mut_resultLand);
                 Mat heatMap(H, W, CV_32F, appInterface.camera.resultLandMarks.ptr(0, n));
-                pthread_mutex_unlock(&mut_resultLand);
+//                pthread_mutex_unlock(&mut_resultLand);
                 // 1 maximum per heatmap
                 Point p(-1, -1), pm;
                 double conf;
@@ -239,6 +269,7 @@ void *thAcquireImageFunc(void *arg)
                     p = pm;
                 points[n] = p;
             }
+            pthread_mutex_unlock(&mut_resultLand);
 
             // connect body parts and draw it !
             float SX = float(appInterface.camera.frame.cols) / W;
@@ -259,10 +290,11 @@ void *thAcquireImageFunc(void *arg)
                 b.x *= SX;
                 b.y *= SY;
 
-                line(appInterface.camera.frame, a, b, Scalar(0, 200, 0), 2);
-                circle(appInterface.camera.frame, a, 3, Scalar(0, 0, 200), -1);
-                circle(appInterface.camera.frame, b, 3, Scalar(0, 0, 200), -1);
+                line(appInterface.camera.frame, a, b, Scalar(0, 200, 0), 3);
+                circle(appInterface.camera.frame, a, 6, Scalar(0, 0, 200), -1);
+                circle(appInterface.camera.frame, b, 6, Scalar(0, 0, 200), -1);
             }
+
 
             appInterface.startProcess();
             pthread_cond_signal(&cond_processImage);
@@ -283,7 +315,7 @@ void *thAcquireImageFunc(void *arg)
  * @return true 
  * @return false 
  */
-bool createThreads()
+bool ApplicationInterface::createThreads()
 {
     pthread_attr_t tattr;
     pthread_t tid;
@@ -321,11 +353,13 @@ bool createThreads()
     //pthread_detach(thProcessImage);
 
     pthread_create(&thManageDB, NULL, thManageDBFunc, NULL);
-    // pthread_detach(thManageDB);
+     //pthread_detach(thManageDB);
     pthread_create(&thClassification, NULL, thClassificationFunc, NULL);
-    //    pthread_detach(thClassification);
+       // pthread_detach(thClassification);
     pthread_create(&thTraining, NULL, thTrainingFunc, NULL);
-    //    pthread_detach(thTraining);
+       // pthread_detach(thTraining);
+
+
 
     return true;
 }

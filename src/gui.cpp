@@ -20,6 +20,7 @@ gui::gui(QWidget *parent)
     this->guiUser = NULL;
     guiSecond = new GuiSecond(this);
     QObject::connect(guiSecond, &GuiSecond::finished, this, &gui::show);
+//    QObject::connect(push_quitApp, &QPushButton::clicked, this, &QCoreApplication::quit, Qt::QueuedConnection);
 }
 
 gui::~gui()
@@ -28,7 +29,9 @@ gui::~gui()
     delete ui;
 }
 
-
+/**
+ * @brief gui::on_pushButton_clicked
+ */
 void gui::on_pushButton_clicked()
 {
     string user;
@@ -59,4 +62,7 @@ void gui::on_pushButton_clicked()
 }
 
 
-
+void gui::on_push_quitApp_clicked()
+{
+    QCoreApplication::quit();
+}
