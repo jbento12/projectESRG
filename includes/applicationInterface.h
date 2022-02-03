@@ -17,11 +17,8 @@
 
 #include "manageDB.h"
 #include "user.h"
+#include "heartdaemon.h"
 
-
-#define MSGQOBJ_NAME    "/daemonMessage"
-#define MAX_MSG_LEN     10000
-#define MSG_PRIO 1
 
 
 extern pthread_mutex_t mut_acquireImage;
@@ -42,7 +39,7 @@ public:
     ApplicationInterface();
     ~ApplicationInterface();
 
-    pid_t pidDaemon;
+
 
     /**
      * @brief 
@@ -73,13 +70,9 @@ public:
     void stopProcess(){this->toProcess = false;};
     bool getToProcess(){return this->toProcess;};
 
-
-
-
-
-
 public:
     Camera camera;
+    HeartDaemon heartSensor;
 
 private:
     bool toAcquire;

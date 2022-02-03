@@ -30,16 +30,16 @@ int main(int argc, char *argv[])
     char buttonValue = 0;
     int count = 0;
 
-    QApplication a(argc, argv);
+     QApplication a(argc, argv);
      appInterface.init();
      appInterface.createThreads();
      gui w;
      w.show();
 
-    #ifdef MY_ARCH_PC
 
+#ifdef MY_ARCH_PC
      return a.exec();
-    #else
+#else
      while(true)       //if it is running on the board it never exits this loop
      {
             cout << "Opening button driver\n";
@@ -66,13 +66,13 @@ int main(int argc, char *argv[])
      }
     #endif
 
-//    appInterface.createThreads();
+    //appInterface.createThreads();
 
-//    pthread_join(appInterface.thManageDB,       NULL);
-//    pthread_join(appInterface.thProcessImage,   NULL);
-//    pthread_join(appInterface.thClassification, NULL);
-//    pthread_join(appInterface.thTraining,       NULL);
-//    pthread_join(appInterface.thAcquireImage,   NULL);
+    pthread_join(appInterface.thManageDB,       NULL);
+    pthread_join(appInterface.thProcessImage,   NULL);
+    pthread_join(appInterface.thClassification, NULL);
+    pthread_join(appInterface.thTraining,       NULL);
+    pthread_join(appInterface.thAcquireImage,   NULL);
     return gui_ret;
 }
 
