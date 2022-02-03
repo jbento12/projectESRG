@@ -29,10 +29,12 @@ public:
     bool close();
     int readFromMsg();
 
-    uint32_t getHeartRate(void);
+    int32_t getHeartRate(void);
+    int32_t getHeartStamp(void);
     void startHeart();
     void stopHeart();
 
+    pid_t getPidDaemon(){return this->pidDaemon;};
 
 private:
     pid_t pidDaemon;
@@ -42,7 +44,8 @@ private:
     unsigned int m_prio;
     unsigned int msg_num = 0;
 
-    uint32_t heartRate;
+    int32_t heartRate;
+    int32_t heartStamp;
 };
 
 #endif // HEARTDAEMON_H

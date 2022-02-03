@@ -31,8 +31,10 @@ bool HeartDaemon::close()
 
 int HeartDaemon::readFromMsg()
 {
-    char str[MAX_MSG_LEN];
+    char str[100];
+    char str2[100];
     int num;
+    int num2;
      //--------------- get get message ------------
      mq_recv_ret = mq_receive(msgq_id, str, MAX_MSG_LEN, NULL);
      if (mq_recv_ret == -1) {
@@ -41,14 +43,16 @@ int HeartDaemon::readFromMsg()
      }
 
      // --------------- Scan message ---------------
-     sscanf(str, "%s %d", str, &num);
-     if(strcmp(MSG_PID_STR, str))       //verify if it is the PID
+     sscanf(str, "%s %d %d", str2, &num, &num2);
+     cout << str << endl;
+     if(!strcmp(MSG_PID_STR, str2))       //verify if it is the PID
      {
          pidDaemon = num;
      }
-     else if(strcmp(MSG_HEART_RATE_STR, str))   //verify if it is the PID
+     else if(!strcmp(MSG_HEART_RATE_STR, str2))   //verify if it is the PID
         {
             heartRate = num;
+            heartStamp = num2;
         }
         else
          {
@@ -61,11 +65,15 @@ int HeartDaemon::readFromMsg()
 
 
 
-uint32_t HeartDaemon::getHeartRate(void)
+int32_t HeartDaemon::getHeartRate(void)
 {
     return this->heartRate;
 }
 
+int32_t HeartDaemon::getHeartStamp(void)
+{
+    return this->heartStamp;
+}
 
 void HeartDaemon::startHeart()
 {

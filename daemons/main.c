@@ -151,6 +151,7 @@ void DaemonProc(pid_t pid)
 	close(STDERR_FILENO); // close standard error file descriptor
 }
 
+
 void ShareID(void)
 {
 

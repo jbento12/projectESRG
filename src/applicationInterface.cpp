@@ -142,8 +142,22 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
     cout << "thread - thTrainingFunc\n";
 
 
+#ifndef MY_ARCH_PC
+    appInterface.heartSensor.open();
+    appInterface.heartSensor.readFromMsg();     //read daemon pid
+    cout << "O deakjfenjfnerov = " << appInterface.heartSensor.getPidDaemon();
+    appInterface.heartSensor.startHeart();
+    while(1)
+    {
+        appInterface.heartSensor.readFromMsg();
+        cout << "FROM DAEMAN" << appInterface.heartSensor.getPidDaemon() <<
+                    "VALOR" << appInterface.heartSensor.getHeartRate() <<
+                    "STAMP" << appInterface.heartSensor.getHeartStamp() << endl;
+        sleep(1);
+    }
+#endif
 
-//    mqd_t msgq_id;
+            //    mqd_t msgq_id;
 //    int mq_recv_ret;
 //    char buffer[MAX_MSG_LEN];
 //    unsigned int m_prio = MSG_PRIO;
@@ -369,21 +383,21 @@ bool ApplicationInterface::createThreads()
     ret = pthread_attr_setschedparam(&tattr, &param);
 
     pthread_create(&thAcquireImage, &tattr, thAcquireImageFunc, NULL);
-    pthread_detach(thAcquireImage);
+    //pthread_detach(thAcquireImage);
 
     /* set the priority; others are unchanged */
     param.sched_priority = 75;
     /* setting the new scheduling param */
     ret = pthread_attr_setschedparam(&tattr, &param);
     pthread_create(&thProcessImage, &tattr, thProcessImageFunc, NULL);
-    pthread_detach(thProcessImage);
+    //pthread_detach(thProcessImage);
 
     pthread_create(&thManageDB, NULL, thManageDBFunc, NULL);
-     pthread_detach(thManageDB);
+     //pthread_detach(thManageDB);
     pthread_create(&thClassification, NULL, thClassificationFunc, NULL);
-        pthread_detach(thClassification);
+       // pthread_detach(thClassification);
     pthread_create(&thTraining, NULL, thTrainingFunc, NULL);
-        pthread_detach(thTraining);
+       // pthread_detach(thTraining);
 
 
 

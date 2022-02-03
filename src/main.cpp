@@ -30,49 +30,49 @@ int main(int argc, char *argv[])
     char buttonValue = 0;
     int count = 0;
 
-     QApplication a(argc, argv);
-     appInterface.init();
-     appInterface.createThreads();
-     gui w;
-     w.show();
+     //QApplication a(argc, argv);
+     //appInterface.init();
+     //appInterface.createThreads();
+     //gui w;
+     //w.show();
 
-    #ifdef MY_ARCH_PC
 
-     return a.exec();
-    #else
-     while(true)       //if it is running on the board it never exits this loop
-     {
-            cout << "Opening button driver\n";
-            buttonFd = open(BUTTON_NAME, O_RDWR);
-            if(buttonFd < 0) {
-                     cout << "Cannot open device file...\n";
-              return 0;
-            }
-            cout << "Button driver opened\n";
+//#ifdef MY_ARCH_PC
+//     return a.exec();
+//#else
+//     while(true)       //if it is running on the board it never exits this loop
+//     {
+//            cout << "Opening button driver\n";
+//            buttonFd = open(BUTTON_NAME, O_RDWR);
+//            if(buttonFd < 0) {
+//                     cout << "Cannot open device file...\n";
+//              return 0;
+//            }
+//            cout << "Button driver opened\n";
 
-                while(true)
-                {
-                     read(buttonFd, &buttonValue, count);
-                     if(buttonValue == 1)
-                     {
-                         cout << "Init button pushed ...\n";
-                        break;
-                     }
-                     usleep(500000);    //check button every half second
-                }
-            close(buttonFd);
+//                while(true)
+//                {
+//                     read(buttonFd, &buttonValue, count);
+//                     if(buttonValue == 1)
+//                     {
+//                         cout << "Init button pushed ...\n";
+//                        break;
+//                     }
+//                     usleep(500000);    //check button every half second
+//                }
+//            close(buttonFd);
 
-          gui_ret = a.exec();
-     }
-    #endif
+//          gui_ret = a.exec();
+//     }
+//    #endif
 
-//    appInterface.createThreads();
+    appInterface.createThreads();
 
-//    pthread_join(appInterface.thManageDB,       NULL);
-//    pthread_join(appInterface.thProcessImage,   NULL);
-//    pthread_join(appInterface.thClassification, NULL);
-//    pthread_join(appInterface.thTraining,       NULL);
-//    pthread_join(appInterface.thAcquireImage,   NULL);
+    pthread_join(appInterface.thManageDB,       NULL);
+    pthread_join(appInterface.thProcessImage,   NULL);
+    pthread_join(appInterface.thClassification, NULL);
+    pthread_join(appInterface.thTraining,       NULL);
+    pthread_join(appInterface.thAcquireImage,   NULL);
     return gui_ret;
 }
 
