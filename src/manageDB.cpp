@@ -179,3 +179,13 @@ void ManageDB::populateExerciseList()
     database.close();
 }
 
+
+void ManageDB::manageDBaddQuery(QString query)
+{
+
+
+
+}
+
+
+

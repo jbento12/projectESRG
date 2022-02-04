@@ -107,27 +107,19 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
     cout << "thread - thManageDBFunc\n";
     ManageDB manageDatabase;
 
-
-//    if (!manageDatabase.database.open())
-//    {
-//        qDebug("cant open DATABASE");
-//    }
-
-    //manageDatabase.populateUserList();
-    //User::printUserList();
-
     manageDatabase.populateExerciseList();
     Exercise::printMarketExerciseList();
 
 
-//    //task infinite loop
-//    while(1)
-//    {
+    //task infinite loop
+    while(1)
+    {
 
 
 
 
-//    }
+
+    }
 
 
 }

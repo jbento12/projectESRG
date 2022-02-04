@@ -92,8 +92,10 @@ void User::addExerciseToNewModel(Exercise& exercise)
 }
 
 
-int32_t User::addNewModel(const string name)
+int32_t User::addNewModel(const string name,  int32_t& userId, QString& exerciseList)
 {
+    QString list_aux;
+
     if(name == "")
         return USER_ERR_TRAIN_NAME_INVAL;
 
@@ -104,8 +106,20 @@ int32_t User::addNewModel(const string name)
             return USER_ERR_TRAIN_NAME_EXISTS;
         }
     }
+
     newModel.setName(name);
     userTrainingList.push_back(newModel);
+
+    userId = this->userId;  //pass userId to isert it in the database
+    //put every exerciseID of the new training model into a comma spareted string
+    for(int i = 0; i < newModel.exerciseList.size(); i++)
+    {
+        int exerId = newModel.exerciseList[i].getId();
+        list_aux.push_back(QString::number(exerId));
+        list_aux.push_back(',');
+    }
+    exerciseList = list_aux;
+
     return 0;
 }
 

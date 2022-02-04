@@ -10,6 +10,8 @@
 #include "user.h"
 #include "exercise.h"
 #include "macros.h"
+#include <queue>          // std::queue
+
 
 #ifdef MY_ARCH_PC
 #define MY_DATABASE_PATH_U "/home/luiscarlos/Documents/embebidos/sfm_sqlite.db"
@@ -44,8 +46,10 @@ public:
     void populateExerciseList();
 
 
+    static void manageDBaddQuery(QString query);
+    queue<QString> queryQueue;
 
-
+public:
     QSqlDatabase database;
     QSqlQuery *query;
 private:
