@@ -8,7 +8,7 @@
 #include <iostream>
 
 uint32_t ManageDB::countCon = 0;
-
+queue<QString> ManageDB::queryQueue;
 
 ManageDB::ManageDB()
 {
@@ -140,9 +140,12 @@ void ManageDB::getUserTrainingList(User &user)
             int32_t exerId;
             string substr;
             getline( ss, substr, ',' );
-            exerId = stoi(substr);
-            exer_aux = Exercise::getExerciseFromId(exerId);
-            train_aux.exerciseList.push_back(exer_aux);
+            if(substr != "")
+             {
+                exerId = stoi(substr);
+                exer_aux = Exercise::getExerciseFromId(exerId);
+                train_aux.exerciseList.push_back(exer_aux);
+            }
         }
 
         user.userTrainingList.push_back(train_aux);
@@ -182,10 +185,19 @@ void ManageDB::populateExerciseList()
 
 void ManageDB::manageDBaddQuery(QString query)
 {
-
-
-
+    ManageDB::queryQueue.push(query);
 }
 
+QString ManageDB::manageDBremoveQuery()
+{
+    QString tmp;
+    tmp =  ManageDB::queryQueue.front();
+    ManageDB::queryQueue.pop();
+    return tmp;
+}
 
+bool ManageDB::manageDBqueryQueueIsEmpty()
+{
+    return ManageDB::queryQueue.empty();
+}
 

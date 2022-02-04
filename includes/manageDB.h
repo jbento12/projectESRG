@@ -47,7 +47,10 @@ public:
 
 
     static void manageDBaddQuery(QString query);
-    queue<QString> queryQueue;
+    static QString manageDBremoveQuery();
+    static bool manageDBqueryQueueIsEmpty();
+
+    static queue<QString> queryQueue;
 
 public:
     QSqlDatabase database;

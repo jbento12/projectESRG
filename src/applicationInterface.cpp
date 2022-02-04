@@ -36,6 +36,10 @@ pthread_mutex_t mut_frame;
 pthread_cond_t cond_acquireImage;
 pthread_cond_t cond_processImage;
 
+
+pthread_mutex_t mut_manageDB;
+pthread_cond_t cond_manageDB;
+
 ApplicationInterface appInterface;
 
 /**
@@ -106,7 +110,7 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
 {
     cout << "thread - thManageDBFunc\n";
     ManageDB manageDatabase;
-
+    QString qryString;
     manageDatabase.populateExerciseList();
     Exercise::printMarketExerciseList();
 
@@ -114,11 +118,18 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
     //task infinite loop
     while(1)
     {
-
-
-
-
-
+        if(!ManageDB::manageDBqueryQueueIsEmpty())
+        {
+            manageDatabase.database.open();
+            qryString = ManageDB::manageDBremoveQuery();
+            manageDatabase.query->prepare(qryString);
+            manageDatabase.query->exec();
+           manageDatabase.database.close();
+        }
+        else
+        {
+           pthread_cond_wait(&cond_manageDB, &mut_manageDB);
+        }
     }
 
 

@@ -1,5 +1,6 @@
 #include "guisecond.h"
 #include "ui_guisecond.h"
+#include "applicationInterface.h"
 
 GuiSecond::GuiSecond(QWidget *parent) :
     QDialog(parent),
@@ -120,6 +121,7 @@ void GuiSecond::on_push_CreatModel_clicked()
         query += "')";
 
         ManageDB::manageDBaddQuery(query);
+        pthread_cond_signal(&cond_manageDB);
         QMessageBox::information(this, "Add New Model", "New Model Added");
     }
     else if(ret == USER_ERR_TRAIN_NAME_INVAL){

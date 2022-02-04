@@ -29,6 +29,10 @@ extern pthread_mutex_t mut_frame;
 extern pthread_cond_t cond_acquireImage;
 extern pthread_cond_t cond_processImage;
 
+
+extern pthread_mutex_t mut_manageDB;
+extern pthread_cond_t cond_manageDB;
+
 /**
  * @brief 
  * 
