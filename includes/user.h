@@ -47,6 +47,7 @@ public:
     //list of exercise list
     Training newModel;
     vector<Training> userTrainingList;
+
     int32_t addNewModel(const string, int32_t& userId, QString& exerciseList);
     void addExerciseToNewModel(Exercise& exercise);
     void populateUserTrainingList();

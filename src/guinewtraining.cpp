@@ -42,7 +42,6 @@ void GuiNewTraining::on_push_Select_clicked()
     int32_t ret;
     QString train_name;
 
-    train_name = ui->comboBox_ChooseTrain->itemData(ui->comboBox_ChooseTrain->currentIndex()).toString();
     train_name = ui->comboBox_ChooseTrain->currentText();
 
     if(train_name == "")
@@ -52,10 +51,9 @@ void GuiNewTraining::on_push_Select_clicked()
     }
 
     this->guiUser->setToPlayTraining(train_name.toStdString());
-
+    guiTrainingSession->setUserRef(guiUser);
     this->hide();
     guiTrainingSession->show();
-
 }
 
 

@@ -18,6 +18,7 @@ GuiSecond::GuiSecond(QWidget *parent) :
 
 GuiSecond::~GuiSecond()
 {
+    delete guiHistory;
     delete guiNewTraining;
     delete ui;
 }

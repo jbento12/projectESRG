@@ -17,12 +17,15 @@ public:
     void nextExercise();
 
     string getName();
+    void getName(string& name);
+
     void setName(const string& name);
 
     vector<Exercise> exerciseList;
-private:
+    int32_t currentExercise;
     string name;
-    int32_t currentExerciseId;
+private:
+
 
 };
 

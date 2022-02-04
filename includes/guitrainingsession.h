@@ -33,11 +33,13 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_push_goNext_clicked();
+
 signals:
     void signal_GuiTrainingSession_finished();
 
 private:
-
+    QString trainingName;
     User* guiUser;
 public:
     Ui::GuiTrainingSession *ui;

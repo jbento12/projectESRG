@@ -16,6 +16,7 @@ GuiTrainingSession::GuiTrainingSession(QWidget *parent) :
 GuiTrainingSession::~GuiTrainingSession()
 {
     delete ui;
+    delete timer;
 }
 
 
@@ -66,6 +67,16 @@ void GuiTrainingSession::on_GuiTrainingSession_accepted()
 
 void GuiTrainingSession::on_pushButton_clicked()
 {
+   string aux;
+   aux = this->guiUser->toPlay.getName();
+    trainingName = QString::fromStdString(aux);
+    ui->label_TraningName->setText(trainingName);
     appInterface.startAcquire();
+
     timer->start(100); // camera timer
+}
+
+void GuiTrainingSession::on_push_goNext_clicked()
+{
+
 }
