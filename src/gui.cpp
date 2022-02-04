@@ -5,11 +5,7 @@
 
 #include <string>
 
-//gui* w_ptr;
-//temporario para o login
 
-//const string test_Username = "";
-//const string test_Password = "";
 
 gui::gui(QWidget *parent)
     : QMainWindow(parent)
@@ -37,18 +33,19 @@ void gui::on_pushButton_clicked()
     string user;
     string pass;
     string user_first_name = "Unknown";
-
+    ManageDB auxDB;
 
     user = ui->line_user->text().toStdString();   //get text from UI
     pass = ui->line_pass->text().toStdString();
 
-    if(User::checkLogin(user, pass, this->guiUser))
+    if(auxDB.checkLogin(user, pass, appInterface.currentUser))
     {
-        if(!guiUser)
-            return;
 
+        auxDB.getUserTrainingList(appInterface.currentUser);
+        guiUser = &appInterface.currentUser;
         QString salute = "Boas meu puto " + QString::fromStdString(this->guiUser->getName());
         QMessageBox::information(this, "Login", salute);
+
 
         //pass control to the next window
         this->hide();

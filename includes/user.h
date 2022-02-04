@@ -38,6 +38,7 @@ public:
 
     string getName();
     string getUsername();
+    int32_t getId(){return this->userId;};
 
     static bool checkLogin(const string& username, const string& password, User*& user);
 

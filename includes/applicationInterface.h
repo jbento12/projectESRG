@@ -74,6 +74,7 @@ public:
     Camera camera;
     HeartDaemon heartSensor;
 
+    User currentUser;
 private:
     bool toAcquire;
     bool toProcess;
