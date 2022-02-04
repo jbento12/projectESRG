@@ -4,6 +4,7 @@
 #include <QDialog>
 
 #include "user.h"
+#include "manageDB.h"
 
 
 namespace Ui {

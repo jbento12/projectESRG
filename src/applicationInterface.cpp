@@ -105,21 +105,31 @@ void ApplicationInterface::stopAcquire()
 void* ApplicationInterface::thManageDBFunc(void *arg)
 {
     cout << "thread - thManageDBFunc\n";
-
     ManageDB manageDatabase;
-    manageDatabase.database = QSqlDatabase::addDatabase("QSQLITE");
-    manageDatabase.database.setDatabaseName(MY_DATABASE_PATH_U);
 
-    if (!manageDatabase.database.open())
-    {
-        qDebug("cant open DATABASE");
-    }
 
-    manageDatabase.populateUserList();
-    User::printUserList();
+//    if (!manageDatabase.database.open())
+//    {
+//        qDebug("cant open DATABASE");
+//    }
+
+    //manageDatabase.populateUserList();
+    //User::printUserList();
 
     manageDatabase.populateExerciseList();
     Exercise::printMarketExerciseList();
+
+
+//    //task infinite loop
+//    while(1)
+//    {
+
+
+
+
+//    }
+
+
 }
 
 /**
@@ -131,6 +141,9 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
 void* ApplicationInterface::thClassificationFunc(void *arg)
 {
     cout << "thread - thClassificationFunc\n";
+
+
+pthread_exit(NULL);
 }
 
 /**
@@ -158,7 +171,7 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
     }
 #endif
 
-
+pthread_exit(NULL);
 }
 
 /**
@@ -217,6 +230,8 @@ void* ApplicationInterface::thProcessImageFunc(void *arg)
             pthread_cond_wait(&cond_processImage, &mut_processImage);
         }
     }
+
+pthread_exit(NULL);
 }
 
 /**
@@ -307,6 +322,8 @@ void* ApplicationInterface::thAcquireImageFunc(void *arg)
             pthread_cond_wait(&cond_acquireImage, &mut_acquireImage);
         }
     }
+
+pthread_exit(NULL);
 }
 
 /**

@@ -5,7 +5,8 @@
 #include <string>
 #include "user.h"
 #include "guisecond.h"
-
+#include "manageDB.h"
+#include "applicationInterface.h"
 
 
 
