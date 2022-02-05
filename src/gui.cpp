@@ -1,4 +1,14 @@
-﻿#include "gui.h"
+﻿/**
+ * @file gui.cpp
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+#include "gui.h"
 #include "ui_gui.h"
 #include <QMessageBox>
 

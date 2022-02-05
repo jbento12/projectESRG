@@ -1,4 +1,13 @@
-#ifndef MANAGE_DB_H__
+/**
+ * @file manageDB.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #define MANAGE_DB_H__
 
 

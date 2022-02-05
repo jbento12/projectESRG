@@ -1,4 +1,13 @@
-#ifndef MY_MACROS_H
+/**
+ * @file macros.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #define MY_MACROS_H
 
 #if defined(__x86_64__)

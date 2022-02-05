@@ -1,4 +1,13 @@
-#ifndef HEARTDAEMON_H
+/**
+ * @file heartdaemon.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #define HEARTDAEMON_H
 
 #include <unistd.h>
@@ -8,7 +17,7 @@
 #include <string>
 #include <signal.h>
 #include <string.h>
-#include <iostream>
+
 
 #define MSGQOBJ_NAME    "/daemonMessage"
 #define MAX_MSG_LEN     10000
