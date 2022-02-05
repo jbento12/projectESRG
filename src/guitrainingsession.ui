@@ -481,7 +481,7 @@
     <string>Current playing:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_currExer">
    <property name="geometry">
     <rect>
      <x>340</x>

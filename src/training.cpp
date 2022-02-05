@@ -26,14 +26,17 @@ bool Training::insertExercise(const Exercise& exercise)
 
 Exercise Training::removeExercise()
 {
-    currentExercise++;
+
 }
 
 
-void Training::nextExercise()
+int32_t Training::nextExercise()
 {
+    if(currentExercise >= this->exerciseList.size())
+        return -1;
 
-
+    currentExercise++;
+    return currentExercise;
 }
 
 

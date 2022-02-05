@@ -22,11 +22,6 @@ uint64_t increDebug = 0;
 
 using namespace std;
 
-//pthread_t thManageDB;
-//pthread_t thProcessImage;
-//pthread_t thClassification;
-//pthread_t thTraining;
-//pthread_t thAcquireImage;
 
 pthread_mutex_t mut_acquireImage;
 pthread_mutex_t mut_processImage;
@@ -132,7 +127,6 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
         }
     }
 
-
 }
 
 /**
@@ -172,6 +166,8 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
                     "STAMP "    << appInterface.heartSensor.getHeartStamp()  << endl;
         sleep(1);
     }
+#else
+
 #endif
 
 pthread_exit(NULL);

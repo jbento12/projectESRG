@@ -40,6 +40,7 @@ signals:
 
 private:
     QString trainingName;
+    QString exerciseName;
     User* guiUser;
 public:
     Ui::GuiTrainingSession *ui;

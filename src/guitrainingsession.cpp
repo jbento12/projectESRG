@@ -35,6 +35,7 @@ void GuiTrainingSession::TimerSlot()
 
     ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
     ui->label_Stamp->setText(QString::number(appInterface.heartSensor.getHeartStamp()));
+//    ui->label_currExer->setText(exerciseName);
 }
 
 //---------------------- Functions ---------------------------
@@ -67,16 +68,32 @@ void GuiTrainingSession::on_GuiTrainingSession_accepted()
 
 void GuiTrainingSession::on_pushButton_clicked()
 {
-   string aux;
-   aux = this->guiUser->toPlay.getName();
+    string aux;
+    int32_t curr_aux;
+
+   //---------- set name of the training --------------
+    aux = this->guiUser->toPlay.getName();
     trainingName = QString::fromStdString(aux);
     ui->label_TraningName->setText(trainingName);
-    appInterface.startAcquire();
 
+    //---------- set first exercise -------------------
+    curr_aux = this->guiUser->toPlay.getCurrExer();
+    aux = this->guiUser->toPlay.exerciseList[curr_aux].getName();
+    exerciseName = QString::fromStdString(aux);
+    ui->label_currExer->setText(exerciseName);
+
+    //---------- start camera acquire -----------------
+    appInterface.startAcquire();
     timer->start(100); // camera timer
 }
 
 void GuiTrainingSession::on_push_goNext_clicked()
 {
+    string aux;
+    int32_t aux_curr = this->guiUser->toPlay.nextExercise();
+
+    aux = this->guiUser->toPlay.exerciseList[aux_curr].getName();
+    if(aux_curr >= 0)
+        exerciseName = QString::fromStdString(aux);
 
 }

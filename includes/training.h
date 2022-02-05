@@ -14,17 +14,22 @@ public:
 
     bool insertExercise(const Exercise& exercise);
     Exercise removeExercise();
-    void nextExercise();
+    int32_t nextExercise();
 
     string getName();
     void getName(string& name);
-
     void setName(const string& name);
 
+    int32_t getCurrExer(){return this->currentExercise;};
+
+public:
     vector<Exercise> exerciseList;
+
+private:
     int32_t currentExercise;
     string name;
-private:
+
+    //---- for history saving -------
 
 
 };
