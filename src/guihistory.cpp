@@ -3,6 +3,11 @@
 #include "manageDB.h"
 #include "applicationInterface.h"
 
+/**
+ * @brief GuiHistory::GuiHistory
+ * Costructor created automatically by Qt
+ * @param parent
+ */
 GuiHistory::GuiHistory(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GuiHistory)
@@ -10,6 +15,10 @@ GuiHistory::GuiHistory(QWidget *parent) :
     ui->setupUi(this);
 }
 
+/**
+ * @brief GuiHistory::~GuiHistory
+ * Default Destructor
+ */
 GuiHistory::~GuiHistory()
 {
     delete ui;
@@ -17,22 +26,39 @@ GuiHistory::~GuiHistory()
 
 
 //---------------------- Functions ---------------------------
+/**
+ * @brief GuiHistory::setUserRef
+ * Sets the "pointer reference" to the logged in user
+ * @param user
+ */
 void GuiHistory::setUserRef(User* user)
 {
   guiUser = user;
 }
 
-
+/**
+ * @brief GuiHistory::on_push_GoBack_clicked
+ * Called when User presses "Go Back" button in the UI
+ */
 void GuiHistory::on_push_GoBack_clicked()
 {
     this->on_GuiHistory_finished(0);
 }
 
+/**
+ * @brief GuiHistory::on_GuiHistory_finished
+ * Called from GuiHistory::on_push_GoBack_clicked()
+ * @param result
+ */
 void GuiHistory::on_GuiHistory_finished(int result)
 {
     this->close();
 }
 
+/**
+ * @brief GuiHistory::on_push_history_clicked
+ * Responsible for showing the training history of the current logged in User
+ */
 void GuiHistory::on_push_history_clicked()
 {
     ManageDB aux_database;
