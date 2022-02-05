@@ -35,7 +35,7 @@ void GuiTrainingSession::TimerSlot()
 
     ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
     ui->label_Stamp->setText(QString::number(appInterface.heartSensor.getHeartStamp()));
-//    ui->label_currExer->setText(exerciseName);
+    ui->label_currExer->setText(exerciseName);
 }
 
 //---------------------- Functions ---------------------------
@@ -92,8 +92,13 @@ void GuiTrainingSession::on_push_goNext_clicked()
     string aux;
     int32_t aux_curr = this->guiUser->toPlay.nextExercise();
 
-    aux = this->guiUser->toPlay.exerciseList[aux_curr].getName();
-    if(aux_curr >= 0)
-        exerciseName = QString::fromStdString(aux);
 
+    if(aux_curr >= 0)
+    {
+        aux = this->guiUser->toPlay.exerciseList[aux_curr].getName();
+        exerciseName = QString::fromStdString(aux);
+    }
+    else {
+        QMessageBox::warning(this, "End of training", "There are no more exercises in this model");
+    }
 }

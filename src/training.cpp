@@ -35,8 +35,7 @@ int32_t Training::nextExercise()
     if(currentExercise >= this->exerciseList.size())
         return -1;
 
-    currentExercise++;
-    return currentExercise;
+    return currentExercise++;
 }
 
 
