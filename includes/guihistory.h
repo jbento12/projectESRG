@@ -26,6 +26,8 @@ private slots:
 
     void on_GuiHistory_finished(int result);
 
+    void on_push_history_clicked();
+
 private:
     Ui::GuiHistory *ui;
     User* guiUser;

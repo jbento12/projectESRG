@@ -21,6 +21,7 @@ ManageDB::ManageDB()
     database.setDatabaseName(MY_DATABASE_PATH_U);
 
     query = new QSqlQuery(database);
+    model = new QSqlQueryModel();
 }
 
 ManageDB::ManageDB(const string& name)
@@ -32,6 +33,7 @@ ManageDB::ManageDB(const string& name)
 ManageDB::~ManageDB()
 {
     delete(query);
+    delete(model);
 }
 
 
@@ -150,6 +152,22 @@ void ManageDB::getUserTrainingList(User &user)
 
         user.userTrainingList.push_back(train_aux);
     }
+
+    database.close();
+}
+
+
+
+void ManageDB::getUserTrainingHistory(User &user, QSqlQueryModel* model)
+{
+    if(!database.isOpen())
+        database.open();
+
+    query->prepare("SELECT * FROM training_histoty WHERE userId=?");
+    query->bindValue(0, user.getId());
+    query->exec();
+
+    model->setQuery(*query);
 
     database.close();
 }

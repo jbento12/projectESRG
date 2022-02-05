@@ -119,7 +119,7 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
             qryString = ManageDB::manageDBremoveQuery();
             manageDatabase.query->prepare(qryString);
             manageDatabase.query->exec();
-           manageDatabase.database.close();
+            manageDatabase.database.close();
         }
         else
         {

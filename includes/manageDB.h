@@ -45,6 +45,9 @@ public:
     //----- To Exercise table --------------
     void populateExerciseList();
 
+    //------ To training_History -----------
+    void getUserTrainingHistory(User &user, QSqlQueryModel* model);
+
 
     static void manageDBaddQuery(QString query);
     static QString manageDBremoveQuery();
@@ -55,6 +58,7 @@ public:
 public:
     QSqlDatabase database;
     QSqlQuery *query;
+    QSqlQueryModel* model;
 private:
 
     static uint32_t countCon;
