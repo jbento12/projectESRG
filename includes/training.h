@@ -22,6 +22,9 @@ public:
 
     int32_t getCurrExer(){return this->currentExercise;};
 
+    void HeartRateCalculation(int32_t heartRate);
+    void avgScoreCalculation(int32_t score);
+
 public:
     vector<Exercise> exerciseList;
 
@@ -29,8 +32,12 @@ private:
     int32_t currentExercise;
     string name;
 
-    //---- for history saving -------
-
+    //----- training history ---------
+    uint32_t heartCount;
+    int32_t maxHeartRate;
+    int32_t avgHeartRate;
+    uint32_t scoreCount;
+    int32_t avgScore;
 
 };
 

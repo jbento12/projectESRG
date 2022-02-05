@@ -10,6 +10,12 @@ Training::Training()
 {
     currentExercise = 0;
     name = "";
+
+    heartCount = 0;
+    maxHeartRate = 0;
+    avgHeartRate =0;
+    scoreCount  = 0;
+    avgScore    = 0;
 }
 
 Training::~Training()
@@ -52,5 +58,27 @@ void Training::getName(string& name)
 void Training::setName(const string& name)
 {
     this->name = name;
+}
+
+
+/**
+ * @brief Training::HeartRateCalculation
+ * @param heartRate for the calculation
+ */
+void Training::HeartRateCalculation(int32_t heartRate)
+{
+    if(heartRate > this->maxHeartRate)
+       this->maxHeartRate = heartRate;
+
+    avgHeartRate = ((avgHeartRate * heartCount) + heartRate);
+    heartCount++;
+    avgHeartRate = avgHeartRate/heartCount;
+}
+
+void Training::avgScoreCalculation(int32_t score)
+{
+    avgScore = ((avgScore * scoreCount) + score);
+    scoreCount++;
+    avgScore = avgScore/scoreCount;
 }
 
