@@ -8,7 +8,8 @@
 
 Training::Training()
 {
-
+    currentExercise = 0;
+    name = "";
 }
 
 Training::~Training()
@@ -29,10 +30,12 @@ Exercise Training::removeExercise()
 }
 
 
-void Training::nextExercise()
+int32_t Training::nextExercise()
 {
+    if(currentExercise >= this->exerciseList.size())
+        return -1;
 
-
+    return currentExercise++;
 }
 
 
@@ -41,6 +44,10 @@ string Training::getName()
     return this->name;
 }
 
+void Training::getName(string& name)
+{
+    name = this->name;
+}
 
 void Training::setName(const string& name)
 {

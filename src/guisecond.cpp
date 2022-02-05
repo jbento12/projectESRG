@@ -1,5 +1,6 @@
 #include "guisecond.h"
 #include "ui_guisecond.h"
+#include "applicationInterface.h"
 
 GuiSecond::GuiSecond(QWidget *parent) :
     QDialog(parent),
@@ -17,6 +18,7 @@ GuiSecond::GuiSecond(QWidget *parent) :
 
 GuiSecond::~GuiSecond()
 {
+    delete guiHistory;
     delete guiNewTraining;
     delete ui;
 }
@@ -101,11 +103,26 @@ void GuiSecond::listNewModelExercises()
 void GuiSecond::on_push_CreatModel_clicked()
 {
     int32_t ret;
+    int32_t userId;
+    QString exerciseList;
+    QString query;
+
     string trainingName = ui->lineEdit_NewTrainingName->text().toStdString();
-    ret = this->guiUser->addNewModel(trainingName);
+    ret = this->guiUser->addNewModel(trainingName, userId, exerciseList);
 
     if(ret == 0)
     {
+        query = "INSERT INTO user_training (Name, userId, exercises) VALUES(";
+        query += "'";
+        query += QString::fromStdString(trainingName);
+        query += "','";
+        query += QString::number(userId);
+        query += "','";
+        query += exerciseList;
+        query += "')";
+
+        ManageDB::manageDBaddQuery(query);
+        pthread_cond_signal(&cond_manageDB);
         QMessageBox::information(this, "Add New Model", "New Model Added");
     }
     else if(ret == USER_ERR_TRAIN_NAME_INVAL){

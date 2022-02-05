@@ -22,11 +22,6 @@ uint64_t increDebug = 0;
 
 using namespace std;
 
-//pthread_t thManageDB;
-//pthread_t thProcessImage;
-//pthread_t thClassification;
-//pthread_t thTraining;
-//pthread_t thAcquireImage;
 
 pthread_mutex_t mut_acquireImage;
 pthread_mutex_t mut_processImage;
@@ -35,6 +30,10 @@ pthread_mutex_t mut_frame;
 
 pthread_cond_t cond_acquireImage;
 pthread_cond_t cond_processImage;
+
+
+pthread_mutex_t mut_manageDB;
+pthread_cond_t cond_manageDB;
 
 ApplicationInterface appInterface;
 
@@ -106,29 +105,27 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
 {
     cout << "thread - thManageDBFunc\n";
     ManageDB manageDatabase;
-
-
-//    if (!manageDatabase.database.open())
-//    {
-//        qDebug("cant open DATABASE");
-//    }
-
-    //manageDatabase.populateUserList();
-    //User::printUserList();
-
+    QString qryString;
     manageDatabase.populateExerciseList();
     Exercise::printMarketExerciseList();
 
 
-//    //task infinite loop
-//    while(1)
-//    {
-
-
-
-
-//    }
-
+    //task infinite loop
+    while(1)
+    {
+        if(!ManageDB::manageDBqueryQueueIsEmpty())
+        {
+            manageDatabase.database.open();
+            qryString = ManageDB::manageDBremoveQuery();
+            manageDatabase.query->prepare(qryString);
+            manageDatabase.query->exec();
+           manageDatabase.database.close();
+        }
+        else
+        {
+           pthread_cond_wait(&cond_manageDB, &mut_manageDB);
+        }
+    }
 
 }
 
@@ -169,6 +166,8 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
                     "STAMP "    << appInterface.heartSensor.getHeartStamp()  << endl;
         sleep(1);
     }
+#else
+
 #endif
 
 pthread_exit(NULL);

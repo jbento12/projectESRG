@@ -12,7 +12,6 @@
 #include "training.h"
 #include "exercise.h"
 
-
 #define USER_ERR_TRAIN_NAME_INVAL -1
 #define USER_ERR_TRAIN_NAME_EXISTS -2
 
@@ -48,7 +47,8 @@ public:
     //list of exercise list
     Training newModel;
     vector<Training> userTrainingList;
-    int32_t addNewModel(const string);
+
+    int32_t addNewModel(const string, int32_t& userId, QString& exerciseList);
     void addExerciseToNewModel(Exercise& exercise);
     void populateUserTrainingList();
     //bool checkLoginFromDB(const string& username, const string& pass);

@@ -16,6 +16,7 @@ GuiTrainingSession::GuiTrainingSession(QWidget *parent) :
 GuiTrainingSession::~GuiTrainingSession()
 {
     delete ui;
+    delete timer;
 }
 
 
@@ -34,6 +35,7 @@ void GuiTrainingSession::TimerSlot()
 
     ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
     ui->label_Stamp->setText(QString::number(appInterface.heartSensor.getHeartStamp()));
+    ui->label_currExer->setText(exerciseName);
 }
 
 //---------------------- Functions ---------------------------
@@ -66,6 +68,37 @@ void GuiTrainingSession::on_GuiTrainingSession_accepted()
 
 void GuiTrainingSession::on_pushButton_clicked()
 {
+    string aux;
+    int32_t curr_aux;
+
+   //---------- set name of the training --------------
+    aux = this->guiUser->toPlay.getName();
+    trainingName = QString::fromStdString(aux);
+    ui->label_TraningName->setText(trainingName);
+
+    //---------- set first exercise -------------------
+    curr_aux = this->guiUser->toPlay.getCurrExer();
+    aux = this->guiUser->toPlay.exerciseList[curr_aux].getName();
+    exerciseName = QString::fromStdString(aux);
+    ui->label_currExer->setText(exerciseName);
+
+    //---------- start camera acquire -----------------
     appInterface.startAcquire();
     timer->start(100); // camera timer
+}
+
+void GuiTrainingSession::on_push_goNext_clicked()
+{
+    string aux;
+    int32_t aux_curr = this->guiUser->toPlay.nextExercise();
+
+
+    if(aux_curr >= 0)
+    {
+        aux = this->guiUser->toPlay.exerciseList[aux_curr].getName();
+        exerciseName = QString::fromStdString(aux);
+    }
+    else {
+        QMessageBox::warning(this, "End of training", "There are no more exercises in this model");
+    }
 }
