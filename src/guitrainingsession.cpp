@@ -2,7 +2,7 @@
 #include "ui_guitrainingsession.h"
 
 #include "applicationInterface.h"
-
+#include <ctime>
 
 GuiTrainingSession::GuiTrainingSession(QWidget *parent) :
     QDialog(parent),
@@ -48,9 +48,28 @@ void GuiTrainingSession::setUserRef(User* user)
 
 void GuiTrainingSession::on_GuiTrainingSession_finished(int result)
 {
+   QString query;
+   time_t now = time(0);
+   char* dt = ctime(&now);
    timer->stop();
    appInterface.stopAcquire();
    this->close();
+
+   query = "INSERT INTO training_history (userId, train_name, train_date, avgScore, avgHeart) VALUES(";
+   query += "'";
+   query += QString::number(this->guiUser->getId());    //userId
+   query += "','";
+   query += QString::fromStdString(this->guiUser->toPlay.getName()); //trainning name
+   query += "','";
+   query += QString::fromLocal8Bit(dt);     //date of finish
+   query += "','";
+   query += QString::number(this->guiUser->toPlay.getAvgHeart());
+   query += "','";
+   query += QString::number(this->guiUser->toPlay.getAvgScore());
+   query += "')";
+
+   ManageDB::manageDBaddQuery(query);
+   pthread_cond_signal(&cond_manageDB);
 }
 
 

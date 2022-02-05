@@ -25,6 +25,9 @@ public:
     void HeartRateCalculation(int32_t heartRate);
     void avgScoreCalculation(int32_t score);
 
+    int32_t getAvgHeart(){return this->avgHeartRate;};
+    int32_t getAvgScore(){return this->avgScore;};
+
 public:
     vector<Exercise> exerciseList;
 
