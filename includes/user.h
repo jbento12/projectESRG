@@ -1,6 +1,6 @@
 /**
  * @file user.h
- * @author your name (you@domain.com)
+ * @author ERSG group 3
  * @brief 
  * @version 0.1
  * @date 2022-02-05
