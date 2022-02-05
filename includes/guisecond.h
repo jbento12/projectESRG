@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef GUISECOND_H
 #define GUISECOND_H
 
 #include <QDialog>

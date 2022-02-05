@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef GUIHISTORY_H
 #define GUIHISTORY_H
 
 #include <QDialog>

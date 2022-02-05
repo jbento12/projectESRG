@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef poseClassification__H
 #define poseClassification__H
 
 

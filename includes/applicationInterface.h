@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef APPLICATION_INTERFACE_H
 #define APPLICATION_INTERFACE_H
 
 #include "gui.h"

@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef MANAGE_DB_H__
 #define MANAGE_DB_H__
 
 

@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#include <manageDB.h>
 #include <sys/types.h>
 #include "training.h"
 #include "exercise.h"

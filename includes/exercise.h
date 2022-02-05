@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef MYEXERCISE_H__
 #define MYEXERCISE_H__
 
 #include <iostream>

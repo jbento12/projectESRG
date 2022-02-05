@@ -1,4 +1,5 @@
 /**
+
  * @file user.cpp
  * @author ERSG group 3
  * @brief 
@@ -8,6 +9,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#include "user.h"
 #include "poseClassification.h"
 
 #include <QString>

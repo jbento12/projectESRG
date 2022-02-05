@@ -38,13 +38,20 @@ void GuiTrainingSession::TimerSlot()
     src = appInterface.camera.frame;
 
     pthread_mutex_lock(&mut_frame);
+        // update frame
         ui->label_ImageDisplay->setPixmap(QPixmap::fromImage(QImage(src.data, src.cols,
                    src.rows, src.step, QImage::Format_RGB888)).scaled(500,500,Qt::KeepAspectRatio));
     pthread_mutex_unlock(&mut_frame);
 
+    //update labels
     ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
     ui->label_Stamp->setText(QString::number(appInterface.heartSensor.getHeartStamp()));
     ui->label_currExer->setText(exerciseName);
+
+    //send heartRate and score for averages calculation
+    this->guiUser->toPlay.HeartRateCalculation(appInterface.heartSensor.getHeartRate()
+                                               + appInterface.heartSensor.getHeartStamp());
+//    this->guiUser->toPlay.avgScoreCalculation();
 }
 
 //---------------------- Functions ---------------------------

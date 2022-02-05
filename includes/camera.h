@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef CAMERA_H
 #define CAMERA_H
 
 #include <opencv2/dnn.hpp>

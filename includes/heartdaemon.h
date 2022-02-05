@@ -8,8 +8,10 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef HEARTDAEMON_H
 #define HEARTDAEMON_H
 
+#include <iostream>
 #include <unistd.h>
 #include <mqueue.h>   /* mq_* functions */
 #include <sys/stat.h>

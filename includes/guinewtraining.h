@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef GUINEWTRAINING_H
 #define GUINEWTRAINING_H
 
 #include <QDialog>

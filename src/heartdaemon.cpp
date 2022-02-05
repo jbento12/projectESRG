@@ -54,7 +54,7 @@ int HeartDaemon::readFromMsg()
 
      // --------------- Scan message ---------------
      sscanf(str, "%s %d %d", str2, &num, &num2);
-     cout << str << endl;
+     //cout << str << endl;
      if(!strcmp(MSG_PID_STR, str2))       //verify if it is the PID
      {
          pidDaemon = num;

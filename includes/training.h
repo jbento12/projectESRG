@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef TRAINING_H
 #define TRAINING_H
 
 #include <vector>

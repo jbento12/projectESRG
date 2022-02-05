@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef MY_MACROS_H
 #define MY_MACROS_H
 
 #if defined(__x86_64__)

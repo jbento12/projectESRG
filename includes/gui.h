@@ -8,6 +8,7 @@
  * @copyright Copyright (c) 2022
  * 
  */
+#ifndef GUI_H
 #define GUI_H
 
 #include <QMainWindow>
