@@ -398,23 +398,23 @@ bool ApplicationInterface::createThreads()
     qDebug() << sched_get_priority_max (SCHED_RR);
 
     pthread_attr_setschedpolicy(&tattr, SCHED_RR);
-    param.sched_priority = 0;
+    param.sched_priority = 75;
     pthread_attr_setschedparam(&tattr, &param);
         pthread_create(&thAcquireImage, &tattr, thAcquireImageFunc, NULL);
 
-    param.sched_priority = 75;
+    param.sched_priority = 10;
     pthread_attr_setschedparam(&tattr, &param);
         pthread_create(&thProcessImage, &tattr, thProcessImageFunc, NULL);
 
-    param.sched_priority = 10;
+    param.sched_priority = 25;
     pthread_attr_setschedparam(&tattr, &param);
         pthread_create(&thManageDB, NULL, thManageDBFunc, NULL);
 
-    param.sched_priority = 25;
+    param.sched_priority = 50;
     pthread_attr_setschedparam(&tattr, &param);
         pthread_create(&thClassification, NULL, thClassificationFunc, NULL);
 
-    param.sched_priority = 75;
+    param.sched_priority = 50;
     pthread_attr_setschedparam(&tattr, &param);
         pthread_create(&thTraining, NULL, thTrainingFunc, NULL);
 
