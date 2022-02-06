@@ -38,7 +38,7 @@ extern pthread_mutex_t mut_frame;
 
 extern pthread_cond_t cond_acquireImage;
 extern pthread_cond_t cond_processImage;
-
+extern pthread_cond_t cond_poseQualif;
 
 extern pthread_mutex_t mut_manageDB;
 extern pthread_cond_t cond_manageDB;
@@ -89,6 +89,9 @@ public:
     HeartDaemon heartSensor;
 
     User currentUser;
+
+    //---- holds the landmarks positions
+    vector<Point> points;
 private:
     bool toAcquire;
     bool toProcess;

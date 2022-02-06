@@ -13,6 +13,7 @@
 #include "training.h"
 #include "manageDB.h"
 #include "gui.h"
+#include "poseClassification.h"
 
 #include <iostream>
 #include <QPixmap>
@@ -38,10 +39,14 @@ pthread_mutex_t mut_acquireImage;
 pthread_mutex_t mut_processImage;
 pthread_mutex_t mut_resultLand;
 pthread_mutex_t mut_frame;
+pthread_mutex_t mut_pointVect;
+
 
 pthread_cond_t cond_acquireImage;
 pthread_cond_t cond_processImage;
 
+pthread_mutex_t mut_poseQualif;
+pthread_cond_t cond_poseQualif;
 
 pthread_mutex_t mut_manageDB;
 pthread_cond_t cond_manageDB;
@@ -56,6 +61,7 @@ ApplicationInterface::ApplicationInterface()
 {
     toAcquire = false;
     toProcess = false;
+    points.reserve(16);
 }
 
 
@@ -134,7 +140,7 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
         }
         else
         {
-           pthread_cond_wait(&cond_manageDB, &mut_manageDB);
+           pthread_cond_wait(&cond_poseQualif, &mut_poseQualif);
         }
     }
 
@@ -149,7 +155,22 @@ void* ApplicationInterface::thManageDBFunc(void *arg)
 void* ApplicationInterface::thClassificationFunc(void *arg)
 {
     cout << "thread - thClassificationFunc\n";
+    PoseClassification poseQuali;
 
+    while(true)
+    {
+
+        //---------- get most recent landmarks -----------------
+        pthread_mutex_lock(&mut_pointVect);
+        poseQuali.pontos = appInterface.points;
+        pthread_mutex_unlock(&mut_pointVect);
+        //---------- Score calculation -------------------------
+
+            //-------- Set instantaniuos score -----------------
+
+        //----- waits for new landmark-------- (does not need to keep processing the same)
+        pthread_cond_wait(&cond_poseQualif, &mut_poseQualif);
+    }
 
 pthread_exit(NULL);
 }
@@ -234,6 +255,8 @@ void* ApplicationInterface::thProcessImageFunc(void *arg)
             pthread_mutex_lock(&mut_resultLand);
             appInterface.camera.resultLandMarks = landMarks.clone();
             pthread_mutex_unlock(&mut_resultLand);
+            //------ siganl de qualification thread to start the calcualtion -------------
+            pthread_cond_signal(&cond_poseQualif);
         }
         else
         {
@@ -254,7 +277,7 @@ void* ApplicationInterface::thAcquireImageFunc(void *arg)
 {
     float thresh = 0.1;
     int midx = 1, npairs = 14, nparts = 16;
-    vector<Point> points(22);
+
 
     //time the imgage aquire
     struct timespec time_aux;
@@ -277,24 +300,26 @@ void* ApplicationInterface::thAcquireImageFunc(void *arg)
             pthread_mutex_lock(&mut_resultLand);
             int H = appInterface.camera.resultLandMarks.size[2];
             int W = appInterface.camera.resultLandMarks.size[3];
-//            pthread_mutex_unlock(&mut_resultLand);
+            pthread_mutex_unlock(&mut_resultLand);
 
             // Draw the position of the body parts in the Image
             for (int n = 0; n < nparts; n++)
             {
                 // Slice heatmap of corresponding body's part.
-//                pthread_mutex_lock(&mut_resultLand);
+                pthread_mutex_lock(&mut_resultLand);
                 Mat heatMap(H, W, CV_32F, appInterface.camera.resultLandMarks.ptr(0, n));
-//                pthread_mutex_unlock(&mut_resultLand);
+                pthread_mutex_unlock(&mut_resultLand);
                 // 1 maximum per heatmap
                 Point p(-1, -1), pm;
                 double conf;
                 minMaxLoc(heatMap, 0, &conf, 0, &pm);
                 if (conf > thresh)
                     p = pm;
-                points[n] = p;
+                pthread_mutex_lock(&mut_pointVect);
+                appInterface.points[n] = p;
+                pthread_mutex_unlock(&mut_pointVect);
             }
-            pthread_mutex_unlock(&mut_resultLand);
+            //pthread_mutex_unlock(&mut_resultLand);
 
             // connect body parts and draw it !
             float SX = float(appInterface.camera.frame.cols) / W;
@@ -302,8 +327,8 @@ void* ApplicationInterface::thAcquireImageFunc(void *arg)
             for (int n = 0; n < npairs; n++)
             {
                 // lookup 2 connected body/hand parts
-                Point2f a = points[POSE_PAIRS[midx][n][0]];
-                Point2f b = points[POSE_PAIRS[midx][n][1]];
+                Point2f a = appInterface.points[POSE_PAIRS[midx][n][0]];
+                Point2f b = appInterface.points[POSE_PAIRS[midx][n][1]];
 
                 // we did not find enough confidence before
                 if (a.x <= 0 || a.y <= 0 || b.x <= 0 || b.y <= 0)
@@ -358,35 +383,36 @@ bool ApplicationInterface::createThreads()
     pthread_cond_init(&cond_acquireImage, NULL);
     pthread_cond_init(&cond_processImage, NULL);
 
-    ret = pthread_attr_init(&tattr);
 
-    //    ret = pthread_attr_getschedparam (&tattr, &param);
+    pthread_attr_init(&tattr);
 
+    pthread_attr_getschedparam (&tattr, &param);
     /* setting the new scheduling param */
+
+    qDebug() << sched_get_priority_min (SCHED_RR);
+    qDebug() << sched_get_priority_max (SCHED_RR);
 
     pthread_attr_setschedpolicy(&tattr, SCHED_RR);
-
     param.sched_priority = 0;
-    ret = pthread_attr_setschedparam(&tattr, &param);
+    pthread_attr_setschedparam(&tattr, &param);
+        pthread_create(&thAcquireImage, &tattr, thAcquireImageFunc, NULL);
 
-    pthread_create(&thAcquireImage, &tattr, thAcquireImageFunc, NULL);
-    //pthread_detach(thAcquireImage);
-
-    /* set the priority; others are unchanged */
     param.sched_priority = 75;
-    /* setting the new scheduling param */
-    ret = pthread_attr_setschedparam(&tattr, &param);
-    pthread_create(&thProcessImage, &tattr, thProcessImageFunc, NULL);
-    //pthread_detach(thProcessImage);
+    pthread_attr_setschedparam(&tattr, &param);
+        pthread_create(&thProcessImage, &tattr, thProcessImageFunc, NULL);
 
-    pthread_create(&thManageDB, NULL, thManageDBFunc, NULL);
-     //pthread_detach(thManageDB);
-    pthread_create(&thClassification, NULL, thClassificationFunc, NULL);
-       // pthread_detach(thClassification);
-    pthread_create(&thTraining, NULL, thTrainingFunc, NULL);
-       // pthread_detach(thTraining);
+    param.sched_priority = 10;
+    pthread_attr_setschedparam(&tattr, &param);
+        pthread_create(&thManageDB, NULL, thManageDBFunc, NULL);
 
+    param.sched_priority = 25;
+    pthread_attr_setschedparam(&tattr, &param);
+        pthread_create(&thClassification, NULL, thClassificationFunc, NULL);
 
+    param.sched_priority = 75;
+    pthread_attr_setschedparam(&tattr, &param);
+        pthread_create(&thTraining, NULL, thTrainingFunc, NULL);
 
+    pthread_attr_destroy(&tattr);
     return true;
 }
