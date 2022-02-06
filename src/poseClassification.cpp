@@ -12,6 +12,7 @@
 #include "poseClassification.h"
 #include "camera.h"
 
+
 PoseClassification::PoseClassification()
 {
 
@@ -23,6 +24,7 @@ PoseClassification::~PoseClassification()
 
 
 }
+
 
 
 int PoseClassification::calculateAngle(){
@@ -54,4 +56,9 @@ int PoseClassification::calculateAngle(){
 
 //    return (int) floor(alpha * 180. / PI + 0.5);
 
+}
+
+int32_t PoseClassification::scoreCalculation(string name)
+{
+    return 51;
 }

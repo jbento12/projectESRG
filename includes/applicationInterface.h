@@ -87,8 +87,9 @@ public:
 public:
     Camera camera;
     HeartDaemon heartSensor;
-
     User currentUser;
+
+    int32_t instaScore;
 
     //---- holds the landmarks positions
     vector<Point> points;

@@ -69,6 +69,11 @@ void Training::setName(const string& name)
     this->name = name;
 }
 
+string Training::getCurrExerName()
+{
+    return this->exerciseList[currentExercise].getName();
+}
+
 
 /**
  * @brief Training::HeartRateCalculation

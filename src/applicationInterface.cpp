@@ -156,20 +156,25 @@ void* ApplicationInterface::thClassificationFunc(void *arg)
 {
     cout << "thread - thClassificationFunc\n";
     PoseClassification poseQuali;
+    string exerName;
 
     while(true)
     {
+        pthread_cond_wait(&cond_poseQualif, &mut_poseQualif);
 
         //---------- get most recent landmarks -----------------
         pthread_mutex_lock(&mut_pointVect);
         poseQuali.pontos = appInterface.points;
         pthread_mutex_unlock(&mut_pointVect);
+
         //---------- Score calculation -------------------------
+        exerName = appInterface.currentUser.toPlay.getCurrExerName();
+        appInterface.instaScore = poseQuali.scoreCalculation(exerName);
 
-            //-------- Set instantaniuos score -----------------
-
+            //-------- Set instantaniuos score for average calculation -----------------
+        appInterface.currentUser.toPlay.avgScoreCalculation(appInterface.instaScore);
         //----- waits for new landmark-------- (does not need to keep processing the same)
-        pthread_cond_wait(&cond_poseQualif, &mut_poseQualif);
+
     }
 
 pthread_exit(NULL);

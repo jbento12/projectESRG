@@ -13,7 +13,10 @@
 
 #include <vector>
 #include "exercise.h"
+#include "iostream"
+#include "string"
 
+using namespace std;
 
 class Training
 {
@@ -31,7 +34,7 @@ public:
     void setName(const string& name);
 
     int32_t getCurrExer(){return this->currentExercise;};
-
+    string getCurrExerName();
     void HeartRateCalculation(int32_t heartRate);
     void avgScoreCalculation(int32_t score);
 

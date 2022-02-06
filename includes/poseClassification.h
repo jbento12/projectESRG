@@ -14,6 +14,7 @@
 #include <cmath>
 #include <vector>
 #include "camera.h"
+#include <iostream>
 
 #define nParts 16
 
@@ -36,6 +37,9 @@
 
 #define PI 3.14159
 
+using namespace std;
+
+
 struct POINT2D{
     int x;
     int y;
@@ -52,7 +56,7 @@ class PoseClassification{
 
     string get_exercise_name();
     int calculateAngle();
-    int attribute_score(int Angle, string exercise_name);
+    int32_t scoreCalculation(string name);
 
 public:
     vector<Point> pontos;

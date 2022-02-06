@@ -51,7 +51,7 @@ void GuiTrainingSession::TimerSlot()
     //send heartRate and score for averages calculation
     this->guiUser->toPlay.HeartRateCalculation(appInterface.heartSensor.getHeartRate()
                                                + appInterface.heartSensor.getHeartStamp());
-//    this->guiUser->toPlay.avgScoreCalculation();
+    this->guiUser->toPlay.avgScoreCalculation(appInterface.instaScore);
 }
 
 //---------------------- Functions ---------------------------
