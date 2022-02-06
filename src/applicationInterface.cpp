@@ -51,6 +51,9 @@ pthread_cond_t cond_poseQualif;
 pthread_mutex_t mut_manageDB;
 pthread_cond_t cond_manageDB;
 
+pthread_mutex_t mut_training;
+pthread_cond_t cond_training;
+
 ApplicationInterface appInterface;
 
 /**
@@ -98,6 +101,7 @@ void ApplicationInterface::startAcquire()
     this->camera.open();
     this->heartSensor.startHeart();
     pthread_cond_signal(&cond_acquireImage); //tell thread to start aquire
+    pthread_cond_signal(&cond_training);
 }
 
 /**
@@ -197,11 +201,17 @@ void* ApplicationInterface::thTrainingFunc(void *arg)
 
     while(1)
     {
+        if(appInterface.getToAcquire())
+        {
         appInterface.heartSensor.readFromMsg();
         cout << "FROM DAEMAN "  << appInterface.heartSensor.getPidDaemon()   <<
                      "VALOR "   << appInterface.heartSensor.getHeartRate()   <<
                     "STAMP "    << appInterface.heartSensor.getHeartStamp()  << endl;
         sleep(1);
+        }
+        else {
+            pthread_cond_wait(&cond_training, &mut_training);
+        }
     }
 #else
 
