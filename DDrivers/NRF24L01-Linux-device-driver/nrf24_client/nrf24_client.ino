@@ -15,13 +15,11 @@ char data[64];
 uint8_t count = 0;
 
 //  Variables
-const int PulseWire = 0;       // PulseSensor PURPLE WIRE connected to ANALOG PIN 0
-const int LED13 = 13;          // The on-board Arduino LED, close to PIN 13.
+const int pulse = 0;       // PulseSensor PURPLE WIRE connected to ANALOG PIN 0
 int Threshold = 550;           // Determine which Signal to "count as a beat" and which to ignore.
-                               // Use the "Gettting Started Project" to fine-tune Threshold Value beyond default setting.
-                               // Otherwise leave the default "550" value. 
+                              
                                
-PulseSensorPlayground pulseSensor;  // Creates an instance of the PulseSensorPlayground object called "pulseSensor"
+PulseSensorPlayground pulseSensor;  // instance
 
 
 
@@ -43,7 +41,7 @@ void setup()
     Serial.println("setRF failed");    
 
   //------------- Heart sensor setup ----------------------------------------
-  pulseSensor.analogInput(PulseWire);   
+  pulseSensor.analogInput(pulse);   
   pulseSensor.setThreshold(Threshold);   
 }
 
