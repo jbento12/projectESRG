@@ -71,7 +71,9 @@ void Training::setName(const string& name)
 
 string Training::getCurrExerName()
 {
-    return this->exerciseList[currentExercise].getName();
+    if(currentExercise < 1 || currentExercise >= exerciseList.size())
+        return "";
+    return this->exerciseList[currentExercise - 1].getName();
 }
 
 
