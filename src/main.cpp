@@ -11,11 +11,11 @@
 #include "applicationInterface.h"
 #include "exercise.h"
 #include "user.h"
-// #include <QApplication>
+#include <QApplication>
 #include <string>
-// #include <QDebug>
+#include <QDebug>
 //#include <QQuickView>
-//#include <QGuiApplication>
+#include <QGuiApplication>
 //#include <QQmlEngine>
 #include "macros.h"
 
@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
     char buttonValue = 0;
     int count = 0;
 
+     // qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
      QApplication a(argc, argv);
      appInterface.init();
      appInterface.createThreads();
