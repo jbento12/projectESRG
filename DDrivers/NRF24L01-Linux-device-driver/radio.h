@@ -1,3 +1,4 @@
+#ifndef _RADIO_Hi
 #define _RADIO_Hi
 
 #include "gpio.h"
@@ -58,3 +59,4 @@ void nrf_CRCO_disable(void);
 
 
 #endif
+

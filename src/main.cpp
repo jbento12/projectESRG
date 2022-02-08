@@ -11,9 +11,9 @@
 #include "applicationInterface.h"
 #include "exercise.h"
 #include "user.h"
-#include <QApplication>
+// #include <QApplication>
 #include <string>
-#include <QDebug>
+// #include <QDebug>
 //#include <QQuickView>
 //#include <QGuiApplication>
 //#include <QQmlEngine>
@@ -72,6 +72,7 @@ int main(int argc, char *argv[])
             close(buttonFd);
 
           gui_ret = a.exec();
+          w.hide();
      }
     #endif
 

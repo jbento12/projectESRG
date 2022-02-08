@@ -176,7 +176,7 @@ void* ApplicationInterface::thClassificationFunc(void *arg)
         appInterface.instaScore = poseQuali.scoreCalculation(exerName);
 
             //-------- Set instantaniuos score for average calculation -----------------
-        //appInterface.currentUser.toPlay.avgScoreCalculation(appInterface.instaScore);
+        appInterface.currentUser.toPlay.avgScoreCalculation(appInterface.instaScore);
         //----- waits for new landmark-------- (does not need to keep processing the same)
 
     }
