@@ -46,6 +46,7 @@ void GuiTrainingSession::TimerSlot()
     //update labels
     ui->label_heartRate->setText(QString::number(appInterface.heartSensor.getHeartRate()));
     ui->label_Stamp->setText(QString::number(appInterface.heartSensor.getHeartStamp()));
+    ui->label_scoreVal->setText(QString::number(appInterface.instaScore));
     ui->label_currExer->setText(exerciseName);
 
     //send heartRate and score for averages calculation
