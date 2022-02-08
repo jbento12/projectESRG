@@ -73,3 +73,31 @@ void gui::on_push_quitApp_clicked()
 {
     QCoreApplication::quit();
 }
+
+void gui::on_push_register_clicked()
+{
+    QString name;
+    QString user;
+    QString pass;
+    string user_first_name = "Unknown";
+    ManageDB auxDB;
+
+    name = ui->line_regName->text();
+    user = ui->line_regUser->text();   //get text from UI
+    pass = ui->lineregPass->text();
+
+    if(!auxDB.userExists(user))
+    {
+        auxDB.addUser(name, user, pass);
+        QMessageBox::information(this, "Register", "Register sucesseful");
+        ui->line_regName->clear();
+        ui->line_regUser->clear();
+        ui->lineregPass->clear();
+    }
+    else
+    {
+        QMessageBox::warning(this, "Register", "User already exists");
+    }
+
+
+}

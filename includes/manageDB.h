@@ -49,6 +49,9 @@ public:
     //----- To User table --------------
     void populateUserList();
     bool checkLogin(const string& username, const string& password, User& user);
+    bool userExists(QString user);
+    void addUser(QString name, QString user, QString pass);
+
     //----- To User_Trainig table --------------
     void getUserTrainingList(User& user);
 

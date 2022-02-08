@@ -126,6 +126,41 @@ bool ManageDB::checkLogin(const string &username, const string &password, User &
 
 }
 
+
+bool ManageDB::userExists(QString user)
+{
+    int count = 0;
+    if(!database.isOpen())
+        database.open();
+
+    query->exec("SELECT * FROM user where username='"+user +"'");
+
+    while(query->next())
+        count++;
+
+    if(count > 0)
+        return true;
+
+    return false;
+}
+
+void ManageDB::addUser(QString name, QString user, QString pass)
+{
+    if(!database.isOpen())
+        database.open();
+
+    query->prepare("INSERT INTO user (Name, username, password) "
+                   "VALUES (:Name, :username, :password)");
+    query->bindValue(":Name", name);
+    query->bindValue(":username", user);
+    query->bindValue(":password", pass);
+
+    query->exec();
+
+     database.close();
+}
+
+
 void ManageDB::getUserTrainingList(User &user)
 {
     stringstream ss;

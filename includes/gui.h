@@ -40,6 +40,8 @@ private slots:
 
     void on_push_quitApp_clicked();
 
+    void on_push_register_clicked();
+
 private:
     Ui::gui *ui;
 
