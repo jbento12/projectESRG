@@ -1,4 +1,13 @@
-
+/**
+ * @file camera.cpp
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "camera.h"
 #include <QDebug>
 /**
@@ -10,12 +19,12 @@ Camera::Camera()
     apiID = cv::CAP_ANY;
     deviceID = 0;
 
-      qDebug() << cap.get(CAP_PROP_FRAME_WIDTH);
-      qDebug() <<   cap.get(cv::CAP_PROP_FRAME_HEIGHT);
-            cap.set(CAP_PROP_FRAME_WIDTH, 600);
-            cap.set(cv::CAP_PROP_FRAME_HEIGHT, 400);
-            qDebug() << cap.get(CAP_PROP_FRAME_WIDTH);
-            qDebug() <<  cap.get(cv::CAP_PROP_FRAME_HEIGHT);
+//      qDebug() << cap.get(CAP_PROP_FRAME_WIDTH);
+//      qDebug() <<   cap.get(cv::CAP_PROP_FRAME_HEIGHT);
+//            cap.set(CAP_PROP_FRAME_WIDTH, 600);
+//            cap.set(cv::CAP_PROP_FRAME_HEIGHT, 400);
+//            qDebug() << cap.get(CAP_PROP_FRAME_WIDTH);
+//            qDebug() <<  cap.get(cv::CAP_PROP_FRAME_HEIGHT);
 }
 
 /**

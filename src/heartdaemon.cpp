@@ -1,3 +1,13 @@
+/**
+ * @file heartdaemon.cpp
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "heartdaemon.h"
 
 
@@ -44,7 +54,7 @@ int HeartDaemon::readFromMsg()
 
      // --------------- Scan message ---------------
      sscanf(str, "%s %d %d", str2, &num, &num2);
-     cout << str << endl;
+     //cout << str << endl;
      if(!strcmp(MSG_PID_STR, str2))       //verify if it is the PID
      {
          pidDaemon = num;

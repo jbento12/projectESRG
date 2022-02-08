@@ -1,3 +1,13 @@
+/**
+ * @file guihistory.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef GUIHISTORY_H
 #define GUIHISTORY_H
 
@@ -25,6 +35,8 @@ private slots:
     void on_push_GoBack_clicked();
 
     void on_GuiHistory_finished(int result);
+
+    void on_push_history_clicked();
 
 private:
     Ui::GuiHistory *ui;

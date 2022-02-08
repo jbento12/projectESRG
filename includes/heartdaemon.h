@@ -1,6 +1,17 @@
+/**
+ * @file heartdaemon.h
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef HEARTDAEMON_H
 #define HEARTDAEMON_H
 
+#include <iostream>
 #include <unistd.h>
 #include <mqueue.h>   /* mq_* functions */
 #include <sys/stat.h>
@@ -8,7 +19,7 @@
 #include <string>
 #include <signal.h>
 #include <string.h>
-#include <iostream>
+
 
 #define MSGQOBJ_NAME    "/daemonMessage"
 #define MAX_MSG_LEN     10000

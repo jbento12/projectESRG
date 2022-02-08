@@ -1,3 +1,13 @@
+/**
+ * @file gui.h
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef GUI_H
 #define GUI_H
 
@@ -5,7 +15,8 @@
 #include <string>
 #include "user.h"
 #include "guisecond.h"
-
+#include "manageDB.h"
+#include "applicationInterface.h"
 
 
 
@@ -28,6 +39,8 @@ private slots:
     void on_pushButton_clicked();
 
     void on_push_quitApp_clicked();
+
+    void on_push_register_clicked();
 
 private:
     Ui::gui *ui;

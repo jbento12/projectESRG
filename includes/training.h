@@ -1,9 +1,22 @@
+/**
+ * @file training.h
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef TRAINING_H
 #define TRAINING_H
 
 #include <vector>
 #include "exercise.h"
+#include "iostream"
+#include "string"
 
+using namespace std;
 
 class Training
 {
@@ -14,15 +27,33 @@ public:
 
     bool insertExercise(const Exercise& exercise);
     Exercise removeExercise();
-    void nextExercise();
+    int32_t nextExercise();
 
     string getName();
+    void getName(string& name);
     void setName(const string& name);
 
+    int32_t getCurrExer(){return this->currentExercise;};
+    string getCurrExerName();
+    void HeartRateCalculation(int32_t heartRate);
+    void avgScoreCalculation(int32_t score);
+
+    int32_t getAvgHeart(){return this->avgHeartRate;};
+    int32_t getAvgScore(){return this->avgScore;};
+
+public:
     vector<Exercise> exerciseList;
+
 private:
+    int32_t currentExercise;
     string name;
-    int32_t currentExerciseId;
+
+    //----- training history ---------
+    uint32_t heartCount;
+    int32_t maxHeartRate;
+    int32_t avgHeartRate;
+    uint32_t scoreCount;
+    int32_t avgScore;
 
 };
 

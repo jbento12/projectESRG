@@ -1,3 +1,14 @@
+/**
+ * @file guinewtraining.cpp
+ * @author ESRG group 3 
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #include "guinewtraining.h"
 #include "ui_guinewtraining.h"
 
@@ -42,17 +53,18 @@ void GuiNewTraining::on_push_Select_clicked()
     int32_t ret;
     QString train_name;
 
-    //get the training name on the combo seltector
- //   train_name = ui->comboBox_ChooseTrain->itemData().toString;
-    //set the "to play" trianing based on the name from the combo box
-//    ret = this->guiUser->setToPlayTraining(QString::toStdString(train_name));
-//    if(ret == 0)
-//    {
-        this->hide();
-        guiTrainingSession->show();
-//    }else {
-//        QMessageBox::warning(this, "Add New Model", "Could not set training");
-//    }
+    train_name = ui->comboBox_ChooseTrain->currentText();
+
+    if(train_name == "")
+    {
+        QMessageBox::warning(this, "Select Model", "Please choose a Model");
+        return;
+    }
+
+    this->guiUser->setToPlayTraining(train_name.toStdString());
+    guiTrainingSession->setUserRef(guiUser);
+    this->hide();
+    guiTrainingSession->show();
 }
 
 

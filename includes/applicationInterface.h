@@ -1,3 +1,13 @@
+/**
+ * @file applicationInterface.h
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #ifndef APPLICATION_INTERFACE_H
 #define APPLICATION_INTERFACE_H
 
@@ -28,6 +38,10 @@ extern pthread_mutex_t mut_frame;
 
 extern pthread_cond_t cond_acquireImage;
 extern pthread_cond_t cond_processImage;
+extern pthread_cond_t cond_poseQualif;
+
+extern pthread_mutex_t mut_manageDB;
+extern pthread_cond_t cond_manageDB;
 
 /**
  * @brief 
@@ -73,7 +87,12 @@ public:
 public:
     Camera camera;
     HeartDaemon heartSensor;
+    User currentUser;
 
+    int32_t instaScore;
+
+    //---- holds the landmarks positions
+    vector<Point> points;
 private:
     bool toAcquire;
     bool toProcess;

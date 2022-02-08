@@ -1,3 +1,14 @@
+/**
+ * @file user.h
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef USER_H__
 #define USER_H__
 
@@ -11,7 +22,6 @@
 #include <QString>
 #include "training.h"
 #include "exercise.h"
-
 
 #define USER_ERR_TRAIN_NAME_INVAL -1
 #define USER_ERR_TRAIN_NAME_EXISTS -2
@@ -38,6 +48,7 @@ public:
 
     string getName();
     string getUsername();
+    int32_t getId(){return this->userId;};
 
     static bool checkLogin(const string& username, const string& password, User*& user);
 
@@ -47,7 +58,8 @@ public:
     //list of exercise list
     Training newModel;
     vector<Training> userTrainingList;
-    int32_t addNewModel(const string);
+
+    int32_t addNewModel(const string, int32_t& userId, QString& exerciseList);
     void addExerciseToNewModel(Exercise& exercise);
     void populateUserTrainingList();
     //bool checkLoginFromDB(const string& username, const string& pass);

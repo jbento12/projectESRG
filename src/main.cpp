@@ -1,4 +1,13 @@
-#include "gui.h"
+/**
+ * @file main.cpp
+ * @author ERSG group 3
+ * @brief 
+ * @version 0.1
+ * @date 2022-02-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "applicationInterface.h"
 #include "exercise.h"
 #include "user.h"
@@ -6,7 +15,7 @@
 #include <string>
 #include <QDebug>
 //#include <QQuickView>
-//#include <QGuiApplication>
+#include <QGuiApplication>
 //#include <QQmlEngine>
 #include "macros.h"
 
@@ -30,6 +39,7 @@ int main(int argc, char *argv[])
     char buttonValue = 0;
     int count = 0;
 
+     // qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
      QApplication a(argc, argv);
      appInterface.init();
      appInterface.createThreads();
@@ -63,6 +73,7 @@ int main(int argc, char *argv[])
             close(buttonFd);
 
           gui_ret = a.exec();
+          w.hide();
      }
     #endif
 
